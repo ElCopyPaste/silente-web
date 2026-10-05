@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+:root {
+  --silente-night:#121B26; --silente-secondary:#172331; --silente-gold:#D5AA4B;
+  --silente-gold-light:#E5C46A; --silente-ivory:#F3EBDD; --silente-muted:#AEB5BC; --silente-border:#293746;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--silente-night);color:var(--silente-ivory);font-family:var(--font-syne),sans-serif}
+button,a{font:inherit}
+::selection{background:var(--silente-gold);color:var(--silente-night)}
+.silente-stars{
+  background:
+    radial-gradient(circle at 20% 15%,rgba(229,196,106,.12) 0 1px,transparent 1.5px),
+    radial-gradient(circle at 80% 22%,rgba(229,196,106,.10) 0 1px,transparent 1.5px),
+    radial-gradient(circle at 35% 72%,rgba(229,196,106,.08) 0 1px,transparent 1.5px),
+    radial-gradient(circle at 75% 80%,rgba(229,196,106,.07) 0 1px,transparent 1.5px),
+    radial-gradient(ellipse at center,rgba(23,35,49,.55),transparent 62%);
+  background-size:240px 240px,310px 310px,280px 280px,360px 360px,100% 100%;
+}
+.reckless{font-family:Georgia,"Times New Roman",serif;font-style:italic}
+.orbit-line{border:1px solid rgba(213,170,75,.2);border-radius:999px}
+.question-capsule{border:1px solid rgba(213,170,75,.32);background:rgba(18,27,38,.72);backdrop-filter:blur(10px);box-shadow:0 0 24px rgba(213,170,75,.05)}
+.question-capsule:hover,.question-capsule:focus-visible{border-color:rgba(229,196,106,.8);box-shadow:0 0 28px rgba(213,170,75,.15)}
