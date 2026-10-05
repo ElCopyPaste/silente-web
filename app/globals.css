@@ -8,6 +8,7 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--silente-night);color:var(--silente-ivory);font-family:var(--font-syne),sans-serif}
 button,a{font:inherit}
+button{touch-action:manipulation}
 ::selection{background:var(--silente-gold);color:var(--silente-night)}
 .silente-stars{
   background:
@@ -22,3 +23,7 @@ button,a{font:inherit}
 .orbit-line{border:1px solid rgba(213,170,75,.2);border-radius:999px;pointer-events:none}
 .question-capsule{border:1px solid rgba(213,170,75,.32);background:rgba(18,27,38,.72);backdrop-filter:blur(10px);box-shadow:0 0 24px rgba(213,170,75,.05);transition:box-shadow .25s ease,border-color .25s ease}
 .question-capsule:hover,.question-capsule:focus-visible{border-color:rgba(229,196,106,.8);box-shadow:0 0 28px rgba(213,170,75,.15)}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .question-capsule{transition:none}
+}
