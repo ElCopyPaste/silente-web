@@ -1,21 +1,54 @@
 export function Pricing() {
   return (
-    <section id="elige-tu-plan" className="px-5 py-24 md:px-8 md:py-32">
-      <div className="mx-auto max-w-4xl text-center">
-        <p className="text-sm uppercase tracking-[.22em] text-[var(--silente-gold)]">Elige tu plan</p>
-        <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">Elige tu plan.</h2>
-        <div className="mx-auto mt-12 max-w-md rounded-[2rem] border border-[var(--silente-border)] bg-[var(--silente-secondary)] p-8 text-left">
-          <p className="text-sm text-[var(--silente-muted)]">Precio mensual</p>
-          <div className="mt-3 text-5xl font-semibold">POR DEFINIR</div>
-          <ul className="mt-8 space-y-4 text-sm text-[var(--silente-muted)]">
-            <li>Conversación ilimitada*</li>
-            <li>Disponible 24/7</li>
-            <li>Acceso por WhatsApp</li>
-            <li>Totalmente privada</li>
-          </ul>
-          <a href="#" className="mt-8 block rounded-full bg-[var(--silente-gold)] px-6 py-4 text-center font-semibold text-[var(--silente-night)]">
-            Suscribirme
-          </a>
+    <section id="elige-tu-plan" className="relative overflow-hidden px-5 py-24 md:px-8 md:py-32">
+      <div className="mx-auto max-w-5xl">
+        <div className="text-center">
+          <p className="text-sm uppercase tracking-[.22em] text-[var(--silente-gold)]">Elige tu plan</p>
+          <h2 className="mt-4 text-4xl font-semibold leading-[1.02] tracking-[-.03em] md:text-6xl">
+            Una conversación que está ahí cuando la necesitas.
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[var(--silente-muted)]">
+            Accede a Silente y comienza tu conversación de forma privada.
+          </p>
+        </div>
+
+        <div className="mx-auto mt-14 max-w-lg">
+          <article className="relative overflow-hidden rounded-[2rem] border border-[rgba(213,170,75,.45)] bg-[var(--silente-secondary)] p-7 shadow-[0_0_70px_rgba(213,170,75,.06)] md:p-10">
+            <div className="absolute inset-x-0 top-0 h-px bg-[var(--silente-gold)]" />
+            <div className="flex items-start justify-between gap-6">
+              <div>
+                <p className="text-xs uppercase tracking-[.2em] text-[var(--silente-gold)]">Plan Silente</p>
+                <h3 className="mt-3 text-2xl font-semibold">Conversación privada</h3>
+              </div>
+              <span className="rounded-full border border-[var(--silente-border)] px-3 py-1 text-xs text-[var(--silente-muted)]">
+                Mensual
+              </span>
+            </div>
+
+            <div className="mt-10 border-y border-[var(--silente-border)] py-7">
+              <p className="text-xs uppercase tracking-[.18em] text-[var(--silente-muted)]">Precio mensual</p>
+              <p className="mt-2 text-4xl font-semibold tracking-tight md:text-5xl">POR DEFINIR</p>
+            </div>
+
+            <ul className="mt-7 space-y-4 text-sm text-[var(--silente-ivory)]">
+              <li className="flex gap-3"><span className="text-[var(--silente-gold)]">∞</span><span>Conversación ilimitada*</span></li>
+              <li className="flex gap-3"><span className="text-[var(--silente-gold)]">24/7</span><span>Disponible 24/7</span></li>
+              <li className="flex gap-3"><span className="text-[var(--silente-gold)]">◈</span><span>Acceso por WhatsApp</span></li>
+              <li className="flex gap-3"><span className="text-[var(--silente-gold)]">◌</span><span>Totalmente privada</span></li>
+            </ul>
+
+            <a
+              href="#"
+              className="mt-9 flex items-center justify-between rounded-full bg-[var(--silente-gold)] px-6 py-4 font-semibold text-[var(--silente-night)] transition-transform hover:scale-[1.01] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
+            >
+              <span>Suscribirme</span>
+              <span aria-hidden="true">→</span>
+            </a>
+
+            <p className="mt-4 text-xs leading-5 text-[var(--silente-muted)]">
+              * Las condiciones definitivas del servicio se informarán junto con la contratación.
+            </p>
+          </article>
         </div>
       </div>
     </section>
