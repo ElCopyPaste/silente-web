@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { Benefits } from "./Benefits";
 import { Header } from "./Header";
 import { SilenteSymbol } from "./SilenteSymbol";
@@ -28,23 +28,25 @@ const mobilePositions = [
   "left-1/2 top-[2%] -translate-x-1/2",
   "right-[0%] top-[23%]",
   "right-[0%] bottom-[16%]",
-  "left-1/2 bottom-[2%] -translate-x-1/2",
   "left-[0%] bottom-[16%]",
   "left-[0%] top-[23%]",
+  "left-1/2 bottom-[2%] -translate-x-1/2",
 ];
 
 export function Hero() {
   const [state, setState] = useState<"saber" | "hablar">("saber");
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
+    if (reduceMotion) return;
     const timer = window.setInterval(() => {
       setState((current) => (current === "saber" ? "hablar" : "saber"));
     }, 3200);
     return () => window.clearInterval(timer);
-  }, []);
+  }, [reduceMotion]);
 
   const goToHow = () => {
-    document.getElementById("como-funciona")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("como-funciona")?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
   };
 
   return (
@@ -58,9 +60,9 @@ export function Hero() {
             <span className="relative inline-grid w-[4.1em] justify-items-center">
               <motion.span
                 key={state}
-                initial={{ opacity: 0, y: state === "saber" ? 8 : -8 }}
+                initial={reduceMotion ? false : { opacity: 0, y: state === "saber" ? 8 : -8 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: .8, ease: "easeInOut" }}
+                transition={reduceMotion ? { duration: 0 } : { duration: .8, ease: "easeInOut" }}
               >
                 {state.toUpperCase()}.
               </motion.span>
@@ -70,9 +72,9 @@ export function Hero() {
 
         <motion.p
           key={state + "-phrase"}
-          initial={{ opacity: 0, y: 8 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: .8, ease: "easeInOut" }}
+          transition={reduceMotion ? { duration: 0 } : { duration: .8, ease: "easeInOut" }}
           className="reckless mt-4 text-2xl text-[var(--silente-gold)] md:mt-5 md:text-3xl"
         >
           {state === "saber" ? "Silente te espera." : "Silente te escucha."}
@@ -84,8 +86,8 @@ export function Hero() {
 
           <motion.div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-            animate={{ rotate: [0, 3, 0, -3, 0] }}
-            transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+            animate={reduceMotion ? undefined : { rotate: [0, 3, 0, -3, 0] }}
+            transition={reduceMotion ? undefined : { duration: 14, repeat: Infinity, ease: "easeInOut" }}
           >
             <SilenteSymbol />
           </motion.div>
@@ -99,8 +101,8 @@ export function Hero() {
                 "question-capsule absolute hidden max-w-[230px] rounded-full px-5 py-3.5 text-left text-sm leading-tight text-[var(--silente-ivory)] md:block " +
                 desktopPositions[index]
               }
-              animate={{ y: [0, index % 2 === 0 ? -6 : 6, 0] }}
-              transition={{ duration: 5 + index * .35, repeat: Infinity, ease: "easeInOut" }}
+              animate={reduceMotion ? undefined : { y: [0, index % 2 === 0 ? -6 : 6, 0] }}
+              transition={reduceMotion ? undefined : { duration: 5 + index * .35, repeat: Infinity, ease: "easeInOut" }}
             >
               {question}
             </motion.button>
@@ -115,8 +117,8 @@ export function Hero() {
                 "question-capsule absolute block max-w-[145px] rounded-full px-3 py-2.5 text-left text-[11px] leading-[1.15] text-[var(--silente-ivory)] md:hidden " +
                 mobilePositions[index]
               }
-              animate={{ y: [0, index % 2 === 0 ? -4 : 4, 0] }}
-              transition={{ duration: 5.5 + index * .3, repeat: Infinity, ease: "easeInOut" }}
+              animate={reduceMotion ? undefined : { y: [0, index % 2 === 0 ? -4 : 4, 0] }}
+              transition={reduceMotion ? undefined : { duration: 5.5 + index * .3, repeat: Infinity, ease: "easeInOut" }}
             >
               {question}
             </motion.button>
