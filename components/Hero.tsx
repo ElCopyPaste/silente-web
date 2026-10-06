@@ -33,6 +33,14 @@ const mobilePositions = [
   "left-1/2 bottom-[1%] -translate-x-1/2",
 ];
 
+function WhatsAppIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-current">
+      <path d="M12 2.25a9.75 9.75 0 0 0-8.42 14.53L2.3 21.7l5.04-1.25A9.75 9.75 0 1 0 12 2.25Zm0 17.75a8 8 0 0 1-4.08-1.12l-.29-.17-2.99.74.76-2.91-.19-.3A8 8 0 1 1 12 20Zm4.38-5.94c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1-.37-1.91-1.18-.71-.63-1.19-1.41-1.33-1.65-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.11.15 1.53.09.47-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z" />
+    </svg>
+  );
+}
+
 export function Hero() {
   const [state, setState] = useState<"saber" | "hablar">("saber");
   const reduceMotion = useReducedMotion();
@@ -134,7 +142,7 @@ export function Hero() {
           className="relative z-20 mx-auto flex min-h-14 w-full max-w-[590px] items-center justify-between rounded-full bg-[var(--silente-gold)] px-6 py-4 text-left font-semibold text-[var(--silente-night)] shadow-[0_0_34px_rgba(213,170,75,.18)] transition-transform hover:scale-[1.01] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
         >
           <span className="flex items-center gap-3">
-            <span className="text-2xl" aria-hidden="true">◔</span>
+            <WhatsAppIcon />
             <span>Chatear con Silente</span>
           </span>
           <span className="text-2xl" aria-hidden="true">→</span>
