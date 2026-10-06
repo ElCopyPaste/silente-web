@@ -42,18 +42,35 @@ button{touch-action:manipulation}
 
 .question-capsule{
   z-index:2;
-  border:1px solid rgba(229,196,106,.34);
-  border-radius:1.15rem;
-  background:linear-gradient(145deg,rgba(5,15,24,.56),rgba(7,17,29,.32));
-  backdrop-filter:blur(8px);
-  box-shadow:inset 0 1px 0 rgba(255,236,195,.1),0 8px 26px rgba(0,0,0,.2);
-  text-shadow:0 1px 14px rgba(0,0,0,.72);
-  transition:background .4s ease,border-color .4s ease,box-shadow .4s ease;
+  position:relative;
+  border:0;
+  border-radius:.2rem;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+  text-shadow:0 2px 16px rgba(0,0,0,.96),0 0 26px rgba(0,0,0,.78);
+  transition:color .4s ease,text-shadow .4s ease;
 }
+.question-capsule::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:5px;
+  height:5px;
+  border-radius:999px;
+  background:var(--silente-gold-light);
+  box-shadow:0 0 7px 2px rgba(229,196,106,.48);
+  transform:translateY(-50%);
+}
+.question-capsule-0::after,.question-capsule-2::after,.question-capsule-4::after{right:-10px}
+.question-capsule-1::after,.question-capsule-3::after,.question-capsule-5::after{left:-10px}
 .question-capsule:hover,.question-capsule:focus-visible{
-  border-color:rgba(255,217,133,.8);
-  background:linear-gradient(145deg,rgba(8,20,30,.72),rgba(8,18,27,.56));
-  box-shadow:inset 0 1px 0 rgba(255,236,195,.15),0 0 25px rgba(213,170,75,.15),0 12px 30px rgba(0,0,0,.26);
+  color:var(--silente-gold-light);
+  text-shadow:0 2px 18px rgba(0,0,0,.98),0 0 22px rgba(213,170,75,.3);
+}
+.question-capsule:focus-visible{
+  outline:1px solid rgba(229,196,106,.8);
+  outline-offset:6px;
 }
 .hero-cta{
   background:linear-gradient(105deg,#F6CE7C 0%,#E8B950 48%,#F4C76D 100%);
