@@ -59,14 +59,14 @@ export function Hero() {
     });
   };
 
-  const activeWord = state === "saber" ? "SABER." : "HABLAR.";
+  const activeWord = state === "saber" ? "Saber." : "Hablar.";
 
   return (
     <section className="silente-stars relative min-h-screen overflow-hidden px-4 pb-12 pt-3 md:px-8 md:pb-16 md:pt-5">
       <Header />
 
       <div className="relative z-10 mx-auto mt-9 max-w-6xl text-center md:mt-14">
-        <h1 className="text-[clamp(2.2rem,6.7vw,5.35rem)] font-semibold leading-[.94] tracking-[-.055em] text-[var(--silente-ivory)]">
+        <h1 className="text-[clamp(1.25rem,6.4vw,5.35rem)] font-semibold leading-[.94] tracking-[-.055em] text-[var(--silente-ivory)]">
           <span className="block whitespace-nowrap">
             Hay cosas que necesitas{" "}
             <span className="relative inline-grid w-[4.35em] justify-items-center align-baseline">
@@ -100,7 +100,7 @@ export function Hero() {
           initial={reduceMotion ? false : { opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={reduceMotion ? { duration: 0 } : { duration: 0.8, ease: "easeInOut" }}
-          className="mt-3 text-[1.65rem] font-medium tracking-[-.025em] text-[var(--silente-gold)] md:mt-4 md:text-3xl"
+          className="mt-3 min-h-[1.4em] text-[clamp(1.2rem,3.5vw,1.875rem)] font-medium tracking-[-.025em] text-[var(--silente-gold)] md:mt-4"
         >
           {state === "saber" ? "Silente te espera." : "Silente te escucha."}
         </motion.p>
@@ -154,7 +154,7 @@ export function Hero() {
 
         <a
           href="#como-funciona"
-          className="relative z-20 mx-auto flex min-h-14 w-full max-w-[590px] items-center justify-between rounded-full bg-[var(--silente-gold)] px-6 py-4 text-left font-semibold text-[var(--silente-night)] shadow-[0_0_34px_rgba(213,170,75,.18)] transition-transform hover:scale-[1.01] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
+          className="relative z-20 mx-auto flex min-h-14 w-full max-w-[590px] items-center justify-between rounded-full bg-[var(--silente-gold)] px-6 py-4 text-left font-semibold text-[var(--silente-night)] shadow-[0_0_34px_rgba(213,170,75,.18)] transition-transform hover:scale-[1.01] active:scale-[.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
         >
           <span className="flex items-center gap-3">
             <WhatsAppIcon />
