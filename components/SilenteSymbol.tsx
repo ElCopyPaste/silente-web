@@ -3,15 +3,15 @@ export function SilenteSymbol() {
     <div
       role="img"
       aria-label="Símbolo provisional de Silente"
-      className="silente-symbol relative flex h-28 w-28 items-center justify-center md:h-40 md:w-40"
+      className="silente-symbol relative flex h-[min(42vw,220px)] w-[min(42vw,220px)] items-center justify-center md:h-64 md:w-64"
     >
       <span
         aria-hidden="true"
-        className="absolute inset-0 rounded-full border border-[rgba(229,196,106,.16)] bg-[radial-gradient(circle,rgba(229,196,106,.13),rgba(229,196,106,.035)_42%,transparent_70%)] shadow-[0_0_28px_rgba(229,196,106,.12),0_0_90px_rgba(213,170,75,.12)]"
+        className="absolute inset-0 rounded-full border border-[rgba(229,196,106,.28)] bg-[radial-gradient(circle,rgba(229,196,106,.13),rgba(229,196,106,.035)_42%,transparent_70%)] shadow-[0_0_28px_rgba(229,196,106,.12),0_0_90px_rgba(213,170,75,.12)]"
       />
       <span
         aria-hidden="true"
-        className="absolute inset-[9px] rounded-full border-[1.5px] border-[var(--silente-gold-light)] shadow-[inset_0_0_18px_rgba(229,196,106,.08),0_0_18px_rgba(229,196,106,.16)] md:inset-[12px]"
+        className="absolute inset-[9px] rounded-full border-2 border-[var(--silente-gold-light)] shadow-[inset_0_0_18px_rgba(229,196,106,.08),0_0_18px_rgba(229,196,106,.16)] md:inset-[12px]"
       />
       <span
         aria-hidden="true"
