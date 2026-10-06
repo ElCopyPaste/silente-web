@@ -9,7 +9,13 @@ Sitio web de Silente.
 - TypeScript
 - Tailwind CSS
 - Motion
-- Syne y Cormorant Garamond (SIL Open Font License 1.1)
+- Syne
+
+## Tipografía
+
+Syne es la tipografía vigente para el sistema completo de Silente, incluida la frase emocional.
+
+Reckless fue reemplazada y no forma parte de la implementación vigente.
 
 ## Desarrollo local
 
