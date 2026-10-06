@@ -2,12 +2,29 @@ export function SilenteSymbol() {
   return (
     <div
       role="img"
-      aria-label="Símbolo de Silente"
-      className="silente-symbol relative flex h-28 w-28 items-center justify-center rounded-full border-[2px] border-[var(--silente-gold-light)] bg-[radial-gradient(circle,rgba(229,196,106,.08),transparent_58%)] shadow-[0_0_24px_rgba(229,196,106,.25),0_0_70px_rgba(213,170,75,.12)] md:h-40 md:w-40"
+      aria-label="Símbolo provisional de Silente"
+      className="silente-symbol relative flex h-28 w-28 items-center justify-center md:h-40 md:w-40"
     >
-      <span className="absolute -top-2 h-4 w-4 rounded-full bg-[var(--silente-gold-light)] shadow-[0_0_18px_rgba(229,196,106,.75)]" />
-      <span className="absolute inset-[10px] rounded-full border border-[var(--silente-gold)] opacity-25" />
-      <span className="h-2 w-2 rounded-full bg-[var(--silente-gold-light)] shadow-[0_0_12px_rgba(229,196,106,.8)]" />
+      <span
+        aria-hidden="true"
+        className="absolute inset-0 rounded-full border border-[rgba(229,196,106,.16)] bg-[radial-gradient(circle,rgba(229,196,106,.13),rgba(229,196,106,.035)_42%,transparent_70%)] shadow-[0_0_28px_rgba(229,196,106,.12),0_0_90px_rgba(213,170,75,.12)]"
+      />
+      <span
+        aria-hidden="true"
+        className="absolute inset-[9px] rounded-full border-[1.5px] border-[var(--silente-gold-light)] shadow-[inset_0_0_18px_rgba(229,196,106,.08),0_0_18px_rgba(229,196,106,.16)] md:inset-[12px]"
+      />
+      <span
+        aria-hidden="true"
+        className="absolute inset-[22px] rounded-full border border-[rgba(213,170,75,.45)] md:inset-[31px]"
+      />
+      <span
+        aria-hidden="true"
+        className="absolute left-1/2 top-[-2px] h-4 w-4 -translate-x-1/2 rounded-full bg-[var(--silente-gold-light)] shadow-[0_0_18px_rgba(229,196,106,.85),0_0_34px_rgba(213,170,75,.35)] md:top-[-3px] md:h-5 md:w-5"
+      />
+      <span
+        aria-hidden="true"
+        className="relative h-2.5 w-2.5 rounded-full bg-[var(--silente-gold-light)] shadow-[0_0_14px_rgba(229,196,106,.95),0_0_30px_rgba(213,170,75,.45)] md:h-3 md:w-3"
+      />
     </div>
   );
 }
