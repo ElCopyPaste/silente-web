@@ -110,7 +110,7 @@ export function Hero() {
               type="button"
               onClick={goToHow}
               className={
-                "question-capsule question-capsule-${index} absolute hidden max-w-[240px] rounded-full px-5 py-4 text-left text-sm leading-[1.2] text-[var(--silente-ivory)] md:block " +
+                "question-capsule question-capsule-" + index + " absolute hidden max-w-[240px] rounded-full px-5 py-4 text-left text-sm leading-[1.2] text-[var(--silente-ivory)] md:block " +
                 desktopPositions[index]
               }
               animate={reduceMotion ? undefined : { y: [0, index % 2 === 0 ? -6 : 6, 0] }}
@@ -126,7 +126,7 @@ export function Hero() {
               type="button"
               onClick={goToHow}
               className={
-                "question-capsule question-capsule-${index} absolute block min-h-11 max-w-[150px] rounded-full px-3.5 py-3 text-left text-[11px] leading-[1.18] text-[var(--silente-ivory)] md:hidden " +
+                "question-capsule question-capsule-" + index + " absolute block min-h-11 max-w-[150px] rounded-full px-3.5 py-3 text-left text-[11px] leading-[1.18] text-[var(--silente-ivory)] md:hidden " +
                 mobilePositions[index]
               }
               animate={reduceMotion ? undefined : { y: [0, index % 2 === 0 ? -4 : 4, 0] }}
