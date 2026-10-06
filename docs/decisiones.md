@@ -16,8 +16,8 @@ Los destinos de esas acciones se incorporarán cuando estén definidos.
 - Mobile first.
 - Fondo azul noche.
 - Dorado como color de identidad y CTA.
-- Syne como tipografía del sistema.
-- Reckless queda pendiente hasta disponer del archivo/licencia correspondiente.
+- Syne como tipografía principal de interfaz.
+- Cormorant Garamond, con licencia SIL Open Font License 1.1, como serif itálica de acento.
 - El logo real reemplazará el símbolo provisional.
 
 ## Criterio de desarrollo
