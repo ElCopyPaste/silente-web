@@ -51,19 +51,21 @@ button{touch-action:manipulation}
   text-shadow:0 2px 16px rgba(0,0,0,.96),0 0 26px rgba(0,0,0,.78);
   transition:color .4s ease,text-shadow .4s ease;
 }
-.question-capsule::after{
+.question-capsule::before{
   content:"";
   position:absolute;
-  top:50%;
-  width:5px;
-  height:5px;
-  border-radius:999px;
-  background:var(--silente-gold-light);
-  box-shadow:0 0 7px 2px rgba(229,196,106,.48);
-  transform:translateY(-50%);
+  z-index:0;
+  inset:-10px -16px;
+  border:1px solid rgba(229,196,106,.56);
+  border-radius:50%;
+  box-shadow:0 0 12px rgba(229,196,106,.12);
+  pointer-events:none;
+  animation:question-orbit-glow 7s ease-in-out infinite;
 }
-.question-capsule-0::after,.question-capsule-2::after,.question-capsule-4::after{right:-10px}
-.question-capsule-1::after,.question-capsule-3::after,.question-capsule-5::after{left:-10px}
+@keyframes question-orbit-glow{
+  0%,100%{opacity:.52;box-shadow:0 0 8px rgba(229,196,106,.1)}
+  50%{opacity:1;box-shadow:0 0 20px rgba(229,196,106,.34)}
+}
 .question-capsule:hover,.question-capsule:focus-visible{
   color:var(--silente-gold-light);
   text-shadow:0 2px 18px rgba(0,0,0,.98),0 0 22px rgba(213,170,75,.3);
@@ -80,4 +82,5 @@ button{touch-action:manipulation}
   .silente-symbol{animation:none}
   html{scroll-behavior:auto}
   .question-capsule,.hero-cta{transition:none}
+  .question-capsule::before{animation:none}
 }
