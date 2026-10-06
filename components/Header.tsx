@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 const links = [
@@ -12,16 +13,21 @@ export function Header() {
 
   return (
     <header className="relative z-30 mx-auto max-w-6xl">
-      <div className="relative flex h-[68px] items-center justify-center md:h-[76px]">
+      <div className="relative flex h-[76px] items-center justify-center md:h-[88px]">
         <a
           href="#"
           aria-label="Silente, inicio"
-          className="flex flex-col items-center gap-1 text-[16px] font-normal tracking-[.13em] text-[var(--silente-gold-light)] md:text-lg"
+          className="flex items-center justify-center focus-visible:rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
         >
-          <span aria-hidden="true" className="relative mb-0.5 h-[23px] w-[23px] rounded-full border-2 border-[var(--silente-gold)]">
-            <span className="absolute left-1/2 top-[-8px] h-[7px] w-[7px] -translate-x-1/2 rounded-full bg-[var(--silente-gold-light)] shadow-[0_0_12px_rgba(229,196,106,.8)]" />
-          </span>
-          silente
+          <Image
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/logo-silente.webp`}
+            alt="Silente"
+            width={640}
+            height={692}
+            priority
+            unoptimized
+            className="h-[72px] w-auto object-contain md:h-[84px]"
+          />
         </a>
 
         <button
