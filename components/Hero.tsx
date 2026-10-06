@@ -50,7 +50,7 @@ export function Hero() {
     if (reduceMotion) return;
     const timer = window.setInterval(() => {
       setState((current) => (current === "saber" ? "hablar" : "saber"));
-    }, 3200);
+    }, 4000);
     return () => window.clearInterval(timer);
   }, [reduceMotion]);
 
