@@ -50,7 +50,7 @@ function QuestionOrbit({ delay, reduceMotion }: { delay: number; reduceMotion: b
       preserveAspectRatio="none"
       className="pointer-events-none absolute -inset-3 h-[calc(100%+1.5rem)] w-[calc(100%+1.5rem)] overflow-visible"
     >
-      <ellipse cx="50" cy="35" rx="48" ry="31" fill="none" stroke="#D5AA4B" strokeOpacity="0.38" strokeWidth="0.55" />
+      <ellipse cx="50" cy="35" rx="48" ry="31" fill="none" stroke="#D5AA4B" strokeOpacity="0.55" strokeWidth="0.9" />
       {!reduceMotion && (
         <motion.ellipse
           cx="50"
@@ -58,13 +58,12 @@ function QuestionOrbit({ delay, reduceMotion }: { delay: number; reduceMotion: b
           rx="48"
           ry="31"
           fill="none"
-          pathLength={1}
           stroke="#F1C76B"
-          strokeWidth="1.5"
-          strokeDasharray="0.13 0.87"
+          strokeWidth="2"
+          strokeDasharray="34 218"
           strokeLinecap="round"
           initial={{ strokeDashoffset: 0 }}
-          animate={{ strokeDashoffset: [0, -1] }}
+          animate={{ strokeDashoffset: [0, -252] }}
           transition={{ duration: 9, repeat: Infinity, ease: "linear", delay }}
           style={{ filter: "drop-shadow(0 0 3px rgba(241,199,107,.9))" }}
         />
