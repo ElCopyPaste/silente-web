@@ -80,7 +80,7 @@ export function Hero() {
           <span className="block whitespace-nowrap">Hay cosas que</span>
           <span className="mt-1 block whitespace-nowrap">
             necesitas{" "}
-            <span className="relative inline-grid w-[4.35em] justify-items-center align-baseline">
+            <span className="relative inline-grid w-[4.35em] justify-items-start align-baseline">
               <motion.span
                 key={state}
                 initial={reduceMotion ? false : { opacity: 0, y: state === "saber" ? 8 : -8 }}
@@ -104,10 +104,6 @@ export function Hero() {
         </motion.p>
 
         <div className="relative mx-auto mt-6 h-[430px] w-full max-w-6xl md:mt-8 md:h-[570px]">
-
-
-
-
           <motion.div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
             animate={reduceMotion ? undefined : { rotate: [0, 3, 0, -3, 0] }}
@@ -138,7 +134,7 @@ export function Hero() {
               type="button"
               onClick={goToHow}
               className={
-                "question-capsule question-capsule-" + index + " absolute block min-h-11 max-w-[150px] rounded-full px-3.5 py-3 text-left text-[11px] leading-[1.18] text-[var(--silente-ivory)] md:hidden " +
+                "question-capsule question-capsule-" + index + " absolute block min-h-11 w-[min(42vw,210px)] rounded-full px-3.5 py-3 text-left text-[clamp(11px,2vw,15px)] leading-[1.2] text-[var(--silente-ivory)] md:hidden " +
                 mobilePositions[index]
               }
               animate={reduceMotion ? undefined : { y: [0, index % 2 === 0 ? -4 : 4, 0] }}
