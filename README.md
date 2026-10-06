@@ -9,6 +9,7 @@ Sitio web de Silente.
 - TypeScript
 - Tailwind CSS
 - Motion
+- Syne y Cormorant Garamond (SIL Open Font License 1.1)
 
 ## Desarrollo local
 
@@ -23,7 +24,6 @@ La primera implementación de la Home está incorporada en la rama `main`.
 
 Antes de publicación deben incorporarse los recursos y datos todavía pendientes:
 - logo real
-- Reckless
 - video demo
 - precio
 - URL de WhatsApp
