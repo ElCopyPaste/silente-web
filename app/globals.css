@@ -19,7 +19,7 @@ button{touch-action:manipulation}
     radial-gradient(ellipse at center,rgba(23,35,49,.55),transparent 62%);
   background-size:240px 240px,310px 310px,280px 280px,360px 360px,100% 100%;
 }
-.reckless{font-family:Georgia,"Times New Roman",serif;font-style:italic}
+.cormorant{font-family:var(--font-cormorant),Georgia,"Times New Roman",serif;font-style:italic}
 .orbit-line{border:1px solid rgba(213,170,75,.2);border-radius:999px;pointer-events:none}
 .question-capsule{border:1px solid rgba(213,170,75,.32);background:rgba(18,27,38,.72);backdrop-filter:blur(10px);box-shadow:0 0 24px rgba(213,170,75,.05);transition:box-shadow .25s ease,border-color .25s ease}
 .question-capsule:hover,.question-capsule:focus-visible{border-color:rgba(229,196,106,.8);box-shadow:0 0 28px rgba(213,170,75,.15)}
