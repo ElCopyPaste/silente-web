@@ -65,7 +65,7 @@ export function Hero() {
   return (
     <section className="silente-stars relative min-h-screen overflow-hidden bg-[#07111d] px-4 pb-12 pt-3 md:px-8 md:pb-16 md:pt-5">
       <Image
-        src="/fondo.webp"
+        src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/fondo.webp`}
         alt=""
         fill
         priority

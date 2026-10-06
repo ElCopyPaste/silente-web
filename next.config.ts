@@ -8,9 +8,11 @@ const nextConfig: NextConfig = isGitHubPages
       output: "export",
       basePath: "/silente-web",
       trailingSlash: true,
+      env: { NEXT_PUBLIC_BASE_PATH: "/silente-web" },
     }
   : {
       reactStrictMode: true,
+      env: { NEXT_PUBLIC_BASE_PATH: "" },
       async headers() {
         return [
           {
