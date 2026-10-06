@@ -60,7 +60,7 @@ export function Hero() {
     });
   };
 
-  const activeWord = state === "saber" ? "Saber." : "Hablar.";
+  const activeWord = state === "saber" ? "saber." : "hablar.";
 
   return (
     <section className="silente-stars relative isolate min-h-[100svh] overflow-hidden bg-[#07111d] px-4 pb-10 pt-3 md:px-8 md:pb-14 md:pt-5">
