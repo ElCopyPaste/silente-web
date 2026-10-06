@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
 import { Benefits } from "./Benefits";
 import { Header } from "./Header";
@@ -62,30 +63,26 @@ export function Hero() {
   const activeWord = state === "saber" ? "Saber." : "Hablar.";
 
   return (
-    <section className="silente-stars relative min-h-screen overflow-hidden px-4 pb-12 pt-3 md:px-8 md:pb-16 md:pt-5">
+    <section className="silente-stars relative min-h-screen overflow-hidden bg-[#07111d] px-4 pb-12 pt-3 md:px-8 md:pb-16 md:pt-5">
+      <Image
+        src="/fondo.webp"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="pointer-events-none z-0 object-cover object-center"
+      />
       <Header />
 
       <div className="relative z-10 mx-auto mt-9 max-w-6xl text-center md:mt-14">
         <h1 className="text-[clamp(1.25rem,6.4vw,5.35rem)] font-semibold leading-[.94] tracking-[-.055em] text-[var(--silente-ivory)]">
-          <span className="block whitespace-nowrap">
-            Hay cosas que necesitas{" "}
+          <span className="block whitespace-nowrap">Hay cosas que</span>
+          <span className="mt-1 block whitespace-nowrap">
+            necesitas{" "}
             <span className="relative inline-grid w-[4.35em] justify-items-center align-baseline">
               <motion.span
                 key={state}
                 initial={reduceMotion ? false : { opacity: 0, y: state === "saber" ? 8 : -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={reduceMotion ? { duration: 0 } : { duration: 0.8, ease: "easeInOut" }}
-              >
-                {activeWord}
-              </motion.span>
-            </span>
-          </span>
-          <span className="mt-1 block whitespace-nowrap">
-            Hay cosas que necesitas{" "}
-            <span className="relative inline-grid w-[4.35em] justify-items-center align-baseline">
-              <motion.span
-                key={state + "-second"}
-                initial={reduceMotion ? false : { opacity: 0, y: state === "saber" ? -8 : 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={reduceMotion ? { duration: 0 } : { duration: 0.8, ease: "easeInOut" }}
               >
@@ -106,10 +103,9 @@ export function Hero() {
         </motion.p>
 
         <div className="relative mx-auto mt-6 h-[430px] w-full max-w-6xl md:mt-8 md:h-[570px]">
-          <div className="orbit-line absolute left-1/2 top-1/2 h-[176px] w-[min(96vw,470px)] -translate-x-1/2 -translate-y-1/2 rotate-[-17deg]" aria-hidden="true" />
-          <div className="orbit-line absolute left-1/2 top-1/2 h-[242px] w-[min(112vw,630px)] -translate-x-1/2 -translate-y-1/2 rotate-[15deg]" aria-hidden="true" />
-          <div className="orbit-line absolute left-1/2 top-1/2 h-[320px] w-[min(128vw,790px)] -translate-x-1/2 -translate-y-1/2 rotate-[-8deg] opacity-70" aria-hidden="true" />
-          <div className="orbit-line absolute left-1/2 top-1/2 h-[415px] w-[min(142vw,980px)] -translate-x-1/2 -translate-y-1/2 rotate-[20deg] opacity-45" aria-hidden="true" />
+
+
+
 
           <motion.div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
