@@ -59,22 +59,37 @@ export function Hero() {
     });
   };
 
+  const activeWord = state === "saber" ? "SABER." : "HABLAR.";
+
   return (
     <section className="silente-stars relative min-h-screen overflow-hidden px-4 pb-12 pt-3 md:px-8 md:pb-16 md:pt-5">
       <Header />
 
       <div className="relative z-10 mx-auto mt-9 max-w-6xl text-center md:mt-14">
-        <h1 className="text-[clamp(2.35rem,7vw,5.5rem)] font-semibold leading-[.92] tracking-[-.055em] text-[var(--silente-ivory)]">
-          <span className="block">Hay cosas que necesitas</span>
-          <span className="mt-1 block">
-            <span className="relative inline-grid w-[4.1em] justify-items-center">
+        <h1 className="text-[clamp(2.2rem,6.7vw,5.35rem)] font-semibold leading-[.94] tracking-[-.055em] text-[var(--silente-ivory)]">
+          <span className="block whitespace-nowrap">
+            Hay cosas que necesitas{" "}
+            <span className="relative inline-grid w-[4.35em] justify-items-center align-baseline">
               <motion.span
                 key={state}
                 initial={reduceMotion ? false : { opacity: 0, y: state === "saber" ? 8 : -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={reduceMotion ? { duration: 0 } : { duration: 0.8, ease: "easeInOut" }}
               >
-                {state.toUpperCase()}.
+                {activeWord}
+              </motion.span>
+            </span>
+          </span>
+          <span className="mt-1 block whitespace-nowrap">
+            Hay cosas que necesitas{" "}
+            <span className="relative inline-grid w-[4.35em] justify-items-center align-baseline">
+              <motion.span
+                key={state + "-second"}
+                initial={reduceMotion ? false : { opacity: 0, y: state === "saber" ? -8 : 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={reduceMotion ? { duration: 0 } : { duration: 0.8, ease: "easeInOut" }}
+              >
+                {activeWord}
               </motion.span>
             </span>
           </span>
