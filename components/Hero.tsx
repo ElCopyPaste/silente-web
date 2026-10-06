@@ -17,21 +17,21 @@ const questions = [
 ];
 
 const desktopPositions = [
-  "left-1/2 top-[2%] -translate-x-1/2",
-  "right-[3%] top-[23%]",
-  "right-[5%] bottom-[15%]",
-  "left-1/2 bottom-[2%] -translate-x-1/2",
-  "left-[5%] bottom-[15%]",
-  "left-[3%] top-[23%]",
+  "left-[5%] top-[13%]",
+  "right-[5%] top-[14%]",
+  "left-[1%] top-[45%]",
+  "right-[1%] top-[50%]",
+  "left-[6%] bottom-[8%]",
+  "right-[6%] bottom-[8%]",
 ];
 
 const mobilePositions = [
-  "left-1/2 top-[1%] -translate-x-1/2",
-  "right-[0%] top-[25%]",
-  "right-[1%] bottom-[17%]",
-  "left-[1%] bottom-[17%]",
-  "left-[0%] top-[25%]",
-  "left-1/2 bottom-[1%] -translate-x-1/2",
+  "left-[3%] top-[9%]",
+  "right-[3%] top-[10%]",
+  "left-[0%] top-[44%]",
+  "right-[0%] top-[47%]",
+  "left-[4%] bottom-[8%]",
+  "right-[4%] bottom-[8%]",
 ];
 
 function WhatsAppIcon() {
@@ -69,6 +69,7 @@ export function Hero() {
         alt=""
         fill
         priority
+        unoptimized
         sizes="100vw"
         className="pointer-events-none z-0 object-cover object-center"
       />
