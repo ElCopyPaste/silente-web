@@ -12,12 +12,15 @@ export function Header() {
 
   return (
     <header className="relative z-30 mx-auto max-w-6xl">
-      <div className="relative flex h-11 items-center justify-center">
+      <div className="relative flex h-[68px] items-center justify-center">
         <a
           href="#"
           aria-label="Silente, inicio"
-          className="text-sm font-semibold tracking-[.22em] text-[var(--silente-gold)]"
+          className="flex flex-col items-center gap-0.5 text-[11px] font-semibold tracking-[.18em] text-[var(--silente-gold)]"
         >
+          <span aria-hidden="true" className="relative mb-0.5 h-[22px] w-[22px] rounded-full border-2 border-[var(--silente-gold)]">
+            <span className="absolute left-1/2 top-[-8px] h-[6px] w-[6px] -translate-x-1/2 rounded-full bg-[var(--silente-gold)]" />
+          </span>
           SILENTE
         </a>
 
@@ -27,7 +30,7 @@ export function Header() {
           aria-expanded={open}
           aria-controls="menu-principal"
           onClick={() => setOpen((value) => !value)}
-          className="absolute right-0 top-0 flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full border border-[var(--silente-border)] transition-colors hover:border-[var(--silente-gold)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
+          className="absolute right-0 top-1/2 flex h-11 w-11 -translate-y-1/2 flex-col items-center justify-center gap-1.5 rounded-full border border-[var(--silente-border)] transition-colors hover:border-[var(--silente-gold)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
         >
           <span className={"h-px w-4 bg-[var(--silente-ivory)] transition-transform " + (open ? "translate-y-[3px] rotate-45" : "")} />
           <span className={"h-px w-4 bg-[var(--silente-ivory)] transition-transform " + (open ? "-translate-y-[3px] -rotate-45" : "")} />
