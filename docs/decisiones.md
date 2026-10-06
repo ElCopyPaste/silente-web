@@ -16,8 +16,8 @@ Los destinos de esas acciones se incorporarán cuando estén definidos.
 - Mobile first.
 - Fondo azul noche.
 - Dorado como color de identidad y CTA.
-- Syne como tipografía principal de interfaz.
-- Cormorant Garamond, con licencia SIL Open Font License 1.1, como serif itálica de acento.
+- Syne como tipografía del sistema completo, incluida la frase emocional.
+- La tipografía Reckless fue reemplazada y no forma parte de la implementación vigente.
 - El logo real reemplazará el símbolo provisional.
 
 ## Criterio de desarrollo
