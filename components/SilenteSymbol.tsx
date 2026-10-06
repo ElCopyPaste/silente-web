@@ -1,29 +1,19 @@
+import Image from "next/image";
+
 export function SilenteSymbol() {
   return (
     <div
       role="img"
-      aria-label="Símbolo provisional de Silente"
-      className="silente-symbol relative flex h-[min(27vw,220px)] w-[min(27vw,220px)] items-center justify-center md:h-64 md:w-64"
+      aria-label="Aro dorado de luz en el centro del sistema orbital"
+      className="silente-symbol relative aspect-square w-[min(36vw,280px)] md:w-72"
     >
-      <span
-        aria-hidden="true"
-        className="absolute inset-0 rounded-full border border-[rgba(229,196,106,.28)] bg-[radial-gradient(circle,rgba(229,196,106,.13),rgba(229,196,106,.035)_42%,transparent_70%)] shadow-[0_0_28px_rgba(229,196,106,.12),0_0_90px_rgba(213,170,75,.12)]"
-      />
-      <span
-        aria-hidden="true"
-        className="absolute inset-[9px] rounded-full border-[8px] border-[var(--silente-gold-light)] shadow-[inset_0_0_18px_rgba(229,196,106,.08),0_0_24px_rgba(229,196,106,.3),0_0_48px_rgba(213,170,75,.2)] md:inset-[12px] md:border-[10px]"
-      />
-      <span
-        aria-hidden="true"
-        className="absolute inset-[22px] rounded-full border border-[rgba(213,170,75,.45)] md:inset-[31px]"
-      />
-      <span
-        aria-hidden="true"
-        className="absolute left-1/2 top-[-2px] h-4 w-4 -translate-x-1/2 rounded-full bg-[var(--silente-gold-light)] shadow-[0_0_18px_rgba(229,196,106,.85),0_0_34px_rgba(213,170,75,.35)] md:top-[-3px] md:h-5 md:w-5"
-      />
-      <span
-        aria-hidden="true"
-        className="relative h-2.5 w-2.5 rounded-full bg-[var(--silente-gold-light)] shadow-[0_0_14px_rgba(229,196,106,.95),0_0_30px_rgba(213,170,75,.45)] md:h-3 md:w-3"
+      <Image
+        src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/central-symbol.webp`}
+        alt=""
+        fill
+        unoptimized
+        sizes="(max-width: 768px) 36vw, 288px"
+        className="object-contain opacity-80 mix-blend-screen"
       />
     </div>
   );

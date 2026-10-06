@@ -63,24 +63,31 @@ export function Hero() {
   const activeWord = state === "saber" ? "Saber." : "Hablar.";
 
   return (
-    <section className="silente-stars relative min-h-screen overflow-hidden bg-[#07111d] px-4 pb-12 pt-3 md:px-8 md:pb-16 md:pt-5">
-      <Image
-        src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/fondo.webp`}
-        alt=""
-        fill
-        priority
-        unoptimized
-        sizes="100vw"
-        className="pointer-events-none z-0 object-cover object-center"
-      />
+    <section className="silente-stars relative isolate min-h-[100svh] overflow-hidden bg-[#07111d] px-4 pb-10 pt-3 md:px-8 md:pb-14 md:pt-5">
+      <motion.div
+        aria-hidden="true"
+        className="absolute inset-[-2%] z-0"
+        animate={reduceMotion ? undefined : { scale: [1.02, 1.06, 1.02], x: [0, -7, 0], y: [0, 5, 0] }}
+        transition={reduceMotion ? undefined : { duration: 48, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <Image
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/fondo.webp`}
+          alt=""
+          fill
+          priority
+          unoptimized
+          sizes="100vw"
+          className="pointer-events-none object-cover object-center"
+        />
+      </motion.div>
       <Header />
 
-      <div className="relative z-10 mx-auto mt-9 max-w-6xl text-center md:mt-14">
-        <h1 className="text-[clamp(1.25rem,6.4vw,5.35rem)] font-semibold leading-[.94] tracking-[-.055em] text-[var(--silente-ivory)]">
+      <div className="relative z-10 mx-auto mt-6 max-w-6xl text-center md:mt-10">
+        <h1 className="text-[clamp(2rem,9vw,5.75rem)] font-normal leading-[1.02] tracking-[-.055em] text-[var(--silente-ivory)]">
           <span className="block whitespace-nowrap">Hay cosas que</span>
           <span className="mt-1 block whitespace-nowrap">
             necesitas{" "}
-            <span className="relative inline-grid w-[4.35em] justify-items-start align-baseline">
+            <span className="relative inline-grid w-[4.35em] justify-items-start align-baseline text-left">
               <motion.span
                 key={state}
                 initial={reduceMotion ? false : { opacity: 0, y: state === "saber" ? 8 : -8 }}
@@ -98,16 +105,16 @@ export function Hero() {
           initial={reduceMotion ? false : { opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={reduceMotion ? { duration: 0 } : { duration: 0.8, ease: "easeInOut" }}
-          className="mt-3 min-h-[1.4em] text-[clamp(1.2rem,3.5vw,1.875rem)] font-medium tracking-[-.025em] text-[var(--silente-gold)] md:mt-4"
+          className="mt-3 min-h-[1.4em] text-[clamp(1.25rem,4.1vw,2.1rem)] font-normal tracking-[-.025em] text-[var(--silente-gold-light)] md:mt-4"
         >
           {state === "saber" ? "Silente te espera." : "Silente te escucha."}
         </motion.p>
 
-        <div className="relative mx-auto mt-6 h-[430px] w-full max-w-6xl md:mt-8 md:h-[570px]">
+        <div className="relative mx-auto mt-4 h-[430px] w-full max-w-6xl md:mt-7 md:h-[570px]">
           <motion.div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-            animate={reduceMotion ? undefined : { rotate: [0, 3, 0, -3, 0] }}
-            transition={reduceMotion ? undefined : { duration: 14, repeat: Infinity, ease: "easeInOut" }}
+            animate={reduceMotion ? undefined : { scale: [1, 1.018, 1] }}
+            transition={reduceMotion ? undefined : { duration: 8, repeat: Infinity, ease: "easeInOut" }}
           >
             <SilenteSymbol />
           </motion.div>
@@ -118,11 +125,12 @@ export function Hero() {
               type="button"
               onClick={goToHow}
               className={
-                "question-capsule question-capsule-" + index + " absolute hidden max-w-[240px] rounded-full px-5 py-4 text-left text-sm leading-[1.2] text-[var(--silente-ivory)] md:block " +
+                "question-capsule question-capsule-" + index + " absolute hidden max-w-[240px] rounded-full px-5 py-5 text-left text-sm leading-[1.25] text-[var(--silente-ivory)] md:block " +
                 desktopPositions[index]
               }
-              animate={reduceMotion ? undefined : { y: [0, index % 2 === 0 ? -6 : 6, 0] }}
-              transition={reduceMotion ? undefined : { duration: 5 + index * 0.35, repeat: Infinity, ease: "easeInOut" }}
+              initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={reduceMotion ? { duration: 0 } : { delay: 0.25 + index * 0.12, duration: 0.9, ease: "easeOut" }}
             >
               {question}
             </motion.button>
@@ -134,11 +142,12 @@ export function Hero() {
               type="button"
               onClick={goToHow}
               className={
-                "question-capsule question-capsule-" + index + " absolute block min-h-11 w-[min(42vw,210px)] rounded-full px-3.5 py-3 text-left text-[clamp(11px,2vw,15px)] leading-[1.2] text-[var(--silente-ivory)] md:hidden " +
+                "question-capsule question-capsule-" + index + " absolute block min-h-12 w-[min(40vw,220px)] rounded-full px-3.5 py-4 text-left text-[clamp(12px,2vw,15px)] leading-[1.25] text-[var(--silente-ivory)] md:hidden " +
                 mobilePositions[index]
               }
-              animate={reduceMotion ? undefined : { y: [0, index % 2 === 0 ? -4 : 4, 0] }}
-              transition={reduceMotion ? undefined : { duration: 5.5 + index * 0.3, repeat: Infinity, ease: "easeInOut" }}
+              initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={reduceMotion ? { duration: 0 } : { delay: 0.25 + index * 0.12, duration: 0.9, ease: "easeOut" }}
             >
               {question}
             </motion.button>
@@ -147,7 +156,7 @@ export function Hero() {
 
         <a
           href="#como-funciona"
-          className="relative z-20 mx-auto flex min-h-14 w-full max-w-[590px] items-center justify-between rounded-full bg-[var(--silente-gold)] px-6 py-4 text-left font-semibold text-[var(--silente-night)] shadow-[0_0_34px_rgba(213,170,75,.18)] transition-transform hover:scale-[1.01] active:scale-[.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
+          className="hero-cta relative z-20 mx-auto flex min-h-16 w-full max-w-[590px] items-center justify-between rounded-full px-6 py-4 text-left font-medium text-[var(--silente-night)] transition-transform hover:scale-[1.01] active:scale-[.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
         >
           <span className="flex items-center gap-3">
             <WhatsAppIcon />
