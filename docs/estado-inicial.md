@@ -1,4 +1,4 @@
-# Silente — estado inicial
+# Silente — estado del proyecto
 
 La implementación inicial se basa en Silente_Documento_Tecnico_Final_Home_v3.docx.
 
@@ -9,12 +9,12 @@ La implementación inicial se basa en Silente_Documento_Tecnico_Final_Home_v3.do
 - Espacio para video demo.
 - Elige tu plan.
 - Sistema de colores definido en el documento.
-- Syne como tipografía principal.
+- Syne como tipografía principal de interfaz.
+- Cormorant Garamond bajo SIL Open Font License 1.1 como acento serif.
 - Animación inicial de SABER/HABLAR.
 
 ## Pendiente
 - Logo real.
-- Archivo/licencia de Reckless.
 - Video demo real.
 - Precio.
 - Destino real de WhatsApp.
