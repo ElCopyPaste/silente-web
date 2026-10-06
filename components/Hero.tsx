@@ -17,10 +17,10 @@ const questions = [
 ];
 
 const desktopPositions = [
-  "left-[5%] top-[13%]",
-  "right-[5%] top-[14%]",
-  "left-[1%] top-[40%]",
-  "right-[1%] top-[40%]",
+  "left-[5%] top-[8%]",
+  "right-[5%] top-[8%]",
+  "left-[1%] top-[42%]",
+  "right-[1%] top-[42%]",
   "left-[6%] bottom-[8%]",
   "right-[6%] bottom-[8%]",
 ];
@@ -110,7 +110,7 @@ export function Hero() {
           {state === "saber" ? "Silente te espera." : "Silente te escucha."}
         </motion.p>
 
-        <div className="relative mx-auto mt-4 h-[430px] w-full max-w-6xl md:mt-5 md:h-[clamp(380px,54vh,520px)]">
+        <div className="relative mx-auto mt-4 h-[430px] w-full max-w-6xl md:mt-5 md:h-[clamp(320px,46vh,460px)]">
           <motion.div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
             animate={reduceMotion ? undefined : { scale: [1, 1.018, 1] }}
@@ -156,7 +156,7 @@ export function Hero() {
 
         <a
           href="#como-funciona"
-          className="hero-cta relative z-20 mx-auto md:-mt-6 flex min-h-16 w-full max-w-[590px] items-center justify-between rounded-full px-6 py-4 text-left font-medium text-[var(--silente-night)] transition-transform hover:scale-[1.01] active:scale-[.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
+          className="hero-cta relative z-20 mx-auto md:-mt-8 flex min-h-16 w-full max-w-[590px] items-center justify-between rounded-full px-6 py-4 text-left font-medium text-[var(--silente-night)] transition-transform hover:scale-[1.01] active:scale-[.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
         >
           <span className="flex items-center gap-3">
             <WhatsAppIcon />
