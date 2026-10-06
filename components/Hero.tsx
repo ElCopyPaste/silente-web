@@ -90,11 +90,11 @@ export function Hero() {
           {state === "saber" ? "Silente te espera." : "Silente te escucha."}
         </motion.p>
 
-        <div className="relative mx-auto mt-5 h-[455px] w-full max-w-6xl md:mt-8 md:h-[610px]">
-          <div className="orbit-line absolute left-1/2 top-1/2 h-[190px] w-[min(100vw,500px)] -translate-x-1/2 -translate-y-1/2 rotate-[-17deg]" aria-hidden="true" />
-          <div className="orbit-line absolute left-1/2 top-1/2 h-[265px] w-[min(116vw,680px)] -translate-x-1/2 -translate-y-1/2 rotate-[15deg]" aria-hidden="true" />
-          <div className="orbit-line absolute left-1/2 top-1/2 h-[360px] w-[min(132vw,850px)] -translate-x-1/2 -translate-y-1/2 rotate-[-8deg] opacity-70" aria-hidden="true" />
-          <div className="orbit-line absolute left-1/2 top-1/2 h-[470px] w-[min(148vw,1080px)] -translate-x-1/2 -translate-y-1/2 rotate-[20deg] opacity-45" aria-hidden="true" />
+        <div className="relative mx-auto mt-6 h-[430px] w-full max-w-6xl md:mt-8 md:h-[570px]">
+          <div className="orbit-line absolute left-1/2 top-1/2 h-[176px] w-[min(96vw,470px)] -translate-x-1/2 -translate-y-1/2 rotate-[-17deg]" aria-hidden="true" />
+          <div className="orbit-line absolute left-1/2 top-1/2 h-[242px] w-[min(112vw,630px)] -translate-x-1/2 -translate-y-1/2 rotate-[15deg]" aria-hidden="true" />
+          <div className="orbit-line absolute left-1/2 top-1/2 h-[320px] w-[min(128vw,790px)] -translate-x-1/2 -translate-y-1/2 rotate-[-8deg] opacity-70" aria-hidden="true" />
+          <div className="orbit-line absolute left-1/2 top-1/2 h-[415px] w-[min(142vw,980px)] -translate-x-1/2 -translate-y-1/2 rotate-[20deg] opacity-45" aria-hidden="true" />
 
           <motion.div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -110,7 +110,7 @@ export function Hero() {
               type="button"
               onClick={goToHow}
               className={
-                "question-capsule absolute hidden max-w-[240px] rounded-full px-5 py-4 text-left text-sm leading-[1.2] text-[var(--silente-ivory)] md:block " +
+                "question-capsule question-capsule-${index} absolute hidden max-w-[240px] rounded-full px-5 py-4 text-left text-sm leading-[1.2] text-[var(--silente-ivory)] md:block " +
                 desktopPositions[index]
               }
               animate={reduceMotion ? undefined : { y: [0, index % 2 === 0 ? -6 : 6, 0] }}
@@ -126,7 +126,7 @@ export function Hero() {
               type="button"
               onClick={goToHow}
               className={
-                "question-capsule absolute block min-h-11 max-w-[150px] rounded-full px-3.5 py-3 text-left text-[11px] leading-[1.18] text-[var(--silente-ivory)] md:hidden " +
+                "question-capsule question-capsule-${index} absolute block min-h-11 max-w-[150px] rounded-full px-3.5 py-3 text-left text-[11px] leading-[1.18] text-[var(--silente-ivory)] md:hidden " +
                 mobilePositions[index]
               }
               animate={reduceMotion ? undefined : { y: [0, index % 2 === 0 ? -4 : 4, 0] }}
