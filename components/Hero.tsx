@@ -42,36 +42,6 @@ function WhatsAppIcon() {
   );
 }
 
-function QuestionOrbit({ delay, reduceMotion }: { delay: number; reduceMotion: boolean }) {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 100 70"
-      preserveAspectRatio="none"
-      className="pointer-events-none absolute -inset-3 h-[calc(100%+1.5rem)] w-[calc(100%+1.5rem)] overflow-visible"
-    >
-      <ellipse cx="50" cy="35" rx="48" ry="31" fill="none" stroke="#D5AA4B" strokeOpacity="0.55" strokeWidth="0.9" />
-      {!reduceMotion && (
-        <motion.ellipse
-          cx="50"
-          cy="35"
-          rx="48"
-          ry="31"
-          fill="none"
-          stroke="#F1C76B"
-          strokeWidth="2"
-          strokeDasharray="34 218"
-          strokeLinecap="round"
-          initial={{ strokeDashoffset: 0 }}
-          animate={{ strokeDashoffset: [0, -252] }}
-          transition={{ duration: 9, repeat: Infinity, ease: "linear", delay }}
-          style={{ filter: "drop-shadow(0 0 3px rgba(241,199,107,.9))" }}
-        />
-      )}
-    </svg>
-  );
-}
-
 export function Hero() {
   const [state, setState] = useState<"saber" | "hablar">("saber");
   const reduceMotion = useReducedMotion();
@@ -171,7 +141,7 @@ export function Hero() {
                     }
               }
             >
-              <QuestionOrbit delay={index * 0.55} reduceMotion={reduceMotion ?? false} />
+              
               <span className="relative z-10">{question}</span>
             </motion.button>
           ))}
@@ -198,7 +168,7 @@ export function Hero() {
                     }
               }
             >
-              <QuestionOrbit delay={index * 0.55} reduceMotion={reduceMotion ?? false} />
+              
               <span className="relative z-10">{question}</span>
             </motion.button>
           ))}
