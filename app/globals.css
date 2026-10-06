@@ -55,16 +55,17 @@ button{touch-action:manipulation}
   content:"";
   position:absolute;
   z-index:0;
-  inset:-10px -16px;
-  border:1px solid rgba(229,196,106,.56);
+  inset:-7px -12px;
+  background:transparent;
+  border:1px solid rgba(229,196,106,.48);
   border-radius:50%;
-  box-shadow:0 0 12px rgba(229,196,106,.12);
+  box-shadow:0 0 5px rgba(229,196,106,.08);
   pointer-events:none;
   animation:question-orbit-glow 7s ease-in-out infinite;
 }
 @keyframes question-orbit-glow{
-  0%,100%{opacity:.52;box-shadow:0 0 8px rgba(229,196,106,.1)}
-  50%{opacity:1;box-shadow:0 0 20px rgba(229,196,106,.34)}
+  0%,100%{border-color:rgba(229,196,106,.42);box-shadow:0 0 5px rgba(229,196,106,.08)}
+  50%{border-color:rgba(246,206,124,.9);box-shadow:0 0 13px rgba(229,196,106,.25)}
 }
 .question-capsule:hover,.question-capsule:focus-visible{
   color:var(--silente-gold-light);
