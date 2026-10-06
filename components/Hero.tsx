@@ -26,12 +26,12 @@ const desktopPositions = [
 ];
 
 const mobilePositions = [
-  "left-[3%] top-[9%]",
-  "right-[3%] top-[10%]",
-  "left-[0%] top-[44%]",
-  "right-[0%] top-[47%]",
-  "left-[4%] bottom-[8%]",
-  "right-[4%] bottom-[8%]",
+  "left-[2%] top-[13%]",
+  "right-[2%] top-[13%]",
+  "left-[2%] top-[42%]",
+  "right-[2%] top-[42%]",
+  "left-[2%] bottom-[8%]",
+  "right-[2%] bottom-[8%]",
 ];
 
 function WhatsAppIcon() {
@@ -110,7 +110,7 @@ export function Hero() {
           {state === "saber" ? "Silente te espera." : "Silente te escucha."}
         </motion.p>
 
-        <div className="relative mx-auto mt-4 h-[430px] w-full max-w-6xl md:mt-5 md:h-[clamp(320px,46vh,460px)]">
+        <div className="relative mx-auto mt-4 h-[560px] w-full max-w-6xl md:mt-5 md:h-[clamp(400px,46vh,460px)]">
           <motion.div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
             animate={reduceMotion ? undefined : { scale: [1, 1.018, 1] }}
@@ -125,12 +125,21 @@ export function Hero() {
               type="button"
               onClick={goToHow}
               className={
-                "question-capsule question-capsule-" + index + " absolute hidden max-w-[240px] rounded-full px-5 py-5 text-left text-sm leading-[1.25] text-[var(--silente-ivory)] md:block " +
+                "question-capsule question-capsule-" + index + " absolute hidden max-w-[240px] px-5 py-4 text-center text-sm leading-[1.35] text-[var(--silente-ivory)] lg:block " +
                 desktopPositions[index]
               }
-              initial={reduceMotion ? false : { opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={reduceMotion ? { duration: 0 } : { delay: 0.25 + index * 0.12, duration: 0.9, ease: "easeOut" }}
+              initial={reduceMotion ? false : { opacity: 0, y: 10 }}
+              animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: [0, -5, 0] }}
+              whileHover={reduceMotion ? undefined : { scale: 1.035 }}
+              whileFocus={reduceMotion ? undefined : { scale: 1.035 }}
+              transition={
+                reduceMotion
+                  ? { duration: 0 }
+                  : {
+                      opacity: { delay: 0.2 + index * 0.12, duration: 0.7 },
+                      y: { delay: 0.2 + index * 0.12, duration: 6.5 + index * 0.45, repeat: Infinity, ease: "easeInOut" },
+                    }
+              }
             >
               {question}
             </motion.button>
@@ -142,12 +151,21 @@ export function Hero() {
               type="button"
               onClick={goToHow}
               className={
-                "question-capsule question-capsule-" + index + " absolute block min-h-12 w-[min(40vw,220px)] rounded-full px-3.5 py-4 text-left text-[clamp(12px,2vw,15px)] leading-[1.25] text-[var(--silente-ivory)] md:hidden " +
+                "question-capsule question-capsule-" + index + " absolute block w-[min(32vw,190px)] px-2.5 py-3 text-center text-[clamp(11px,1.8vw,14px)] leading-[1.3] text-[var(--silente-ivory)] lg:hidden " +
                 mobilePositions[index]
               }
               initial={reduceMotion ? false : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={reduceMotion ? { duration: 0 } : { delay: 0.25 + index * 0.12, duration: 0.9, ease: "easeOut" }}
+              animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: [0, -4, 0] }}
+              whileHover={reduceMotion ? undefined : { scale: 1.035 }}
+              whileFocus={reduceMotion ? undefined : { scale: 1.035 }}
+              transition={
+                reduceMotion
+                  ? { duration: 0 }
+                  : {
+                      opacity: { delay: 0.2 + index * 0.12, duration: 0.7 },
+                      y: { delay: 0.2 + index * 0.12, duration: 6.5 + index * 0.45, repeat: Infinity, ease: "easeInOut" },
+                    }
+              }
             >
               {question}
             </motion.button>
@@ -156,7 +174,7 @@ export function Hero() {
 
         <a
           href="#como-funciona"
-          className="hero-cta relative z-20 mx-auto md:-mt-8 flex min-h-16 w-full max-w-[590px] items-center justify-between rounded-full px-6 py-4 text-left font-medium text-[var(--silente-night)] transition-transform hover:scale-[1.01] active:scale-[.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
+          className="hero-cta relative z-20 mx-auto lg:-mt-8 flex min-h-16 w-full max-w-[590px] items-center justify-between rounded-full px-6 py-4 text-left font-medium text-[var(--silente-night)] transition-transform hover:scale-[1.01] active:scale-[.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
         >
           <span className="flex items-center gap-3">
             <WhatsAppIcon />
