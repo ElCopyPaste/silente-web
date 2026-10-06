@@ -9,8 +9,7 @@ La implementación inicial se basa en Silente_Documento_Tecnico_Final_Home_v3.do
 - Espacio para video demo.
 - Elige tu plan.
 - Sistema de colores definido en el documento.
-- Syne como tipografía principal de interfaz.
-- Cormorant Garamond bajo SIL Open Font License 1.1 como acento serif.
+- Syne como tipografía del sistema completo.
 - Animación inicial de SABER/HABLAR.
 
 ## Pendiente
@@ -20,3 +19,6 @@ La implementación inicial se basa en Silente_Documento_Tecnico_Final_Home_v3.do
 - Destino real de WhatsApp.
 - Destino real de Suscribirme.
 - Revisión visual final en mobile y desktop.
+
+## Nota tipográfica
+Reckless fue reemplazada por la tipografía definida posteriormente para Silente. La implementación vigente no carga ni utiliza Reckless.
