@@ -1,8 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Syne } from "next/font/google";
+import { Cormorant_Garamond, Syne } from "next/font/google";
 import "./globals.css";
 
 const syne = Syne({ subsets:["latin"], variable:"--font-syne", display:"swap" });
+const cormorant = Cormorant_Garamond({
+  subsets:["latin"],
+  weight:"400",
+  style:"italic",
+  variable:"--font-cormorant",
+  display:"swap",
+});
 
 export const metadata: Metadata = {
   title:"Silente",
@@ -18,5 +25,5 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({children}:{children:React.ReactNode}) {
-  return <html lang="es"><body className={syne.variable}>{children}</body></html>;
+  return <html lang="es"><body className={`${syne.variable} ${cormorant.variable}`}>{children}</body></html>;
 }
