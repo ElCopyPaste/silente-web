@@ -3,7 +3,7 @@ export function SilenteSymbol() {
     <div
       role="img"
       aria-label="Símbolo provisional de Silente"
-      className="silente-symbol relative flex h-[min(42vw,220px)] w-[min(42vw,220px)] items-center justify-center md:h-64 md:w-64"
+      className="silente-symbol relative flex h-[min(27vw,220px)] w-[min(27vw,220px)] items-center justify-center md:h-64 md:w-64"
     >
       <span
         aria-hidden="true"
@@ -11,7 +11,7 @@ export function SilenteSymbol() {
       />
       <span
         aria-hidden="true"
-        className="absolute inset-[9px] rounded-full border-2 border-[var(--silente-gold-light)] shadow-[inset_0_0_18px_rgba(229,196,106,.08),0_0_18px_rgba(229,196,106,.16)] md:inset-[12px]"
+        className="absolute inset-[9px] rounded-full border-[8px] border-[var(--silente-gold-light)] shadow-[inset_0_0_18px_rgba(229,196,106,.08),0_0_24px_rgba(229,196,106,.3),0_0_48px_rgba(213,170,75,.2)] md:inset-[12px] md:border-[10px]"
       />
       <span
         aria-hidden="true"
