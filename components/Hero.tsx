@@ -75,7 +75,7 @@ export function Hero() {
           initial={reduceMotion ? false : { opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={reduceMotion ? { duration: 0 } : { duration: .8, ease: "easeInOut" }}
-          className="reckless mt-4 text-2xl text-[var(--silente-gold)] md:mt-5 md:text-3xl"
+          className="cormorant mt-4 text-2xl text-[var(--silente-gold)] md:mt-5 md:text-3xl"
         >
           {state === "saber" ? "Silente te espera." : "Silente te escucha."}
         </motion.p>
