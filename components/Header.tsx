@@ -12,7 +12,7 @@ export function Header() {
 
   return (
     <header className="relative z-30 mx-auto max-w-6xl">
-      <div className="relative flex h-[76px] items-center justify-center md:h-[88px]">
+      <div className="relative flex h-[68px] items-center justify-center md:h-[76px]">
         <a
           href="#"
           aria-label="Silente, inicio"

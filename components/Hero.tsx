@@ -82,8 +82,8 @@ export function Hero() {
       </motion.div>
       <Header />
 
-      <div className="relative z-10 mx-auto mt-6 max-w-6xl text-center md:mt-10">
-        <h1 className="text-[clamp(2rem,9vw,5.75rem)] font-normal leading-[1.02] tracking-[-.055em] text-[var(--silente-ivory)]">
+      <div className="relative z-10 mx-auto mt-6 max-w-6xl text-center md:mt-7">
+        <h1 className="text-[clamp(2rem,9vw,5.75rem)] font-normal leading-[1.02] md:text-[clamp(2.75rem,5vw,4.5rem)] tracking-[-.055em] text-[var(--silente-ivory)]">
           <span className="block whitespace-nowrap">Hay cosas que</span>
           <span className="mt-1 block whitespace-nowrap">
             necesitas{" "}
@@ -110,7 +110,7 @@ export function Hero() {
           {state === "saber" ? "Silente te espera." : "Silente te escucha."}
         </motion.p>
 
-        <div className="relative mx-auto mt-4 h-[430px] w-full max-w-6xl md:mt-7 md:h-[570px]">
+        <div className="relative mx-auto mt-4 h-[430px] w-full max-w-6xl md:mt-5 md:h-[clamp(280px,38vh,380px)]">
           <motion.div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
             animate={reduceMotion ? undefined : { scale: [1, 1.018, 1] }}
