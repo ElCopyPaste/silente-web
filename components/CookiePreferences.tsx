@@ -107,7 +107,7 @@ export function CookiePreferences() {
           setPreferences(loadPreferences());
           setOpen(true);
         }}
-        className="mt-4 text-sm text-[var(--silente-muted)] underline decoration-[rgba(213,170,75,.45)] underline-offset-4 transition-colors hover:text-[var(--silente-gold-light)]"
+        className="mt-3 block w-full text-left text-sm font-normal leading-5 text-[var(--silente-muted)] transition-colors hover:text-[var(--silente-gold-light)]"
       >
         Preferencias de cookies
       </button>
