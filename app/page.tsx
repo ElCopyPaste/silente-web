@@ -44,7 +44,7 @@ export default function Home() {
       <FAQSection />
       <TestimonialsCarousel />
       <footer className="border-t border-[var(--silente-border)] px-5 py-10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-5 text-center text-xs text-[var(--silente-muted)] md:flex-row md:items-center md:justify-between md:text-left">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-8 text-center text-xs text-[var(--silente-muted)] md:grid-cols-[1fr_auto_auto] md:text-left">
           <div>
             <span className="tracking-[.18em] text-[var(--silente-gold)]">SILENTE</span>
             <p className="mt-2">Visítanos en Redes Sociales</p>
@@ -68,6 +68,12 @@ export default function Home() {
               </span>
             </div>
           </div>
+          <a href="mailto:comercial@silente.cl" aria-label="Contacto por correo" title="Contacto por correo" className="mx-auto flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(213,170,75,.4)] text-[var(--silente-gold)] transition-colors hover:border-[var(--silente-gold-light)] hover:text-[var(--silente-gold-light)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)] md:mx-0">
+            <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current" strokeWidth="1.7">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m4 7 8 6 8-6" />
+            </svg>
+          </a>
           <nav aria-label="Información legal" className="flex flex-wrap justify-center gap-x-5 gap-y-2 md:justify-end">
             <a className="transition-colors hover:text-[var(--silente-ivory)]" href="https://www.silente.cl/terminos">Términos</a>
             <a className="transition-colors hover:text-[var(--silente-ivory)]" href="https://www.silente.cl/privacidad">Privacidad</a>
