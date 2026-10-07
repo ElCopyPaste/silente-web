@@ -22,9 +22,9 @@ export function Header({ mobileHeroContent }: { mobileHeroContent: ReactNode }) 
         <div className="col-start-2 flex min-w-0 items-center justify-center text-center md:hidden">
           {mobileHeroContent}
         </div>
-        <button type="button" aria-label={open ? "Cerrar menú" : "Abrir menú"} aria-expanded={open} aria-controls="menu-principal" onClick={() => setOpen((value) => !value)} className="relative col-start-3 flex h-12 w-12 flex-col items-center justify-center justify-self-end gap-[6px] rounded-full transition-colors hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)] md:absolute md:right-0 md:top-1/2 md:h-12 md:w-12 md:-translate-y-1/2 md:gap-[7px]">
+        <button type="button" aria-label={open ? "Cerrar menú" : "Abrir menú"} aria-expanded={open} aria-controls="menu-principal" onClick={() => setOpen((value) => !value)} className="relative col-start-3 flex h-12 w-12 flex-col items-center justify-center justify-self-end gap-[7px] rounded-full transition-colors hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)] md:absolute md:right-0 md:top-1/2 md:h-12 md:w-12 md:-translate-y-1/2 md:gap-[7px]">
           <span className="h-[2px] w-8 bg-[var(--silente-gold-light)] transition-transform md:w-8" />
-          <span className="h-[2px] w-7 bg-[var(--silente-gold-light)] transition-transform md:w-8" />
+          <span className="h-[2px] w-8 bg-[var(--silente-gold-light)] transition-transform md:w-8" />
           <span className="h-[2px] w-7 bg-[var(--silente-gold-light)] transition-transform md:w-8" />
         </button>
       </div>
