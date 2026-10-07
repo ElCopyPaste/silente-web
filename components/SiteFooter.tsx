@@ -1,4 +1,5 @@
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+import { CookiePreferences } from "@/components/CookiePreferences";
 
 function SocialIcon({ name }: { name: "TikTok" | "Instagram" | "Facebook" }) {
   if (name === "TikTok") {
@@ -18,7 +19,8 @@ export function SiteFooter() {
         <div className="mt-8 grid gap-8 text-center sm:grid-cols-3 sm:text-left">
           <section>
             <h2 className="text-xs font-semibold uppercase tracking-[.18em] text-[var(--silente-gold)]">Compañía</h2>
-            <a className="mt-4 inline-block text-sm text-[var(--silente-ivory)] transition-colors hover:text-[var(--silente-gold-light)]" href={`${basePath}/`}>Silente</a>
+            <a className="mt-4 block text-sm text-[var(--silente-ivory)] transition-colors hover:text-[var(--silente-gold-light)]" href="mailto:contacto@logika.cl">Contacto</a>
+            <CookiePreferences />
           </section>
           <section>
             <h2 className="text-xs font-semibold uppercase tracking-[.18em] text-[var(--silente-gold)]">Legal</h2>
@@ -29,18 +31,12 @@ export function SiteFooter() {
             </nav>
           </section>
           <section>
-            <h2 className="text-xs font-semibold uppercase tracking-[.18em] text-[var(--silente-gold)]">Contacto</h2>
-            <a href="mailto:comercial@silente.cl" aria-label="Escríbenos por correo" title="Escríbenos por correo" className="mt-4 inline-flex items-center gap-2 text-sm text-[var(--silente-ivory)] transition-colors hover:text-[var(--silente-gold-light)]">
-              <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current" strokeWidth="1.7"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg>
-              Escríbenos
-            </a>
-            <div aria-label="Redes sociales" className="mt-4 flex justify-center gap-4 sm:justify-start">
-              {(["TikTok", "Instagram", "Facebook"] as const).map((name) => (
-                <a key={name} href="#" aria-label={name} title={name} className="text-[var(--silente-gold)] transition-colors hover:text-[var(--silente-gold-light)]">
-                  <SocialIcon name={name} />
-                </a>
-              ))}
-            </div>
+            <h2 className="text-xs font-semibold uppercase tracking-[.18em] text-[var(--silente-gold)]">Redes sociales</h2>
+            <nav aria-label="Redes sociales" className="mt-4 flex flex-col items-center gap-3 text-sm text-[var(--silente-muted)] sm:items-start">
+              <a className="transition-colors hover:text-[var(--silente-ivory)]" href="#">Instagram</a>
+              <a className="transition-colors hover:text-[var(--silente-ivory)]" href="#">TikTok</a>
+              <a className="transition-colors hover:text-[var(--silente-ivory)]" href="#">Facebook</a>
+            </nav>
           </section>
         </div>
       </div>
