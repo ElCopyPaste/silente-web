@@ -153,6 +153,7 @@ const sections: readonly PrivacySection[] = [
           ["Registros de altas y bajas de suscripción", "Se conservan de forma seudonimizada para medir el servicio de manera agregada: al eliminar tu cuenta, tu correo se reemplaza por un código sin vínculo contigo"],
           ["Datos de facturación y pago", "Hasta 6 años, conforme a la legislación tributaria chilena (incluso después de eliminar tu cuenta)"],
           ["Registros técnicos y de seguridad de nuestros proveedores", "Según los plazos de retención de cada proveedor de infraestructura, salvo que un plazo legal exija conservarlos por más tiempo"],
+          ["Preferencias de cookies (almacenamiento local)", "Se conservan en tu navegador hasta que las cambies o elimines sus datos de navegación"],
         ],
       } },
       { paragraph: "Cumplido el plazo, los datos se eliminan o se anonimizan de forma irreversible." },
