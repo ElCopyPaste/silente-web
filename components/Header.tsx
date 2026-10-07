@@ -7,7 +7,7 @@ const links = [
   ["Qué es Silente", "#como-funciona"],
   ["Elige tu plan", "#elige-tu-plan"],
   ["Preguntas frecuentes", "#preguntas-frecuentes"],
-  ["Testimonios (Una experiencia para compartir)", "#testimonios"],
+  ["Testimonios", "#testimonios"],
 ] as const;
 
 export function Header() {
