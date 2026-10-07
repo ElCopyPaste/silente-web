@@ -7,6 +7,7 @@ const links = [
   ["Qué es Silente", "#como-funciona"],
   ["Elige tu plan", "#elige-tu-plan"],
   ["Preguntas frecuentes", "#preguntas-frecuentes"],
+  ["Testimonios (Una experiencia para compartir)", "#testimonios"],
 ] as const;
 
 export function Header() {
@@ -24,7 +25,7 @@ export function Header() {
           <span className="h-[2px] w-8 bg-[var(--silente-gold-light)] transition-transform" />
         </button>
       </div>
-      <div id="menu-principal" className={"overflow-hidden transition-[max-height,opacity,margin] duration-300 " + (open ? "mt-3 max-h-40 opacity-100" : "max-h-0 opacity-0")}>
+      <div id="menu-principal" className={"overflow-hidden transition-[max-height,opacity,margin] duration-300 " + (open ? "mt-3 max-h-56 opacity-100" : "max-h-0 opacity-0")}>
         <nav className="rounded-2xl border border-[rgba(213,170,75,.35)] bg-[rgba(5,14,22,.9)] p-2 backdrop-blur-xl" aria-label="Navegación principal">
           {links.map(([label, href]) => (
             <a key={href} href={href} onClick={() => setOpen(false)} className="block rounded-xl px-4 py-3 text-sm text-[var(--silente-ivory)] transition-colors hover:bg-[rgba(213,170,75,.12)] hover:text-[var(--silente-gold-light)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[var(--silente-gold-light)]">
