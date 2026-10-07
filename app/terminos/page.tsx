@@ -27,7 +27,7 @@ const sections: readonly TermsSection[] = [
   {
     title: "3. Qué es el servicio",
     blocks: [
-      { paragraph: "Silente te ofrece un espacio para explorar tus preguntas sobre amor, relaciones, decisiones y futuro. Sus lecturas se inspiran en la videncia, la astrología y distintas mancias, y consideran tu carta natal y los tránsitos planetarios. Conversas con Luna, la guía digital de Silente, por WhatsApp, en privado y a tu ritmo." },
+      { paragraph: "Silente te ofrece un espacio para explorar tus preguntas sobre amor, relaciones, decisiones y futuro. Sus lecturas se inspiran en la videncia, la astrología y distintas mancias, y consideran tu carta natal personalizada y los tránsitos planetarios. Conversas con Luna, la guía digital de Silente, por WhatsApp, en privado y a tu ritmo. El servicio está disponible las 24 horas del día." },
       { paragraph: "El servicio guarda el historial de tus conversaciones para dar continuidad a tus lecturas. Puedes hacer una pregunta, profundizar en la respuesta y abrir nuevos temas cuando quieras. Si eliminas tu cuenta, el historial se borra según lo indicado en la Política de Privacidad." },
     ],
   },
@@ -228,7 +228,7 @@ export default function TermsPage() {
   return (
     <LegalPageLayout
       title="Términos y Condiciones"
-      version="2026-09-16"
+      version="2026-10-07"
       intro="Estos Términos y Condiciones (los «Términos») regulan el acceso y uso del servicio Silente, accesible en silente.cl y a través de WhatsApp, operado por Logika Sistemas SpA, RUT 78.313.784-4, sociedad constituida en Chile (en adelante, «nosotros», «la Empresa» o «el Titular»). Al crear una cuenta, suscribirte o usar el servicio, declaras haber leído y aceptado estos Términos y nuestra Política de Privacidad, que forma parte integrante de este contrato. Si no estás de acuerdo, no uses el servicio."
     >
       {sections.map((section) => (
