@@ -68,7 +68,7 @@ export function Pricing() {
             </ul>
 
             <a
-              href="https://www.silente.cl/checkout"
+              href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/checkout/`}
               className="mt-9 flex items-center justify-between rounded-full bg-[var(--silente-gold)] px-6 py-4 font-semibold text-[var(--silente-night)] transition-transform hover:scale-[1.01] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
             >
               <span>Suscribirme</span>
