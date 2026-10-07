@@ -1,3 +1,29 @@
+type BenefitIconName = "messages" | "clock" | "history" | "cancel" | "chart" | "lock";
+
+function BenefitIcon({ name }: { name: BenefitIconName }) {
+  const shared = {
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.6,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true as const,
+    className: "mt-0.5 h-5 w-5 shrink-0 text-[var(--silente-gold)]",
+  };
+
+  const drawings: Record<BenefitIconName, React.ReactNode> = {
+    messages: <><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H6l-3 2v-6.5A7.5 7.5 0 1 1 20 11.5Z" /><path d="M8 10h8M8 14h5" /></>,
+    clock: <><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>,
+    history: <><path d="M3 11a9 9 0 1 1 2.6 6.4" /><path d="M3 4v7h7M12 7v5l3 2" /></>,
+    cancel: <><circle cx="12" cy="12" r="9" /><path d="M8 12h8" /></>,
+    chart: <><circle cx="12" cy="12" r="3" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7m10 10 2.1 2.1m0-14.2L17 7M7 17l-2.1 2.1" /></>,
+    lock: <><rect x="4" y="10" width="16" height="11" rx="2" /><path d="M8 10V7a4 4 0 1 1 8 0v3M12 14v3" /></>,
+  };
+
+  return <svg {...shared}>{drawings[name]}</svg>;
+}
+
 export function Pricing() {
   return (
     <section id="elige-tu-plan" className="relative overflow-hidden px-5 py-24 md:px-8 md:py-32">
@@ -28,15 +54,17 @@ export function Pricing() {
             <div className="mt-10 border-y border-[var(--silente-border)] py-7">
               <p className="text-xs uppercase tracking-[.18em] text-[var(--silente-muted)]">Suscripción mensual</p>
               <p className="mt-2 text-4xl font-semibold tracking-tight text-[var(--silente-ivory)] md:text-5xl">
-                $3.000 <span className="text-lg font-normal text-[var(--silente-muted)]">CLP / mes</span>
+                $6.000 <span className="text-lg font-normal text-[var(--silente-muted)]">CLP / mes</span>
               </p>
             </div>
 
             <ul className="mt-7 space-y-4 text-sm text-[var(--silente-ivory)]">
-              <li className="flex gap-3"><span className="text-[var(--silente-gold)]">∞</span><span>Conversación ilimitada por WhatsApp</span></li>
-              <li className="flex gap-3"><span className="text-[var(--silente-gold)]">24/7</span><span>Disponible a cualquier hora</span></li>
-              <li className="flex gap-3"><span className="text-[var(--silente-gold)]">◈</span><span>Carta natal personalizada</span></li>
-              <li className="flex gap-3"><span className="text-[var(--silente-gold)]">◌</span><span>Conversaciones privadas</span></li>
+              <li className="flex items-start gap-3"><BenefitIcon name="messages" /><span>25 mensajes al día por WhatsApp</span></li>
+              <li className="flex items-start gap-3"><BenefitIcon name="clock" /><span>Disponible 24 horas al día</span></li>
+              <li className="flex items-start gap-3"><BenefitIcon name="history" /><span>Historial de conversaciones guardado</span></li>
+              <li className="flex items-start gap-3"><BenefitIcon name="cancel" /><span>Cancela cuando quieras</span></li>
+              <li className="flex items-start gap-3"><BenefitIcon name="chart" /><span>Carta natal personalizada</span></li>
+              <li className="flex items-start gap-3"><BenefitIcon name="lock" /><span>Conversaciones privadas</span></li>
             </ul>
 
             <a
@@ -48,7 +76,7 @@ export function Pricing() {
             </a>
 
             <p className="mt-4 text-xs leading-5 text-[var(--silente-muted)]">
-              Cobro mensual recurrente mediante Reveniu. Puedes cancelar cuando quieras, sin permanencia.
+              Cobro mensual recurrente mediante Reveniu.
             </p>
           </article>
         </div>
