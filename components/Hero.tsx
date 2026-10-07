@@ -63,7 +63,7 @@ export function Hero() {
   const activeWord = state === "saber" ? "saber." : "hablar.";
   const mobileHeadline = (
     <div className="flex min-w-0 flex-col items-center justify-center">
-      <h1 className="text-[clamp(15px,4.5vw,18px)] font-normal leading-[1.02] tracking-[-.045em] text-[var(--silente-ivory)]">
+      <h1 className="text-[clamp(1.75rem,8.4vw,4rem)] font-normal leading-[1.02] tracking-[-.045em] text-[var(--silente-ivory)]">
         <span className="block whitespace-nowrap">Hay cosas que</span>
         <span className="block whitespace-nowrap">
           necesitas{" "}
@@ -86,7 +86,7 @@ export function Hero() {
         initial={reduceMotion ? false : { opacity: 0, y: 5 }}
         animate={{ opacity: 1, y: 0 }}
         transition={reduceMotion ? { duration: 0 } : { duration: 0.8, ease: "easeInOut" }}
-        className="mt-1 min-h-[1.2em] whitespace-nowrap text-[clamp(10px,2.8vw,12px)] leading-tight tracking-[-.02em] text-[var(--silente-gold-light)]"
+        className="mt-2 min-h-[1.4em] w-full whitespace-nowrap text-[clamp(1.25rem,4.1vw,2.1rem)] font-normal tracking-[-.025em] text-[var(--silente-gold-light)]"
       >
         {state === "saber" ? "Silente te espera." : "Silente te escucha."}
       </motion.p>
@@ -146,7 +146,7 @@ export function Hero() {
           Conversa con Luna por WhatsApp. Pregúntale por tu horóscopo y por lo que quieras saber sobre amor, dinero, trabajo y suerte.
         </p>
 
-        <div className="relative mx-auto mt-1 h-[clamp(220px,33svh,280px)] w-full max-w-6xl md:mt-5 md:h-[clamp(400px,46vh,460px)]">
+        <div className="relative mx-auto mt-2 h-[clamp(260px,38svh,320px)] w-full max-w-6xl md:mt-5 md:h-[clamp(400px,46vh,460px)]">
           <motion.div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
             animate={reduceMotion ? undefined : { scale: [1, 1.018, 1] }}
@@ -210,7 +210,7 @@ export function Hero() {
 
         <a
           href="#como-funciona"
-          className="hero-cta relative z-20 mx-auto -mt-3 flex min-h-14 w-full max-w-[590px] items-center justify-between rounded-full px-6 py-3 text-left text-sm font-medium text-[var(--silente-night)] transition-transform hover:scale-[1.01] active:scale-[.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)] md:flex md:min-h-16 md:py-4 md:text-base"
+          className="hero-cta relative z-20 mx-auto -mt-3 flex min-h-16 w-full max-w-[590px] items-center justify-between rounded-full px-6 py-4 text-left font-medium text-[var(--silente-night)] transition-transform hover:scale-[1.01] active:scale-[.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)] md:flex md:min-h-16 md:py-4 md:text-base"
         >
           <span className="flex items-center gap-3">
             <WhatsAppIcon />
