@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Preferences = {
   necessary: true;
@@ -51,11 +51,41 @@ function PreferenceSwitch({ checked, disabled, label, onChange }: {
 export function CookiePreferences() {
   const [open, setOpen] = useState(false);
   const [preferences, setPreferences] = useState<Preferences>(loadPreferences);
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   function closeWithoutSaving() {
     setPreferences(loadPreferences());
     setOpen(false);
   }
+
+  useEffect(() => {
+    if (!open) return;
+    const dialog = dialogRef.current;
+    const focusable = () => Array.from(dialog?.querySelectorAll<HTMLElement>('button:not(:disabled)') ?? []);
+    focusable()[0]?.focus();
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setOpen(false);
+        return;
+      }
+      if (event.key !== "Tab") return;
+      const items = focusable();
+      if (!items.length) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [open]);
 
   function savePreferences() {
     try {
@@ -83,14 +113,14 @@ export function CookiePreferences() {
       </button>
 
       {open && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-black/60 p-4 backdrop-blur-sm" onKeyDown={(event) => {
-          if (event.key === "Escape") closeWithoutSaving();
-        }}>
+        <div className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-black/60 p-4 backdrop-blur-sm">
           <div
+            ref={dialogRef}
             role="dialog"
             aria-modal="true"
             aria-labelledby="cookie-preferences-title"
             aria-describedby="cookie-preferences-description"
+            tabIndex={-1}
             className="relative my-auto w-full max-w-2xl rounded-3xl border border-[var(--silente-border)] bg-[var(--silente-night)] p-6 text-[var(--silente-ivory)] shadow-2xl md:p-8"
           >
             <h2 id="cookie-preferences-title" className="text-2xl font-semibold">Preferencias de cookies</h2>
