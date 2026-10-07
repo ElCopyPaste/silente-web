@@ -210,7 +210,7 @@ export function Hero() {
 
         <a
           href="#como-funciona"
-          className="hero-cta relative z-20 mx-auto -mt-3 min-h-14 w-full max-w-[590px] items-center justify-between rounded-full px-6 py-3 text-left text-sm font-medium text-[var(--silente-night)] transition-transform hover:scale-[1.01] active:scale-[.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)] md:flex md:min-h-16 md:py-4 md:text-base"
+          className="hero-cta relative z-20 mx-auto -mt-3 flex min-h-14 w-full max-w-[590px] items-center justify-between rounded-full px-6 py-3 text-left text-sm font-medium text-[var(--silente-night)] transition-transform hover:scale-[1.01] active:scale-[.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)] md:flex md:min-h-16 md:py-4 md:text-base"
         >
           <span className="flex items-center gap-3">
             <WhatsAppIcon />
