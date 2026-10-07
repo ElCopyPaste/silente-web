@@ -45,7 +45,7 @@ const sections: readonly PrivacySection[] = [
         "Datos de cuenta: nombre, correo electrónico y contraseña (almacenada como hash, nunca en texto plano).",
         "Número de WhatsApp: el que nos indicas al registrarte o en «Mi cuenta», en formato internacional. Es también el identificador con el que WhatsApp nos entrega tu conversación, y lo usamos para conectar tu suscripción con tu chat.",
         "Datos de nacimiento: ciudad, fecha y, si la conoces y decides entregarla, hora de nacimiento. La hora es opcional: sin ella no calculamos tu ascendente.",
-        "Datos astrológicos derivados: tu signo solar, tu signo lunar y tu ascendente, calculados a partir de lo anterior.",
+        "Datos astrológicos derivados: tu carta natal personalizada (signo solar, signo lunar y ascendente) y los tránsitos planetarios utilizados en la lectura.",
         "Contenido de tus conversaciones: los mensajes que escribes y las respuestas que genera Luna.",
         "Datos de suscripción: estado (pendiente, activa, por terminar, cancelada), fechas de cambio de estado, identificador de la suscripción en la pasarela de pago y, si la cancelas, el motivo y comentario que entregues en el formulario de baja. No almacenamos el número de tu tarjeta ni su código de seguridad (ver sección 12).",
         "Uso del servicio: la cuenta de mensajes que llevas en el día, para aplicar el límite diario de 25 mensajes.",
@@ -71,7 +71,7 @@ const sections: readonly PrivacySection[] = [
         rows: [
           ["Crear y administrar tu cuenta, autenticarte y conectar tu suscripción con tu chat de WhatsApp", "Ejecución del contrato"],
           ["Enviarte los correos necesarios para tu cuenta, como el enlace para recuperar tu contraseña cuando lo pides", "Ejecución del contrato"],
-          ["Calcular tu carta a partir de tus datos de nacimiento", "Ejecución del contrato y tu consentimiento"],
+          ["Calcular tu carta natal personalizada a partir de tus datos de nacimiento", "Ejecución del contrato y tu consentimiento"],
           ["Generar las respuestas de Luna y mantener la continuidad de la conversación (incluye contenido sensible)", "Tu consentimiento expreso"],
           ["Cobrar la suscripción y cumplir obligaciones contables y tributarias", "Ejecución del contrato y cumplimiento de un deber legal"],
           ["Aplicar el límite diario de 25 mensajes y prevenir abusos del servicio", "Ejecución del contrato e interés legítimo"],
