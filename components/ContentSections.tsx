@@ -95,7 +95,7 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section className="bg-[var(--silente-night)] px-5 py-24 md:px-8 md:py-32">
+    <section id="preguntas-frecuentes" className="bg-[var(--silente-night)] px-5 py-24 md:px-8 md:py-32">
       <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[.8fr_1.2fr] md:gap-20">
         <div>
           <p className="text-sm uppercase tracking-[.22em] text-[var(--silente-gold)]">Antes de empezar</p>
