@@ -43,29 +43,32 @@ button{touch-action:manipulation}
 .question-capsule{
   z-index:2;
   position:absolute;
-  border:0;
-  border-radius:.2rem;
-  background:transparent;
-  box-shadow:none;
-  backdrop-filter:none;
+  border:1px solid rgba(229,196,106,.48);
+  border-radius:9999px;
+  background:rgba(7,17,29,.58);
+  box-shadow:inset 0 0 20px rgba(3,9,15,.36),0 0 14px rgba(3,9,15,.22);
+  backdrop-filter:blur(5px);
   text-shadow:0 2px 16px rgba(0,0,0,.96),0 0 26px rgba(0,0,0,.78);
-  transition:color .4s ease,text-shadow .4s ease;
+  transition:color .4s ease,text-shadow .4s ease,border-color .4s ease;
 }
-.question-capsule::before{
+.question-capsule::after{
   content:"";
   position:absolute;
-  z-index:0;
-  inset:-7px -12px;
-  background:transparent;
-  border:1px solid rgba(229,196,106,.48);
-  border-radius:50%;
-  box-shadow:0 0 5px rgba(229,196,106,.08);
+  z-index:1;
+  inset:-1px;
+  padding:1.5px;
+  border-radius:inherit;
+  background:conic-gradient(from 0deg,transparent 0deg 351deg,rgba(213,170,75,.35) 354deg,#E5C46A 357deg,#FFF0BF 359deg,#E5C46A 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask-composite:exclude;
+  filter:drop-shadow(0 0 5px rgba(229,196,106,.68));
   pointer-events:none;
-  animation:question-orbit-glow 7s ease-in-out infinite;
+  animation:question-frame-light 5.5s linear infinite;
 }
-@keyframes question-orbit-glow{
-  0%,100%{border-color:rgba(229,196,106,.42);box-shadow:0 0 5px rgba(229,196,106,.08)}
-  50%{border-color:rgba(246,206,124,.9);box-shadow:0 0 13px rgba(229,196,106,.25)}
+@keyframes question-frame-light{
+  to{transform:rotate(1turn)}
 }
 .question-capsule:hover,.question-capsule:focus-visible{
   color:var(--silente-gold-light);
@@ -83,5 +86,5 @@ button{touch-action:manipulation}
   .silente-symbol{animation:none}
   html{scroll-behavior:auto}
   .question-capsule,.hero-cta{transition:none}
-  .question-capsule::before{animation:none}
+  .question-capsule::after{animation:none}
 }
