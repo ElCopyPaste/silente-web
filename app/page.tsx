@@ -81,7 +81,7 @@ export default function Home() {
           </div>
         </div>
         <nav aria-label="Información legal" className="mx-auto mt-7 flex max-w-6xl flex-wrap justify-center gap-x-6 gap-y-2 text-xs text-[var(--silente-muted)]">
-          <a className="transition-colors hover:text-[var(--silente-ivory)]" href="https://www.silente.cl/terminos">Términos</a>
+          <a className="transition-colors hover:text-[var(--silente-ivory)]" href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/terminos/`}>Términos</a>
           <a className="transition-colors hover:text-[var(--silente-ivory)]" href="https://www.silente.cl/privacidad">Privacidad</a>
           <a className="transition-colors hover:text-[var(--silente-ivory)]" href="https://www.silente.cl/reembolsos">Reembolsos</a>
         </nav>
