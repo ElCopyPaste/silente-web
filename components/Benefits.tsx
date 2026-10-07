@@ -6,13 +6,13 @@ export function Benefits() {
   ];
 
   return (
-    <ul className="mx-auto mt-8 grid w-full max-w-[780px] grid-cols-3 sm:mt-10">
+    <ul className="mx-auto mt-3 grid w-full max-w-[780px] grid-cols-3 md:mt-10">
       {items.map(({ icon, label }, index) => (
         <li
           key={label}
-          className={"flex min-h-28 flex-col items-center justify-center gap-2 px-2 text-center text-[clamp(11px,2vw,16px)] leading-snug text-[var(--silente-muted)] " + (index > 0 ? "border-l border-[rgba(174,181,188,.4)]" : "")}
+          className={"flex min-h-[68px] flex-col items-center justify-center gap-1.5 px-1 md:min-h-28 md:gap-2 md:px-2 text-center text-[clamp(11px,2vw,16px)] leading-snug text-[var(--silente-muted)] " + (index > 0 ? "border-l border-[rgba(174,181,188,.4)]" : "")}
         >
-          <span aria-hidden="true" className="inline-flex h-9 w-9 shrink-0 items-center justify-center text-[var(--silente-gold)]">
+          <span aria-hidden="true" className="inline-flex h-7 w-7 shrink-0 items-center justify-center text-[var(--silente-gold)] md:h-9 md:w-9">
             {icon === "infinity" && <span className="text-4xl leading-none">∞</span>}
             {icon === "clock" && (
               <svg viewBox="0 0 24 24" className="h-8 w-8 fill-none stroke-current" strokeWidth="1.5">
