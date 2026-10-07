@@ -83,11 +83,11 @@ export function Hero() {
       <Header />
 
       <div className="relative z-10 mx-auto mt-6 max-w-6xl text-center md:mt-7">
-        <h1 className="text-[clamp(2rem,9vw,5.75rem)] font-normal leading-[1.02] md:text-[clamp(2.75rem,5vw,4.5rem)] tracking-[-.055em] text-[var(--silente-ivory)]">
+        <h1 className="w-full text-center text-[clamp(2rem,9vw,5.75rem)] font-normal leading-[1.02] md:text-[clamp(2.75rem,5vw,4.5rem)] tracking-[-.055em] text-[var(--silente-ivory)]">
           <span className="block whitespace-nowrap">Hay cosas que</span>
           <span className="mt-1 block whitespace-nowrap">
             necesitas{" "}
-            <span className="relative inline-grid w-[4.35em] justify-items-start align-baseline text-left">
+            <span className="relative inline-grid w-[4.35em] justify-items-center align-baseline text-center">
               <motion.span
                 key={state}
                 initial={reduceMotion ? false : { opacity: 0, y: state === "saber" ? 8 : -8 }}
@@ -105,7 +105,7 @@ export function Hero() {
           initial={reduceMotion ? false : { opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={reduceMotion ? { duration: 0 } : { duration: 0.8, ease: "easeInOut" }}
-          className="mt-3 min-h-[1.4em] text-[clamp(1.25rem,4.1vw,2.1rem)] font-normal tracking-[-.025em] text-[var(--silente-gold-light)] md:mt-4"
+          className="mt-3 min-h-[1.4em] w-full text-center text-[clamp(1.25rem,4.1vw,2.1rem)] font-normal tracking-[-.025em] text-[var(--silente-gold-light)] md:mt-4"
         >
           {state === "saber" ? "Silente te espera." : "Silente te escucha."}
         </motion.p>
