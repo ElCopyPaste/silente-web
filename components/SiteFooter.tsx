@@ -1,16 +1,6 @@
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 import { CookiePreferences } from "@/components/CookiePreferences";
 
-function SocialIcon({ name }: { name: "TikTok" | "Instagram" | "Facebook" }) {
-  if (name === "TikTok") {
-    return <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-current"><path d="M19.6 8.1a7.2 7.2 0 0 1-4.3-1.4v8.1a6.2 6.2 0 1 1-5.4-6.1v3.3a2.9 2.9 0 1 0 2.1 2.8V2.8h3.3c.2 2.1 1.6 3.7 4.3 4.1v1.2Z" /></svg>;
-  }
-  if (name === "Instagram") {
-    return <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current" strokeWidth="1.8"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.6" cy="6.6" r="1" className="fill-current stroke-none" /></svg>;
-  }
-  return <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-current"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z" /></svg>;
-}
-
 export function SiteFooter() {
   return (
     <footer className="border-t border-[var(--silente-border)] px-5 py-10 md:px-8">
