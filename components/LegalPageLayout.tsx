@@ -49,7 +49,7 @@ export function LegalPageLayout({
           <nav aria-label="Información legal" className="flex flex-wrap justify-center gap-x-5 gap-y-2">
             <a className="transition-colors hover:text-[var(--silente-ivory)]" href={`${basePath}/terminos/`}>Términos</a>
             <a className="transition-colors hover:text-[var(--silente-ivory)]" href={`${basePath}/privacidad/`}>Privacidad</a>
-            <a className="transition-colors hover:text-[var(--silente-ivory)]" href="https://www.silente.cl/reembolsos">Reembolsos</a>
+            <a className="transition-colors hover:text-[var(--silente-ivory)]" href={`${basePath}/reembolsos/`}>Reembolsos</a>
           </nav>
         </div>
       </footer>
