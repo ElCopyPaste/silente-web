@@ -42,6 +42,17 @@ function WhatIsSilenteSection() {
               </article>
             ))}
           </div>
+
+          <div className="mt-16">
+            <p className="mb-5 text-sm uppercase tracking-[.22em] text-[var(--silente-gold)]">Una conversación por WhatsApp</p>
+            <div role="img" aria-label="Espacio reservado para el demo en video de una conversación por WhatsApp" className="flex aspect-video w-full items-center justify-center overflow-hidden rounded-3xl border border-[rgba(213,170,75,.24)] bg-[radial-gradient(ellipse_at_center,rgba(213,170,75,.12),transparent_58%),rgba(5,14,22,.72)] px-6 text-center">
+              <div>
+                <span aria-hidden="true" className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-[rgba(213,170,75,.5)] text-2xl text-[var(--silente-gold-light)]">▶</span>
+                <p className="mt-5 text-lg text-[var(--silente-ivory)] md:text-xl">Demo de conversación por WhatsApp</p>
+                <p className="mt-2 text-sm text-[var(--silente-muted)]">Espacio reservado para el video</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
