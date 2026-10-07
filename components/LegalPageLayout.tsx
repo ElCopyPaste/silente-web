@@ -47,7 +47,7 @@ export function LegalPageLayout({
         <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-5 text-center text-xs text-[var(--silente-muted)] sm:flex-row sm:text-left">
           <span className="tracking-[.18em] text-[var(--silente-gold)]">SILENTE</span>
           <nav aria-label="Información legal" className="flex flex-wrap justify-center gap-x-5 gap-y-2">
-            <a className="transition-colors hover:text-[var(--silente-ivory)]" href="https://www.silente.cl/terminos">Términos</a>
+            <a className="transition-colors hover:text-[var(--silente-ivory)]" href={`${basePath}/terminos/`}>Términos</a>
             <a className="transition-colors hover:text-[var(--silente-ivory)]" href="https://www.silente.cl/privacidad">Privacidad</a>
             <a className="transition-colors hover:text-[var(--silente-ivory)]" href="https://www.silente.cl/reembolsos">Reembolsos</a>
           </nav>
