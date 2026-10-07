@@ -6,6 +6,7 @@ import { useState } from "react";
 const links = [
   ["Cómo funciona", "#como-funciona"],
   ["Elige tu plan", "#elige-tu-plan"],
+  ["Preguntas frecuentes", "#preguntas-frecuentes"],
 ] as const;
 
 export function Header() {
