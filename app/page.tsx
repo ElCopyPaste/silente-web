@@ -1,6 +1,7 @@
 import { Hero } from "@/components/Hero";
 import { FAQSection } from "@/components/ContentSections";
 import { Pricing } from "@/components/Pricing";
+import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 
 function WhatIsSilenteSection() {
   return (
@@ -41,6 +42,7 @@ export default function Home() {
       <WhatIsSilenteSection />
       <Pricing />
       <FAQSection />
+      <TestimonialsCarousel />
       <footer className="border-t border-[var(--silente-border)] px-5 py-10">
         <div className="mx-auto flex max-w-6xl flex-col gap-5 text-center text-xs text-[var(--silente-muted)] md:flex-row md:items-center md:justify-between md:text-left">
           <div>

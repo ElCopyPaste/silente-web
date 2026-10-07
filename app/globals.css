@@ -87,9 +87,15 @@ button{touch-action:manipulation}
   background:linear-gradient(105deg,#F6CE7C 0%,#E8B950 48%,#F4C76D 100%);
   box-shadow:0 6px 36px rgba(236,181,72,.28),inset 0 1px 0 rgba(255,246,222,.52);
 }
+.testimonial-slide{animation:silente-testimonial-in .65s ease-out both}
+@keyframes silente-testimonial-in{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
 @media (prefers-reduced-motion: reduce){
   .silente-symbol{animation:none}
   html{scroll-behavior:auto}
   .question-capsule,.hero-cta{transition:none}
   .question-capsule::after{animation:none}
+  .testimonial-slide{animation:none}
 }
