@@ -18,7 +18,7 @@ const questions = [
 
 export function QuestionsSection() {
   return (
-    <section className="bg-[var(--silente-night)] px-5 py-24 md:px-8 md:py-32">
+    <section className="flex min-h-[100svh] items-center bg-[var(--silente-night)] px-5 py-8 md:block md:min-h-0 md:px-8 md:py-32">
       <div className="mx-auto max-w-6xl">
         <div className="max-w-3xl">
           <p className="text-sm uppercase tracking-[.22em] text-[var(--silente-gold)]">Lo que te inquieta</p>
