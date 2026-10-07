@@ -47,7 +47,26 @@ export default function Home() {
         <div className="mx-auto flex max-w-6xl flex-col gap-5 text-center text-xs text-[var(--silente-muted)] md:flex-row md:items-center md:justify-between md:text-left">
           <div>
             <span className="tracking-[.18em] text-[var(--silente-gold)]">SILENTE</span>
-            <p className="mt-2">Una conversación astrológica privada por WhatsApp.</p>
+            <p className="mt-2">Visítanos en Redes Sociales</p>
+            <div role="group" aria-label="Redes sociales" className="mt-3 flex justify-center gap-4 md:justify-start">
+              <span role="img" aria-label="TikTok" className="flex h-9 w-9 items-center justify-center text-[var(--silente-gold)]">
+                <svg aria-hidden="true" viewBox="0 0 24 24" className="h-6 w-6 fill-current">
+                  <path d="M19.6 8.1a7.2 7.2 0 0 1-4.3-1.4v8.1a6.2 6.2 0 1 1-5.4-6.1v3.3a2.9 2.9 0 1 0 2.1 2.8V2.8h3.3c.2 2.1 1.6 3.7 4.3 4.1v1.2Z" />
+                </svg>
+              </span>
+              <span role="img" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center text-[var(--silente-gold)]">
+                <svg aria-hidden="true" viewBox="0 0 24 24" className="h-6 w-6 fill-none stroke-current" strokeWidth="1.8">
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.6" cy="6.6" r="1" className="fill-current stroke-none" />
+                </svg>
+              </span>
+              <span role="img" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center text-[var(--silente-gold)]">
+                <svg aria-hidden="true" viewBox="0 0 24 24" className="h-6 w-6 fill-current">
+                  <path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.4Z" />
+                </svg>
+              </span>
+            </div>
           </div>
           <nav aria-label="Información legal" className="flex flex-wrap justify-center gap-x-5 gap-y-2 md:justify-end">
             <a className="transition-colors hover:text-[var(--silente-ivory)]" href="https://www.silente.cl/terminos">Términos</a>
