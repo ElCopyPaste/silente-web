@@ -74,9 +74,6 @@ export default function Home() {
             <a className="transition-colors hover:text-[var(--silente-ivory)]" href="https://www.silente.cl/reembolsos">Reembolsos</a>
           </nav>
         </div>
-        <p className="mx-auto mt-8 max-w-6xl text-center text-xs text-[var(--silente-muted)] md:text-left">
-          Hay cosas que necesitas saber. Hay cosas que necesitas hablar.
-        </p>
       </footer>
     </main>
   );
