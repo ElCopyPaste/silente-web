@@ -51,6 +51,11 @@ button{touch-action:manipulation}
   text-shadow:0 2px 16px rgba(0,0,0,.96),0 0 26px rgba(0,0,0,.78);
   transition:color .4s ease,text-shadow .4s ease,border-color .4s ease;
 }
+@property --question-frame-angle{
+  syntax:"<angle>";
+  inherits:false;
+  initial-value:0deg;
+}
 .question-capsule::after{
   content:"";
   position:absolute;
@@ -58,7 +63,7 @@ button{touch-action:manipulation}
   inset:-1px;
   padding:1.5px;
   border-radius:inherit;
-  background:conic-gradient(from 0deg,transparent 0deg 351deg,rgba(213,170,75,.35) 354deg,#E5C46A 357deg,#FFF0BF 359deg,#E5C46A 360deg);
+  background:conic-gradient(from var(--question-frame-angle),transparent 0deg 351deg,rgba(213,170,75,.35) 354deg,#E5C46A 357deg,#FFF0BF 359deg,#E5C46A 360deg);
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
   -webkit-mask-composite:xor;
   mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
@@ -68,7 +73,7 @@ button{touch-action:manipulation}
   animation:question-frame-light 5.5s linear infinite;
 }
 @keyframes question-frame-light{
-  to{transform:rotate(1turn)}
+  to{--question-frame-angle:360deg}
 }
 .question-capsule:hover,.question-capsule:focus-visible{
   color:var(--silente-gold-light);
