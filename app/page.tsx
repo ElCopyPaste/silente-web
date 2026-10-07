@@ -6,23 +6,23 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 function WhatIsSilenteSection() {
   return (
-    <section id="como-funciona" className="bg-[var(--silente-secondary)] px-5 py-24 md:px-8 md:py-32">
+    <section id="como-funciona" className="flex min-h-[100svh] items-center bg-[var(--silente-secondary)] px-5 py-6 md:block md:min-h-0 md:px-8 md:py-32">
       <div className="mx-auto max-w-6xl">
         <div className="max-w-4xl">
           <p className="text-sm uppercase tracking-[.22em] text-[var(--silente-gold)]">Qué es Silente</p>
-          <h2 className="mt-4 text-4xl font-semibold leading-[1.02] tracking-[-.03em] text-[var(--silente-ivory)] md:text-6xl">
+          <h2 className="mt-3 text-3xl font-semibold leading-[1.02] tracking-[-.03em] text-[var(--silente-ivory)] md:mt-4 md:text-6xl">
             Una conversación para encontrar claridad.
           </h2>
-          <p className="mt-6 text-base leading-7 text-[var(--silente-muted)] md:text-lg">
+          <p className="mt-3 text-[15px] leading-6 text-[var(--silente-muted)] md:mt-6 md:text-lg md:leading-7">
             Silente te ofrece un espacio para explorar tus preguntas sobre amor, relaciones, decisiones y futuro. Sus lecturas se inspiran en la videncia, la astrología y distintas mancias, y consideran tu carta natal y los tránsitos planetarios.
           </p>
-          <p className="mt-5 text-base leading-7 text-[var(--silente-muted)] md:text-lg">
+          <p className="mt-3 text-[15px] leading-6 text-[var(--silente-muted)] md:mt-5 md:text-lg md:leading-7">
             Luna es la guía digital de Silente. Conversa con ella por WhatsApp, en privado y a tu ritmo. Haz una pregunta, profundiza en su respuesta y abre nuevos temas cuando quieras.
           </p>
         </div>
 
-        <div className="mt-16">
-          <p className="mb-5 text-sm uppercase tracking-[.22em] text-[var(--silente-gold)]">Una conversación por WhatsApp</p>
+        <div className="mt-8 md:mt-16">
+          <p className="mb-3 text-sm uppercase tracking-[.22em] md:mb-5 text-[var(--silente-gold)]">Una conversación por WhatsApp</p>
           <div role="img" aria-label="Espacio reservado para el demo en video de una conversación por WhatsApp" className="flex aspect-video w-full items-center justify-center overflow-hidden rounded-3xl border border-[rgba(213,170,75,.24)] bg-[radial-gradient(ellipse_at_center,rgba(213,170,75,.12),transparent_58%),rgba(5,14,22,.72)] px-6 text-center">
             <div>
               <span aria-hidden="true" className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-[rgba(213,170,75,.5)] text-2xl text-[var(--silente-gold-light)]">▶</span>
