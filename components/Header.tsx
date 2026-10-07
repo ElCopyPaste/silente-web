@@ -15,7 +15,7 @@ export function Header({ mobileHeroContent }: { mobileHeroContent: ReactNode }) 
 
   return (
     <header className="relative z-30 mx-auto max-w-6xl">
-      <div className="relative grid h-[68px] grid-cols-[52px_minmax(0,1fr)_40px] items-center gap-1 md:block md:h-[116px]">
+      <div className="relative grid h-[68px] grid-cols-[52px_minmax(0,1fr)_52px] items-center gap-1 md:block md:h-[116px]">
         <a href="#" aria-label="Silente, inicio" className="relative col-start-1 flex items-center justify-start focus-visible:rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)] md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
           <Image src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/logo-silente.webp"} alt="Silente" width={640} height={692} priority unoptimized className="h-[54px] w-auto object-contain md:h-[110px]" />
         </a>
