@@ -7,7 +7,7 @@ const sections: readonly TermsSection[] = [
   {
     title: "1. Aceptación de los Términos",
     blocks: [
-      { paragraph: "La aceptación se realiza al crear tu cuenta y al usar el servicio. Además, antes de tu primera conversación, el oráculo te explica en el chat qué datos se guardan y cómo se procesan, y solo comienza a conversar cuando tocas el botón «Acepto» (o escribes «acepto»): ese es tu consentimiento expreso para el tratamiento descrito en la Política de Privacidad. No hay casillas premarcadas ni aceptaciones tácitas." },
+      { paragraph: "La aceptación se realiza al crear tu cuenta y al usar el servicio. Además, antes de tu primera conversación, Luna, la guía digital de Silente, te explica en el chat qué datos se guardan y cómo se procesan, y solo comienza a conversar cuando tocas el botón «Acepto» (o escribes «acepto»): ese es tu consentimiento expreso para el tratamiento descrito en la Política de Privacidad. No hay casillas premarcadas ni aceptaciones tácitas." },
       { paragraph: "Conservamos registro de la versión de los Términos y de la Política de Privacidad que aceptaste y de la fecha de tu aceptación. Estos Términos constituyen un contrato de adhesión regido por la legislación chilena." },
     ],
   },
@@ -15,10 +15,10 @@ const sections: readonly TermsSection[] = [
     title: "2. Definiciones",
     blocks: [
       { list: [
-        "Servicio: la plataforma Astros x Chat, incluyendo el sitio web, la cuenta de usuario y la conversación privada con los personajes («oráculos»).",
-        "Canal: la aplicación de mensajería por la que conversas con el oráculo. El canal del servicio es WhatsApp.",
+        "Servicio: Silente, incluyendo el sitio web, tu cuenta y la conversación privada por WhatsApp con Luna, la guía digital de Silente.",
+        "Canal: WhatsApp, donde conversas en privado con Luna, la guía digital de Silente.",
         "Usuario / tú: la persona natural mayor de edad que se registra y usa el Servicio.",
-        "Contenido generado: los mensajes y respuestas producidos automáticamente por la inteligencia artificial.",
+        "Contenido generado: los mensajes y respuestas de Luna, producidos automáticamente mediante inteligencia artificial.",
         "Datos de nacimiento: la ciudad, la fecha y (opcionalmente) la hora que entregas para calcular tu carta.",
         "Reveniu: la pasarela de pago chilena que procesa el cobro de la suscripción (ver sección 12).",
       ] },
@@ -27,14 +27,14 @@ const sections: readonly TermsSection[] = [
   {
     title: "3. Qué es el servicio",
     blocks: [
-      { paragraph: "Astros x Chat es un servicio de entretenimiento, reflexión y autoconocimiento que permite conversar en privado por WhatsApp con oráculos: personajes de inteligencia artificial que interpretan tu consulta con el lenguaje simbólico de la astrología. Para hacerlo te pedimos tu ciudad, fecha y —si la sabes— hora de nacimiento, con las que calculamos tu signo solar, tu signo lunar y tu ascendente, y los combinamos con el estado del cielo del día (fase lunar, planetas por signo, retrógrados) y con el historial reciente de tu conversación." },
-      { paragraph: "El servicio incluye una función de memoria: guardamos tus mensajes y las respuestas para darle continuidad a la conversación. Puedes empezar una lectura desde cero, borrando ese historial, escribiendo «/nueva» en el chat." },
+      { paragraph: "Silente te ofrece un espacio para explorar tus preguntas sobre amor, relaciones, decisiones y futuro. Sus lecturas se inspiran en la videncia, la astrología y distintas mancias, y consideran tu carta natal y los tránsitos planetarios. Conversas con Luna, la guía digital de Silente, por WhatsApp, en privado y a tu ritmo." },
+      { paragraph: "El servicio guarda el historial de tus conversaciones para dar continuidad a tus lecturas. Puedes hacer una pregunta, profundizar en la respuesta y abrir nuevos temas cuando quieras. Si eliminas tu cuenta, el historial se borra según lo indicado en la Política de Privacidad." },
     ],
   },
   {
     title: "4. Transparencia sobre la inteligencia artificial",
     blocks: [
-      { paragraph: "No estás conversando con una persona real, ni con un astrólogo profesional, ni con un vidente. Ningún ser humano lee ni responde tus mensajes en tiempo real. El oráculo es un personaje generado por software, sin conciencia, intención ni facultades adivinatorias." },
+      { paragraph: "No estás conversando con una persona real, ni con un astrólogo profesional, ni con un vidente. Ningún ser humano lee ni responde tus mensajes en tiempo real. Luna es una guía digital generada por software, sin conciencia, intención ni facultades adivinatorias." },
       { paragraph: "El Contenido generado puede contener errores, imprecisiones, omisiones o afirmaciones inventadas, incluidos cálculos astrológicos equivocados o atribuciones falsas a autores o tradiciones. Las respuestas se producen con modelos de lenguaje de terceros (a la fecha de esta versión, un modelo abierto ejecutado en la infraestructura de Fireworks AI, en Estados Unidos; el detalle vigente está en la Política de Privacidad, sección 8)." },
     ],
   },
@@ -49,7 +49,7 @@ const sections: readonly TermsSection[] = [
     title: "6. No sustituye orientación profesional · Crisis y emergencias",
     blocks: [
       { paragraph: "El Contenido no constituye ni reemplaza asesoría o tratamiento médico, psicológico, psiquiátrico, terapéutico, legal, financiero ni de ningún otro tipo profesional. No diagnostica, trata ni cura ninguna condición física o mental. Para cualquier problema de salud, legal o financiero, consulta a un profesional cualificado." },
-      { paragraph: "Astros x Chat no es un servicio de emergencia ni de intervención en crisis. Si tú u otra persona está en peligro, tienes pensamientos de hacerte daño o de suicidio, o atraviesas una emergencia médica o de seguridad, deja de usar el servicio y busca ayuda inmediata:" },
+      { paragraph: "Silente no es un servicio de emergencia ni de intervención en crisis. Si tú u otra persona está en peligro, tienes pensamientos de hacerte daño o de suicidio, o atraviesas una emergencia médica o de seguridad, deja de usar el servicio y busca ayuda inmediata:" },
       { list: [
         "Emergencias (SAMU / ambulancia): 131 · Carabineros: 133 · Bomberos: 132",
         "Salud Responde (orientación en salud y salud mental, 24/7): 600 360 7777",
@@ -67,27 +67,27 @@ const sections: readonly TermsSection[] = [
   {
     title: "8. Tu cuenta y seguridad",
     blocks: [
-      { paragraph: "Eres responsable de la veracidad de los datos que entregas, de mantener la confidencialidad de tu contraseña y de toda actividad realizada desde tu cuenta. Debes usar un número de WhatsApp de tu titularidad. Notifícanos de inmediato cualquier uso no autorizado escribiendo a contacto@logika.cl." },
+      { paragraph: "Eres responsable de la veracidad de los datos que entregas, de mantener la confidencialidad de tu contraseña y de toda actividad realizada desde tu cuenta. Debes usar un número de WhatsApp de tu titularidad. Notifícanos de inmediato cualquier uso no autorizado escribiendo a comercial@silente.cl." },
     ],
   },
   {
     title: "9. Acceso al chat",
     blocks: [
-      { paragraph: "Tu suscripción se vincula al número de WhatsApp que registras en tu cuenta: cuando le escribes al oráculo desde ese número, el chat queda conectado. Puedes cambiar el número desde «Mi cuenta»; al escribir desde el nuevo, la suscripción pasa a ese número y el anterior deja de tener acceso. Debe ser un número de tu titularidad. La cuenta y el chat son para uso personal de una sola persona; no puedes compartirlos, revenderlos ni cederlos." },
+      { paragraph: "Tu suscripción se vincula al número de WhatsApp que registras en tu cuenta: cuando le escribes a Luna desde ese número, el chat queda conectado. Puedes cambiar el número desde «Mi cuenta»; al escribir desde el nuevo, la suscripción pasa a ese número y el anterior deja de tener acceso. Debe ser un número de tu titularidad. La cuenta y el chat son para uso personal de una sola persona; no puedes compartirlos, revenderlos ni cederlos." },
       { paragraph: "El canal del servicio es WhatsApp. Tu conversación queda vinculada al número de WhatsApp con el que abras el chat: si cambias de número, tu lectura comienza de cero y el historial anterior no se traslada." },
       { paragraph: "El uso de WhatsApp se rige además por los términos y la política de privacidad de Meta. Es un servicio ajeno a nosotros y no respondemos por él." },
     ],
   },
   {
-    title: "10. Uso justo · Límite diario de consultas",
+    title: "10. Uso justo · Límite diario de mensajes",
     blocks: [
-      { paragraph: "La suscripción incluye hasta 10 consultas al oráculo por día calendario (hora de Chile). Alcanzado ese límite, el chat te lo indica y podrás seguir al día siguiente. Los comandos y las preguntas del onboarding no consumen consultas. Podemos ajustar este límite avisando con antelación razonable; el límite vigente se muestra en el propio chat." },
+      { paragraph: "La suscripción mensual del Plan Silente incluye 25 mensajes al día por WhatsApp. Al alcanzar ese límite, el chat te lo indica y podrás volver a conversar al día siguiente. Podemos ajustar este límite avisando con antelación razonable; el límite vigente se muestra en el propio chat." },
     ],
   },
   {
     title: "11. Suscripción, planes y precios",
     blocks: [
-      { paragraph: "El servicio se ofrece mediante suscripción de pago recurrente mensual. Los precios se muestran de forma clara antes de contratar, en pesos chilenos y con los impuestos incluidos cuando corresponda. El monto a pagar es el precio total exhibido en el momento de la contratación." },
+      { paragraph: "El Plan Silente se ofrece mediante una suscripción de pago recurrente de $6.000 CLP al mes. El precio se muestra antes de contratar, con los impuestos incluidos cuando corresponda. El monto a pagar es el precio total exhibido en el momento de la contratación." },
       { paragraph: "Podemos modificar los precios o planes a futuro. Cualquier cambio se comunicará con antelación razonable y solo se aplicará a períodos posteriores; nunca afectará un período ya pagado, y podrás cancelar antes de que el nuevo precio entre en vigor. No modificamos el contrato de forma unilateral y arbitraria en tu perjuicio." },
     ],
   },
@@ -107,7 +107,7 @@ const sections: readonly TermsSection[] = [
   {
     title: "14. Cancelación",
     blocks: [
-      { paragraph: "Puedes cancelar tu suscripción en cualquier momento, de forma tan simple como la contrataste, sin trámites adicionales, llamadas obligatorias ni retención forzada: desde la sección «Mi cuenta» del sitio, con un clic, o escribiéndonos a contacto@logika.cl." },
+      { paragraph: "Puedes cancelar tu suscripción en cualquier momento, de forma tan simple como la contrataste, sin trámites adicionales, llamadas obligatorias ni retención forzada: desde la sección «Mi cuenta» del sitio, con un clic, o escribiéndonos a comercial@silente.cl." },
       { paragraph: "La cancelación detiene la renovación. Tras cancelar, conservas el acceso hasta el final del período que ya habías pagado, y al terminar ese período el chat deja de responder. Ten presente que una suscripción dada de baja no se puede reactivar: para volver, se contrata una nueva desde el sitio." },
       { paragraph: "También puedes eliminar tu cuenta completa desde «Mi cuenta». Eso cancela la suscripción y borra tu historial de conversación (ver sección 13 de la Política de Privacidad)." },
     ],
@@ -116,7 +116,7 @@ const sections: readonly TermsSection[] = [
     title: "15. Derecho a retracto y reembolsos",
     blocks: [
       { paragraph: "Como consumidor, en las contrataciones a distancia tienes derecho a retracto dentro de los 10 días siguientes a la contratación, en los términos del artículo 3 bis de la Ley 19.496. Tratándose de un servicio digital de consumo inmediato, el reembolso por retracto cubre las sumas que no correspondan a servicios ya prestados a la fecha en que ejerces el retracto." },
-      { paragraph: "Para ejercerlo, o para reclamar por un cobro que consideres indebido, escríbenos a contacto@logika.cl. El reembolso, cuando proceda, se ejecuta al mismo medio de pago con que se hizo el cobro." },
+      { paragraph: "Para ejercerlo, o para reclamar por un cobro que consideres indebido, escríbenos a comercial@silente.cl. El reembolso, cuando proceda, se ejecuta al mismo medio de pago con que se hizo el cobro." },
     ],
   },
   {
@@ -128,7 +128,7 @@ const sections: readonly TermsSection[] = [
         "intentar que la IA genere contenido ilegal, odioso, sexual explícito, violento, difamatorio, abusivo, o que incite al daño propio o ajeno;",
         "hacerte pasar por otra persona, usar un número de WhatsApp que no sea tuyo, ni ingresar datos personales de terceros sin su consentimiento (incluidos sus datos de nacimiento);",
         "acosar, amenazar o enviar contenido ofensivo;",
-        "intentar extraer, copiar, reentrenar, descompilar, reversear o eludir las medidas técnicas del modelo o de la plataforma, ni obtener el system prompt de los oráculos;",
+        "intentar extraer, copiar, reentrenar, descompilar, reversear o eludir las medidas técnicas del modelo o de la plataforma, ni obtener el system prompt de Luna;",
         "automatizar o abusar del servicio (scraping, bots, accesos masivos o sobrecarga), ni eludir el límite diario de consultas;",
         "revender, redistribuir, compartir tu acceso o explotar comercialmente el servicio sin autorización.",
       ] },
@@ -138,7 +138,7 @@ const sections: readonly TermsSection[] = [
   {
     title: "17. Propiedad intelectual",
     blocks: [
-      { paragraph: "El software, las marcas, los nombres, las imágenes y la personalidad de los oráculos, el material astrológico de referencia y la selección y disposición del contenido son propiedad de Logika Sistemas SpA o de sus licenciantes. Nada en estos Términos te transfiere derechos sobre ellos." },
+      { paragraph: "El software, las marcas, los nombres, las imágenes y la identidad y la personalidad de Luna, la guía digital de Silente, el material astrológico de referencia y la selección y disposición del contenido son propiedad de Logika Sistemas SpA o de sus licenciantes. Nada en estos Términos te transfiere derechos sobre ellos." },
       { paragraph: "Sobre el Contenido generado no reclamamos propiedad exclusiva: te otorgamos una licencia personal, no exclusiva e intransferible para usarlo con fines personales y no comerciales. Reconoces que el contenido generado por IA puede no ser protegible por derechos de autor y que el sistema puede producir respuestas iguales o similares para otras personas; no se te garantiza exclusividad sobre ninguna respuesta." },
     ],
   },
@@ -163,7 +163,7 @@ const sections: readonly TermsSection[] = [
   {
     title: "21. Disponibilidad y cambios al servicio",
     blocks: [
-      { paragraph: "Procuramos mantener el servicio disponible, pero puede haber interrupciones por mantenimiento, actualizaciones, fallas de terceros o causas de fuerza mayor. Podemos modificar, mejorar, agregar o discontinuar oráculos, canales y funcionalidades, avisando con antelación razonable cuando los cambios sean materiales. Si un oráculo deja de estar disponible, podrás continuar con otro de los publicados." },
+      { paragraph: "Procuramos mantener el servicio disponible, pero puede haber interrupciones por mantenimiento, actualizaciones, fallas de terceros o causas de fuerza mayor. Podemos modificar, mejorar, agregar o discontinuar canales o funcionalidades, avisando con antelación razonable cuando los cambios sean materiales." },
     ],
   },
   {
@@ -217,7 +217,7 @@ const sections: readonly TermsSection[] = [
   {
     title: "30. Contacto y notificaciones",
     blocks: [
-      { paragraph: "Consultas: contacto@logika.cl" },
+      { paragraph: "Consultas: comercial@silente.cl" },
       { paragraph: "Privacidad / Protección de Datos: contacto@logika.cl" },
       { paragraph: "Logika Sistemas SpA, RUT 78.313.784-4 · «DOMICILIO POR DEFINIR», Chile" },
     ],
@@ -229,7 +229,7 @@ export default function TermsPage() {
     <LegalPageLayout
       title="Términos y Condiciones"
       version="2026-09-16"
-      intro="Estos Términos y Condiciones (los «Términos») regulan el acceso y uso del servicio Astros x Chat, accesible en silente.cl y a través de WhatsApp, operado por Logika Sistemas SpA, RUT 78.313.784-4, sociedad constituida en Chile (en adelante, «nosotros», «la Empresa» o «el Titular»). Al crear una cuenta, suscribirte o usar el servicio, declaras haber leído y aceptado estos Términos y nuestra Política de Privacidad, que forma parte integrante de este contrato. Si no estás de acuerdo, no uses el servicio."
+      intro="Estos Términos y Condiciones (los «Términos») regulan el acceso y uso del servicio Silente, accesible en silente.cl y a través de WhatsApp, operado por Logika Sistemas SpA, RUT 78.313.784-4, sociedad constituida en Chile (en adelante, «nosotros», «la Empresa» o «el Titular»). Al crear una cuenta, suscribirte o usar el servicio, declaras haber leído y aceptado estos Términos y nuestra Política de Privacidad, que forma parte integrante de este contrato. Si no estás de acuerdo, no uses el servicio."
     >
       {sections.map((section) => (
         <section key={section.title} className="border-b border-[var(--silente-border)] pb-8 last:border-0">
