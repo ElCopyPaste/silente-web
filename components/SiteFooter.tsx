@@ -1,5 +1,6 @@
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 import { CookiePreferences } from "@/components/CookiePreferences";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export function SiteFooter() {
   return (
