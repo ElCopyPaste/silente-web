@@ -87,12 +87,14 @@ export function Hero() {
           <span className="block whitespace-nowrap">Hay cosas que</span>
           <span className="mt-1 block whitespace-nowrap">
             necesitas{" "}
-            <span className="relative inline-grid w-[4.35em] justify-items-center align-baseline text-center">
+            <span className="relative inline-block align-baseline">
+              <span aria-hidden="true" className="invisible">hablar.</span>
               <motion.span
                 key={state}
                 initial={reduceMotion ? false : { opacity: 0, y: state === "saber" ? 8 : -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={reduceMotion ? { duration: 0 } : { duration: 0.8, ease: "easeInOut" }}
+                className="absolute left-0 top-0 whitespace-nowrap"
               >
                 {activeWord}
               </motion.span>
