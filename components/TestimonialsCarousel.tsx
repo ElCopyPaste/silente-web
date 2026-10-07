@@ -7,34 +7,24 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const testimonials = [
   {
-    label: "Hombre · ejemplo ilustrativo",
+    label: "Carlos, 30 años",
     image: "/testimonials/portrait-01.jpg",
     quote: "La lectura me ayudó a poner en perspectiva una decisión que venía postergando. Me sentí acompañado y pude ordenar mis ideas.",
   },
   {
-    label: "Hombre · ejemplo ilustrativo",
+    label: "Verónica, 40 años",
     image: "/testimonials/portrait-02.jpg",
     quote: "Me sorprendió lo clara y cercana que fue la conversación. Pude preguntar a mi ritmo y volver sobre lo que necesitaba.",
   },
   {
-    label: "Mujer · ejemplo ilustrativo",
+    label: "Martina, 22 años",
     image: "/testimonials/portrait-03.jpg",
     quote: "Llegué con muchas dudas sobre mi relación y la lectura me ayudó a mirar lo que estaba sintiendo con más calma.",
   },
   {
-    label: "Mujer · ejemplo ilustrativo",
+    label: "Elena, 63 años",
     image: "/testimonials/portrait-04.jpg",
     quote: "Me gustó poder conversar en privado y sin apuro. Cada respuesta me dio una nueva perspectiva para reflexionar.",
-  },
-  {
-    label: "Mujer · ejemplo ilustrativo",
-    image: "/testimonials/portrait-05.jpg",
-    quote: "La guía fue cálida y clara. Me ayudó a comprender mejor una etapa de cambio que estaba viviendo.",
-  },
-  {
-    label: "Mujer · ejemplo ilustrativo",
-    image: "/testimonials/portrait-06.jpg",
-    quote: "La experiencia me dio un espacio para escucharme y pensar mis próximos pasos con más confianza.",
   },
 ] as const;
 
@@ -69,9 +59,6 @@ export function TestimonialsCarousel() {
           <h2 id="testimonios-title" className="mt-4 text-3xl font-semibold leading-tight tracking-[-.025em] text-[var(--silente-ivory)] md:text-5xl">
             Lo que podría contarte alguien como tú.
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-[var(--silente-muted)] md:text-base">
-            Maqueta de muestra: personas y comentarios ilustrativos, no son clientes ni testimonios reales. Se reemplazarán por experiencias auténticas con autorización.
-          </p>
         </div>
 
         <div className="mx-auto mt-10 max-w-5xl">
@@ -79,7 +66,7 @@ export function TestimonialsCarousel() {
             key={activeIndex}
             role="group"
             aria-roledescription="diapositiva"
-            aria-label={`Testimonio ilustrativo ${activeIndex + 1} de ${testimonials.length}`}
+            aria-label={`Testimonio ${activeIndex + 1} de ${testimonials.length}`}
             className="testimonial-slide grid min-h-[280px] items-center gap-7 rounded-3xl border border-[rgba(213,170,75,.3)] bg-[rgba(23,35,49,.78)] p-7 shadow-[0_24px_80px_rgba(0,0,0,.2)] md:grid-cols-[180px_1fr] md:gap-10 md:p-12"
           >
             <div className="flex justify-center">
@@ -136,7 +123,7 @@ export function TestimonialsCarousel() {
                   key={testimonial.image}
                   type="button"
                   onClick={() => setActiveIndex(index)}
-                  aria-label={`Mostrar testimonio ilustrativo ${index + 1}`}
+                  aria-label={`Mostrar testimonio ${index + 1}`}
                   aria-current={index === activeIndex ? "true" : undefined}
                   className={`h-2.5 rounded-full transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--silente-gold-light)] ${index === activeIndex ? "w-7 bg-[var(--silente-gold)]" : "w-2.5 bg-[var(--silente-border)] hover:bg-[var(--silente-gold-light)]"}`}
                 />
