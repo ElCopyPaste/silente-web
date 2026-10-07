@@ -61,40 +61,9 @@ export function Hero() {
   };
 
   const activeWord = state === "saber" ? "saber." : "hablar.";
-  const mobileHeadline = (
-    <div className="flex min-w-0 flex-col items-center justify-center">
-      <h1 className="text-[clamp(1.75rem,8.4vw,4rem)] font-normal leading-[.98] tracking-[-.055em] text-[var(--silente-ivory)]">
-        <span className="block whitespace-nowrap">Hay cosas que</span>
-        <span className="mt-1 block whitespace-nowrap">
-          necesitas{" "}
-          <span className="relative inline-block align-baseline">
-            <span aria-hidden="true" className="invisible">hablar.</span>
-            <motion.span
-              key={state}
-              initial={reduceMotion ? false : { opacity: 0, y: state === "saber" ? 5 : -5 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={reduceMotion ? { duration: 0 } : { duration: 0.8, ease: "easeInOut" }}
-              className="absolute left-0 top-0 whitespace-nowrap"
-            >
-              {activeWord}
-            </motion.span>
-          </span>
-        </span>
-      </h1>
-      <motion.p
-        key={state + "-mobile-phrase"}
-        initial={reduceMotion ? false : { opacity: 0, y: 5 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={reduceMotion ? { duration: 0 } : { duration: 0.8, ease: "easeInOut" }}
-        className="mt-2 min-h-[1.4em] w-full whitespace-nowrap text-[clamp(1.25rem,4.1vw,2.1rem)] font-normal tracking-[-.025em] text-[var(--silente-gold-light)]"
-      >
-        {state === "saber" ? "Silente te espera." : "Silente te escucha."}
-      </motion.p>
-    </div>
-  );
 
   return (
-    <section className="silente-stars relative isolate min-h-[100svh] overflow-hidden bg-[#07111d] px-3 pb-4 pt-2 md:px-8 md:pb-14 md:pt-5">
+    <section className="silente-stars relative isolate min-h-[100svh] overflow-hidden bg-[#07111d] px-4 pb-10 pt-3 md:px-8 md:pb-14 md:pt-5">
       <motion.div
         aria-hidden="true"
         className="absolute inset-[-2%] z-0"
@@ -111,10 +80,10 @@ export function Hero() {
           className="pointer-events-none object-cover object-center"
         />
       </motion.div>
-      <Header mobileHeroContent={mobileHeadline} />
+      <Header />
 
-      <div className="relative z-10 mx-auto mt-2 max-w-6xl text-center md:mt-7">
-        <h1 className="hidden w-full text-center text-[clamp(1.75rem,8.4vw,4rem)] font-normal leading-[.98] tracking-[-.055em] text-[var(--silente-ivory)] md:block md:text-[clamp(2.75rem,5vw,4.5rem)]">
+      <div className="relative z-10 mx-auto mt-6 max-w-6xl text-center md:mt-7">
+        <h1 className="w-full text-center text-[clamp(2rem,9vw,5.75rem)] font-normal leading-[1.02] md:text-[clamp(2.75rem,5vw,4.5rem)] tracking-[-.055em] text-[var(--silente-ivory)]">
           <span className="block whitespace-nowrap">Hay cosas que</span>
           <span className="mt-1 block whitespace-nowrap">
             necesitas{" "}
@@ -138,15 +107,15 @@ export function Hero() {
           initial={reduceMotion ? false : { opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={reduceMotion ? { duration: 0 } : { duration: 0.8, ease: "easeInOut" }}
-          className="hidden min-h-[1.4em] w-full text-center text-[clamp(1.25rem,4.1vw,2.1rem)] font-normal tracking-[-.025em] text-[var(--silente-gold-light)] md:mt-4 md:block"
+          className="mt-3 min-h-[1.4em] w-full text-center text-[clamp(1.25rem,4.1vw,2.1rem)] font-normal tracking-[-.025em] text-[var(--silente-gold-light)] md:mt-4"
         >
           {state === "saber" ? "Silente te espera." : "Silente te escucha."}
         </motion.p>
-        <p className="mx-auto mt-0 max-w-[700px] px-2 text-[12px] leading-[1.3] text-[var(--silente-ivory)]/80 md:mt-2 md:px-3 md:text-base md:leading-6">
+        <p className="mx-auto mt-2 max-w-[700px] px-3 text-sm leading-6 text-[var(--silente-ivory)]/80 md:text-base">
           Conversa con Luna por WhatsApp. Pregúntale por tu horóscopo y por lo que quieras saber sobre amor, dinero, trabajo y suerte.
         </p>
 
-        <div className="relative mx-auto mt-2 h-[clamp(260px,38svh,320px)] w-full max-w-6xl md:mt-5 md:h-[clamp(400px,46vh,460px)]">
+        <div className="relative mx-auto mt-4 h-[560px] w-full max-w-6xl md:mt-5 md:h-[clamp(400px,46vh,460px)]">
           <motion.div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
             animate={reduceMotion ? undefined : { scale: [1, 1.018, 1] }}
@@ -210,7 +179,7 @@ export function Hero() {
 
         <a
           href="#como-funciona"
-          className="hero-cta relative z-20 mx-auto -mt-3 flex min-h-16 w-full max-w-[590px] items-center justify-between rounded-full px-6 py-4 text-left font-medium text-[var(--silente-night)] transition-transform hover:scale-[1.01] active:scale-[.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)] md:flex md:min-h-16 md:py-4 md:text-base"
+          className="hero-cta relative z-20 mx-auto lg:-mt-8 flex min-h-16 w-full max-w-[590px] items-center justify-between rounded-full px-6 py-4 text-left font-medium text-[var(--silente-night)] transition-transform hover:scale-[1.01] active:scale-[.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
         >
           <span className="flex items-center gap-3">
             <WhatsAppIcon />
