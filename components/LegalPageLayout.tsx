@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
+import { SiteFooter } from "@/components/SiteFooter";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -43,16 +44,7 @@ export function LegalPageLayout({
         <div className="space-y-10">{children}</div>
       </article>
 
-      <footer className="border-t border-[var(--silente-border)] px-5 py-8">
-        <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-5 text-center text-xs text-[var(--silente-muted)] sm:flex-row sm:text-left">
-          <span className="tracking-[.18em] text-[var(--silente-gold)]">SILENTE</span>
-          <nav aria-label="Información legal" className="flex flex-wrap justify-center gap-x-5 gap-y-2">
-            <a className="transition-colors hover:text-[var(--silente-ivory)]" href={`${basePath}/terminos/`}>Términos</a>
-            <a className="transition-colors hover:text-[var(--silente-ivory)]" href={`${basePath}/privacidad/`}>Privacidad</a>
-            <a className="transition-colors hover:text-[var(--silente-ivory)]" href={`${basePath}/reembolsos/`}>Reembolsos</a>
-          </nav>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
