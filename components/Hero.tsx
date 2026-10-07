@@ -63,9 +63,9 @@ export function Hero() {
   const activeWord = state === "saber" ? "saber." : "hablar.";
   const mobileHeadline = (
     <div className="flex min-w-0 flex-col items-center justify-center">
-      <h1 className="text-[clamp(1.75rem,8.4vw,4rem)] font-normal leading-[1.02] tracking-[-.045em] text-[var(--silente-ivory)]">
+      <h1 className="text-[clamp(1.75rem,8.4vw,4rem)] font-normal leading-[.98] tracking-[-.055em] text-[var(--silente-ivory)]">
         <span className="block whitespace-nowrap">Hay cosas que</span>
-        <span className="block whitespace-nowrap">
+        <span className="mt-1 block whitespace-nowrap">
           necesitas{" "}
           <span className="relative inline-block align-baseline">
             <span aria-hidden="true" className="invisible">hablar.</span>
@@ -113,7 +113,7 @@ export function Hero() {
       </motion.div>
       <Header mobileHeroContent={mobileHeadline} />
 
-      <div className="relative z-10 mx-auto mt-1 max-w-6xl text-center md:mt-7">
+      <div className="relative z-10 mx-auto mt-2 max-w-6xl text-center md:mt-7">
         <h1 className="hidden w-full text-center text-[clamp(1.75rem,8.4vw,4rem)] font-normal leading-[.98] tracking-[-.055em] text-[var(--silente-ivory)] md:block md:text-[clamp(2.75rem,5vw,4.5rem)]">
           <span className="block whitespace-nowrap">Hay cosas que</span>
           <span className="mt-1 block whitespace-nowrap">
