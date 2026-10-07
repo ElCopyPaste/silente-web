@@ -112,7 +112,7 @@ export function Hero() {
           {state === "saber" ? "Silente te espera." : "Silente te escucha."}
         </motion.p>
         <p className="mx-auto mt-2 max-w-[700px] px-3 text-sm leading-6 text-[var(--silente-ivory)]/80 md:text-base">
-          Conversa con Luna, la guía de Silente, sobre amor, decisiones y lo que viene, por WhatsApp.
+          Conversa con Luna por WhatsApp. Pregúntale por tu horóscopo y por lo que quieras saber sobre amor, dinero, trabajo y suerte.
         </p>
 
         <div className="relative mx-auto mt-4 h-[560px] w-full max-w-6xl md:mt-5 md:h-[clamp(400px,46vh,460px)]">
