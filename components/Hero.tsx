@@ -111,6 +111,9 @@ export function Hero() {
         >
           {state === "saber" ? "Silente te espera." : "Silente te escucha."}
         </motion.p>
+        <p className="mx-auto mt-2 max-w-[700px] px-3 text-sm leading-6 text-[var(--silente-ivory)]/80 md:text-base">
+          Conversa con Luna, la guía de Silente, sobre amor, decisiones y lo que viene, por WhatsApp.
+        </p>
 
         <div className="relative mx-auto mt-4 h-[560px] w-full max-w-6xl md:mt-5 md:h-[clamp(400px,46vh,460px)]">
           <motion.div
@@ -143,7 +146,6 @@ export function Hero() {
                     }
               }
             >
-              
               <span className="relative z-10">{question}</span>
             </motion.button>
           ))}
@@ -170,7 +172,6 @@ export function Hero() {
                     }
               }
             >
-              
               <span className="relative z-10">{question}</span>
             </motion.button>
           ))}
@@ -186,7 +187,6 @@ export function Hero() {
           </span>
           <span className="text-2xl" aria-hidden="true">→</span>
         </a>
-        <p className="mt-3 text-sm text-[var(--silente-muted)]">Conversación privada por WhatsApp</p>
         <Benefits />
       </div>
     </section>

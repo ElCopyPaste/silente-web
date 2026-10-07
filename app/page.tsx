@@ -13,10 +13,10 @@ function WhatIsSilenteSection() {
             Una conversación para encontrar claridad.
           </h2>
           <p className="mt-6 text-base leading-7 text-[var(--silente-muted)] md:text-lg">
-            Silente es una experiencia interactiva inspirada en el conocimiento esotérico, la videncia y distintas mancias. Sus lecturas consideran tu carta natal y los tránsitos planetarios para ayudarte a explorar tus inquietudes y encontrar claridad sobre lo que necesitas saber.
+            Silente te ofrece un espacio para explorar tus preguntas sobre amor, relaciones, decisiones y futuro. Sus lecturas se inspiran en la videncia, la astrología y distintas mancias, y consideran tu carta natal y los tránsitos planetarios.
           </p>
           <p className="mt-5 text-base leading-7 text-[var(--silente-muted)] md:text-lg">
-            Conversas con Luna, la guía digital de Silente, por WhatsApp, en privado y a tu ritmo: puedes hacer una pregunta, profundizar y abrir nuevos temas cuando quieras.
+            Luna es la guía digital de Silente. Conversa con ella por WhatsApp, en privado y a tu ritmo. Haz una pregunta, profundiza en su respuesta y abre nuevos temas cuando quieras.
           </p>
         </div>
 
