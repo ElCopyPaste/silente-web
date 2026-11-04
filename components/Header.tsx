@@ -21,20 +21,20 @@ export function Header() {
         menuButtonRef.current?.focus();
       }
     }}>
-      <div className="relative flex h-[96px] items-center justify-center md:h-[116px]">
+      <div className="relative flex h-20 items-center justify-center md:h-[116px]">
         <a href="#" aria-label="Silente, inicio" className="flex items-center justify-center focus-visible:rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]">
-          <Image src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/logo-silente.webp"} alt="Silente" width={640} height={692} priority unoptimized className="h-[90px] w-auto object-contain md:h-[110px]" />
+          <Image src={(process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/logo-silente.webp"} alt="Silente" width={640} height={692} priority unoptimized className="h-[74px] w-auto object-contain md:h-[110px]" />
         </a>
         <button ref={menuButtonRef} type="button" aria-label={open ? "Cerrar menú" : "Abrir menú"} aria-expanded={open} aria-controls="menu-principal" onClick={() => setOpen((value) => !value)} className="absolute right-0 top-1/2 flex h-12 w-12 -translate-y-1/2 flex-col items-center justify-center gap-[7px] rounded-full transition-colors hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]">
-          <span className="h-[2px] w-8 bg-[var(--silente-gold-light)] transition-transform" />
-          <span className="h-[2px] w-8 bg-[var(--silente-gold-light)] transition-transform" />
-          <span className="h-[2px] w-8 bg-[var(--silente-gold-light)] transition-transform" />
+          <svg aria-hidden="true" viewBox="0 0 24 24" className="h-7 w-7 fill-none stroke-[var(--silente-gold-light)]" strokeWidth="1.6" strokeLinecap="round">
+            <path d={open ? "m6 6 12 12M6 18 18 6" : "M3 6h18M3 12h18M3 18h18"} />
+          </svg>
         </button>
       </div>
-      <div id="menu-principal" inert={!open} className={"overflow-hidden transition-[max-height,opacity,margin] duration-300 motion-reduce:transition-none " + (open ? "mt-3 max-h-56 opacity-100" : "max-h-0 opacity-0")}>
+      <div id="menu-principal" inert={!open} className={"absolute inset-x-0 top-full z-40 mt-3 transition-[max-height,opacity] duration-200 motion-reduce:transition-none " + (open ? "max-h-[min(24rem,calc(100svh-7rem))] overflow-y-auto opacity-100" : "max-h-0 overflow-hidden opacity-0")}>
         <nav className="rounded-2xl border border-[rgba(213,170,75,.35)] bg-[rgba(5,14,22,.9)] p-2 backdrop-blur-xl" aria-label="Navegación principal">
           {links.map(([label, href]) => (
-            <a key={href} href={href} onClick={() => setOpen(false)} className="block rounded-xl px-4 py-3 text-sm text-[var(--silente-ivory)] transition-colors hover:bg-[rgba(213,170,75,.12)] hover:text-[var(--silente-gold-light)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[var(--silente-gold-light)]">
+            <a key={href} href={href} onClick={() => setOpen(false)} className="flex min-h-12 items-center rounded-xl px-4 py-3 text-base text-[var(--silente-ivory)] transition-colors hover:bg-[rgba(213,170,75,.12)] hover:text-[var(--silente-gold-light)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[var(--silente-gold-light)]">
               {label}
             </a>
           ))}

@@ -28,6 +28,18 @@
 
 Esta revisión conserva los textos, el precio, los destinos y la identidad visual existentes. No publica cambios en la rama principal.
 
+## Continuación: fondo centrado y revisión final
+
+- Se incorpora `public/fondo-centrado.webp`, generado a partir del fondo existente, con las órbitas doradas centradas en la imagen. El Hero utiliza el nuevo recurso.
+- Las seis preguntas rodean el símbolo también en móvil y tablet. Se ajustan espacios, tamaño de texto y altura orbital para conservar legibilidad y acceso al botón principal.
+- En la vista móvil emulada de 390 × 844, el centro del símbolo queda en y = 422,8 px; el centro vertical de la pantalla está en y = 422 px. No hay desbordamiento horizontal.
+- Se inspeccionan vistas de 320 × 740, 390 × 844, 768 × 1024 y 1440 × 900. Después de la inspección de 320 px se compactan adicionalmente la cabecera y el bloque orbital; ese último ajuste específico no tiene una captura posterior.
+- Se comprueban apertura del menú, cierre con Escape y devolución del foco; despliegue de una respuesta de preguntas frecuentes; apertura de cookies y cancelación con Escape.
+- La alternancia de palabras conserva una transición breve y respeta la preferencia de movimiento reducido. El carrusel se pausa mientras está fuera de pantalla.
+- Detector de Impeccable sobre `app` y `components`: resultado vacío, sin hallazgos. TypeScript, ESLint y `git diff --check`: sin errores.
+- La compilación de producción se intentó, pero Next.js no pudo crear un proceso de trabajo: `spawn EPERM`. La verificación visual se realizó con el servidor local de desarrollo. No se acredita una compilación ni una publicación de producción.
+- Los pendientes funcionales descritos arriba continúan vigentes: destino de WhatsApp, video definitivo, registro/pago y enlaces sociales.
+
 ## Encaje de secciones solicitado posteriormente
 
 El usuario pidió encajar por sección manteniendo la posibilidad de hacer scroll.
