@@ -63,7 +63,7 @@ export function Hero() {
   const activeWord = state === "saber" ? "saber." : "hablar.";
 
   return (
-    <section className="silente-stars relative isolate min-h-[100svh] overflow-hidden bg-[#07111d] px-4 pb-10 pt-3 md:px-8 md:pb-14 md:pt-5">
+    <section className="silente-hero silente-stars relative isolate min-h-[100svh] overflow-hidden bg-[#07111d] px-4 pb-10 pt-3 md:px-8 md:pb-14 md:pt-5">
       <motion.div
         aria-hidden="true"
         className="absolute inset-[-2%] z-0"
@@ -82,7 +82,7 @@ export function Hero() {
       </motion.div>
       <Header />
 
-      <div className="relative z-10 mx-auto mt-6 max-w-6xl text-center md:mt-7">
+      <div className="hero-content relative z-10 mx-auto mt-6 max-w-6xl text-center md:mt-7">
         <h1 className="w-full text-center text-[clamp(2rem,9vw,5.75rem)] font-normal leading-[1.02] md:text-[clamp(2.75rem,5vw,4.5rem)] tracking-[-.055em] text-[var(--silente-ivory)]">
           <span className="block whitespace-nowrap">Hay cosas que</span>
           <span className="mt-1 block whitespace-nowrap">
@@ -115,7 +115,7 @@ export function Hero() {
           Conversa con Luna por WhatsApp. Pregúntale por tu horóscopo y por lo que quieras saber sobre amor, dinero, trabajo y suerte.
         </p>
 
-        <div className="relative mx-auto mt-4 h-[440px] w-full max-w-6xl md:mt-5 md:h-[480px] lg:h-[clamp(400px,46vh,460px)]">
+        <div className="hero-orbit relative mx-auto mt-4 h-[440px] w-full max-w-6xl md:mt-5 md:h-[480px] lg:h-[clamp(400px,46vh,460px)]">
           <motion.div
             className="absolute left-1/2 top-[62%] -translate-x-1/2 -translate-y-1/2 lg:top-1/2"
             animate={reduceMotion ? undefined : { scale: [1, 1.018, 1] }}

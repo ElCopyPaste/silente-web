@@ -6,8 +6,8 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 function WhatIsSilenteSection() {
   return (
-    <section id="como-funciona" className="bg-[var(--silente-secondary)] px-5 py-24 md:px-8 md:py-32">
-      <div className="mx-auto max-w-6xl">
+    <section id="como-funciona" className="bg-[var(--silente-secondary)] px-5 py-12 md:px-8 md:py-16">
+      <div className="mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <div className="max-w-4xl">
           <p className="text-sm uppercase tracking-[.22em] text-[var(--silente-gold)]">Qué es Silente</p>
           <h2 className="mt-4 text-4xl font-semibold leading-[1.02] tracking-[-.03em] text-[var(--silente-ivory)] md:text-6xl">
@@ -21,7 +21,7 @@ function WhatIsSilenteSection() {
           </p>
         </div>
 
-        <div className="mt-16">
+        <div>
           <p className="mb-5 text-sm uppercase tracking-[.22em] text-[var(--silente-gold)]">Una conversación por WhatsApp</p>
           <div role="img" aria-label="Espacio reservado para el demo en video de una conversación por WhatsApp" className="flex aspect-video w-full items-center justify-center overflow-hidden rounded-3xl border border-[rgba(213,170,75,.24)] bg-[radial-gradient(ellipse_at_center,rgba(213,170,75,.12),transparent_58%),rgba(5,14,22,.72)] px-6 text-center">
             <div>
@@ -38,7 +38,7 @@ function WhatIsSilenteSection() {
 
 export default function Home() {
   return (
-    <main>
+    <main className="silente-home">
       <Hero />
       <WhatIsSilenteSection />
       <Pricing />

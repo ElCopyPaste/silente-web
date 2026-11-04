@@ -26,11 +26,11 @@ function BenefitIcon({ name }: { name: BenefitIconName }) {
 
 export function Pricing() {
   return (
-    <section id="elige-tu-plan" className="relative overflow-hidden px-5 py-24 md:px-8 md:py-32">
-      <div className="mx-auto max-w-5xl">
-        <div className="text-center">
+    <section id="elige-tu-plan" className="relative overflow-hidden px-5 py-12 md:px-8 md:py-16">
+      <div className="mx-auto grid w-full max-w-5xl items-center gap-10 md:grid-cols-[.9fr_1.1fr] md:gap-8 lg:gap-16">
+        <div className="text-center md:text-left">
           <p className="text-sm uppercase tracking-[.22em] text-[var(--silente-gold)]">Elige tu plan</p>
-          <h2 className="mt-4 text-4xl font-semibold leading-[1.02] tracking-[-.03em] text-[var(--silente-ivory)] md:text-6xl">
+          <h2 className="mt-4 text-4xl font-semibold leading-[1.02] tracking-[-.03em] text-[var(--silente-ivory)] md:text-5xl lg:text-6xl">
             Un espacio para conversar cuando lo necesitas.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[var(--silente-muted)]">
@@ -38,7 +38,7 @@ export function Pricing() {
           </p>
         </div>
 
-        <div className="mx-auto mt-14 max-w-lg">
+        <div className="mx-auto w-full max-w-lg">
           <article className="relative overflow-hidden rounded-[2rem] border border-[rgba(213,170,75,.45)] bg-[var(--silente-secondary)] p-7 shadow-[0_0_70px_rgba(213,170,75,.06)] md:p-10">
             <div className="absolute inset-x-0 top-0 h-px bg-[var(--silente-gold)]" />
             <div className="flex items-start justify-between gap-6">

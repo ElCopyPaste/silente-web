@@ -54,7 +54,7 @@ export function TestimonialsCarousel() {
   const active = testimonials[activeIndex];
 
   return (
-    <section id="testimonios" aria-labelledby="testimonios-title" className="bg-[var(--silente-night)] px-5 py-20 md:px-8 md:py-28">
+    <section id="testimonios" aria-labelledby="testimonios-title" className="bg-[var(--silente-night)] px-5 py-12 md:px-8 md:py-16">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm uppercase tracking-[.22em] text-[var(--silente-gold)]">Una experiencia para compartir</p>

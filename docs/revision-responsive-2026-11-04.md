@@ -27,3 +27,15 @@
 - Los enlaces sociales apuntan a `#`.
 
 Esta revisión conserva los textos, el precio, los destinos y la identidad visual existentes. No publica cambios en la rama principal.
+
+## Encaje de secciones solicitado posteriormente
+
+El usuario pidió encajar por sección manteniendo la posibilidad de hacer scroll.
+
+- Se aplica `scroll-snap-type: y proximity` al documento únicamente cuando contiene la Home. No se interceptan eventos de rueda ni de teclado.
+- Cada sección principal tiene una altura mínima de `100svh`, encaja por su inicio y puede crecer según su contenido. El footer conserva su altura natural y encaja por su borde inferior.
+- Se compactan los espacios de la portada según la altura disponible. La explicación y el video se distribuyen en dos columnas en escritorio; la presentación del plan y su detalle, en dos columnas desde tablet.
+- Las cinco secciones principales miden exactamente una pantalla en 1440 × 900, 1366 × 768 y 768 × 1024.
+- En 1366 × 768, el recorrido de scroll terminó sucesivamente en 768, 1536, 2304 y 3072 px: inicio de explicación, plan, preguntas y testimonios.
+- En 390 × 844, la portada, la explicación, las preguntas cerradas y los testimonios caben en una pantalla. El plan conserva su altura de contenido. Se comprobó el avance libre de 40 px dentro del plan con la flecha hacia abajo.
+- Los tamaños anteriores son vistas emuladas en Chromium, no pruebas en dispositivos físicos. Una pantalla más baja, el zoom o respuestas desplegadas pueden requerir scroll dentro de la sección.

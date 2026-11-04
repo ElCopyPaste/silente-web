@@ -15,6 +15,37 @@ body{margin:0;background:var(--silente-night);color:var(--silente-ivory);font-fa
 button{touch-action:manipulation}
 ::selection{background:var(--silente-gold);color:var(--silente-night)}
 
+/* Native document scrolling stays available inside sections taller than the screen. */
+html:has(.silente-home){scroll-snap-type:y proximity}
+.silente-home > section{
+  min-block-size:100svh;
+  scroll-snap-align:start;
+  scroll-snap-stop:always;
+}
+.silente-home > section:not(.silente-hero){
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-block:clamp(24px,5svh,64px);
+}
+.silente-home > section:not(.silente-hero) > div{width:100%}
+.silente-home > footer{scroll-snap-align:end}
+.silente-hero{padding-block:12px 24px}
+.silente-hero .hero-content{margin-top:16px;width:100%}
+.silente-hero .hero-orbit{height:clamp(300px,calc(100svh - 532px),470px)}
+.silente-hero .hero-content > ul{margin-top:16px}
+.silente-hero .hero-content > ul > li{min-height:72px}
+
+@media (min-width:1024px){
+  .silente-hero header > div:first-child{height:88px}
+  .silente-hero header img{height:84px}
+  .silente-hero h1{font-size:clamp(2.75rem,6svh,4rem);letter-spacing:-.04em}
+  .silente-hero .hero-content > p:first-of-type{font-size:clamp(1.4rem,3svh,2rem);margin-top:12px}
+  .silente-hero .hero-orbit{height:clamp(240px,calc(100svh - 530px),420px);margin-top:12px}
+  .silente-hero .silente-symbol{width:clamp(160px,25svh,260px)}
+  .silente-hero .hero-cta{margin-top:0}
+}
+
 .silente-stars{
   position:relative;
   isolation:isolate;
