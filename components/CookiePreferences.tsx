@@ -41,9 +41,11 @@ function PreferenceSwitch({ checked, disabled, label, onChange }: {
       aria-checked={checked}
       disabled={disabled}
       onClick={onChange}
-      className={`relative h-7 w-12 shrink-0 rounded-full transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--silente-gold-light)] ${checked ? "bg-[var(--silente-gold)]" : "bg-[rgba(255,255,255,.2)]"} ${disabled ? "cursor-not-allowed opacity-80" : ""}`}
+      className={`relative flex h-11 w-12 shrink-0 items-center rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--silente-gold-light)] ${disabled ? "cursor-not-allowed opacity-80" : ""}`}
     >
-      <span className={`absolute top-1 h-5 w-5 rounded-full bg-[var(--silente-night)] transition-transform ${checked ? "translate-x-6" : "translate-x-1"}`} />
+      <span aria-hidden="true" className={`relative h-7 w-12 rounded-full transition-colors ${checked ? "bg-[var(--silente-gold)]" : "bg-[rgba(255,255,255,.2)]"}`}>
+        <span className={`absolute left-1 top-1 h-5 w-5 rounded-full bg-[var(--silente-night)] transition-transform ${checked ? "translate-x-5" : "translate-x-0"}`} />
+      </span>
     </button>
   );
 }
@@ -52,6 +54,7 @@ export function CookiePreferences() {
   const [open, setOpen] = useState(false);
   const [preferences, setPreferences] = useState<Preferences>(loadPreferences);
   const dialogRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
 
   function closeWithoutSaving() {
     setPreferences(loadPreferences());
@@ -61,11 +64,15 @@ export function CookiePreferences() {
   useEffect(() => {
     if (!open) return;
     const dialog = dialogRef.current;
+    const trigger = triggerRef.current;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     const focusable = () => Array.from(dialog?.querySelectorAll<HTMLElement>('button:not(:disabled)') ?? []);
     focusable()[0]?.focus();
 
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
+        setPreferences(loadPreferences());
         setOpen(false);
         return;
       }
@@ -84,7 +91,11 @@ export function CookiePreferences() {
     }
 
     document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+      trigger?.focus();
+    };
   }, [open]);
 
   function savePreferences() {
@@ -102,12 +113,13 @@ export function CookiePreferences() {
   return (
     <>
       <button
+        ref={triggerRef}
         type="button"
         onClick={() => {
           setPreferences(loadPreferences());
           setOpen(true);
         }}
-        className="mt-3 block w-full text-center text-sm font-normal leading-5 text-[var(--silente-muted)] transition-colors hover:text-[var(--silente-gold-light)] sm:text-left"
+        className="mt-3 block min-h-11 w-full rounded text-center text-sm font-normal leading-5 text-[var(--silente-muted)] transition-colors hover:text-[var(--silente-gold-light)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--silente-gold-light)] sm:text-left"
       >
         Preferencias de cookies
       </button>

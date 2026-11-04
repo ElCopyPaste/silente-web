@@ -110,11 +110,11 @@ export function FAQSection() {
         <div className="divide-y divide-[var(--silente-border)] border-y border-[var(--silente-border)]">
           {faqs.map(({ question, answer }) => (
             <details key={question} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg text-[var(--silente-ivory)] marker:hidden">
+              <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 rounded text-lg text-[var(--silente-ivory)] marker:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]">
                 <span>{question}</span>
                 <span aria-hidden="true" className="text-xl text-[var(--silente-gold)] transition-transform group-open:rotate-45">+</span>
               </summary>
-              <p className="max-w-2xl pt-4 pr-8 text-sm leading-6 text-[var(--silente-muted)]">{answer}</p>
+              <p className="max-w-2xl pt-4 pr-2 text-base leading-7 text-[var(--silente-muted)]">{answer}</p>
             </details>
           ))}
         </div>

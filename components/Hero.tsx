@@ -25,15 +25,6 @@ const desktopPositions = [
   "right-[6%] bottom-[8%]",
 ];
 
-const mobilePositions = [
-  "left-[2%] top-[13%]",
-  "right-[2%] top-[13%]",
-  "left-[2%] top-[42%]",
-  "right-[2%] top-[42%]",
-  "left-[2%] bottom-[8%]",
-  "right-[2%] bottom-[8%]",
-];
-
 function WhatsAppIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-current">
@@ -63,15 +54,13 @@ export function Hero() {
   const activeWord = state === "saber" ? "saber." : "hablar.";
 
   return (
-    <section className="silente-stars relative isolate min-h-[100svh] overflow-hidden bg-[#07111d] px-4 pb-10 pt-3 md:px-8 md:pb-14 md:pt-5">
-      <motion.div
+    <section className="silente-hero silente-stars relative isolate min-h-[100svh] overflow-hidden bg-[#07111d] px-4 pb-10 pt-3 md:px-8 md:pb-14 md:pt-5">
+      <div
         aria-hidden="true"
-        className="absolute inset-[-2%] z-0"
-        animate={reduceMotion ? undefined : { scale: [1.02, 1.06, 1.02], x: [0, -7, 0], y: [0, 5, 0] }}
-        transition={reduceMotion ? undefined : { duration: 48, repeat: Infinity, ease: "easeInOut" }}
+        className="hero-background absolute inset-[-2%] z-0"
       >
         <Image
-          src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/fondo.webp`}
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/fondo-centrado.webp`}
           alt=""
           fill
           priority
@@ -79,11 +68,11 @@ export function Hero() {
           sizes="100vw"
           className="pointer-events-none object-cover object-center"
         />
-      </motion.div>
+      </div>
       <Header />
 
-      <div className="relative z-10 mx-auto mt-6 max-w-6xl text-center md:mt-7">
-        <h1 className="w-full text-center text-[clamp(2rem,9vw,5.75rem)] font-normal leading-[1.02] md:text-[clamp(2.75rem,5vw,4.5rem)] tracking-[-.055em] text-[var(--silente-ivory)]">
+      <div className="hero-content relative z-10 mx-auto mt-6 max-w-6xl text-center md:mt-7">
+        <h1 className="w-full text-center text-[clamp(1.75rem,8.4vw,2.5rem)] font-normal leading-[1.08] md:text-[clamp(2.75rem,5vw,4.5rem)] tracking-[-.035em] text-[var(--silente-ivory)]">
           <span className="block whitespace-nowrap">Hay cosas que</span>
           <span className="mt-1 block whitespace-nowrap">
             necesitas{" "}
@@ -91,7 +80,7 @@ export function Hero() {
               <span aria-hidden="true" className="invisible">hablar.</span>
               <motion.span
                 key={state}
-                initial={reduceMotion ? false : { opacity: 0, y: state === "saber" ? 8 : -8 }}
+                initial={reduceMotion ? false : { opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={reduceMotion ? { duration: 0 } : { duration: 0.8, ease: "easeInOut" }}
                 className="absolute left-0 top-0 whitespace-nowrap"
@@ -104,28 +93,24 @@ export function Hero() {
 
         <motion.p
           key={state + "-phrase"}
-          initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
           transition={reduceMotion ? { duration: 0 } : { duration: 0.8, ease: "easeInOut" }}
           className="mt-3 min-h-[1.4em] w-full text-center text-[clamp(1.25rem,4.1vw,2.1rem)] font-normal tracking-[-.025em] text-[var(--silente-gold-light)] md:mt-4"
         >
           {state === "saber" ? "Silente te espera." : "Silente te escucha."}
         </motion.p>
-        <p className="mx-auto mt-2 max-w-[700px] px-3 text-sm leading-6 text-[var(--silente-ivory)]/80 md:text-base">
+        <p className="hero-intro mx-auto mt-3 max-w-[700px] text-base leading-6 text-[var(--silente-ivory)]/90">
           Conversa con Luna por WhatsApp. Pregúntale por tu horóscopo y por lo que quieras saber sobre amor, dinero, trabajo y suerte.
         </p>
 
-        <div className="relative mx-auto mt-4 h-[560px] w-full max-w-6xl md:mt-5 md:h-[clamp(400px,46vh,460px)]">
-          <motion.div
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-            animate={reduceMotion ? undefined : { scale: [1, 1.018, 1] }}
-            transition={reduceMotion ? undefined : { duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          >
+        <div className="hero-orbit relative mx-auto mt-4 h-[440px] w-full max-w-6xl md:mt-5 md:h-[480px] lg:h-[clamp(400px,46vh,460px)]">
+          <div className="hero-symbol-anchor">
             <SilenteSymbol />
-          </motion.div>
+          </div>
 
           {questions.map((question, index) => (
-            <motion.button
+            <button
               key={question}
               type="button"
               onClick={goToHow}
@@ -133,53 +118,28 @@ export function Hero() {
                 "question-capsule question-capsule-" + index + " absolute hidden max-w-[240px] px-5 py-4 text-center text-sm leading-[1.35] text-[var(--silente-ivory)] lg:block " +
                 desktopPositions[index]
               }
-              initial={reduceMotion ? false : { opacity: 0, y: 10 }}
-              animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: [0, -5, 0] }}
-              whileHover={reduceMotion ? undefined : { scale: 1.035 }}
-              whileFocus={reduceMotion ? undefined : { scale: 1.035 }}
-              transition={
-                reduceMotion
-                  ? { duration: 0 }
-                  : {
-                      opacity: { delay: 0.2 + index * 0.12, duration: 0.7 },
-                      y: { delay: 0.2 + index * 0.12, duration: 6.5 + index * 0.45, repeat: Infinity, ease: "easeInOut" },
-                    }
-              }
             >
               <span className="relative z-10">{question}</span>
-            </motion.button>
+            </button>
           ))}
 
           {questions.map((question, index) => (
-            <motion.button
+            <button
               key={"mobile-" + question}
               type="button"
               onClick={goToHow}
               className={
-                "question-capsule question-capsule-" + index + " absolute block w-[min(32vw,190px)] px-2.5 py-3 text-center text-[clamp(11px,1.8vw,14px)] leading-[1.3] text-[var(--silente-ivory)] lg:hidden " +
-                mobilePositions[index]
-              }
-              initial={reduceMotion ? false : { opacity: 0, y: 10 }}
-              animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: [0, -4, 0] }}
-              whileHover={reduceMotion ? undefined : { scale: 1.035 }}
-              whileFocus={reduceMotion ? undefined : { scale: 1.035 }}
-              transition={
-                reduceMotion
-                  ? { duration: 0 }
-                  : {
-                      opacity: { delay: 0.2 + index * 0.12, duration: 0.7 },
-                      y: { delay: 0.2 + index * 0.12, duration: 6.5 + index * 0.45, repeat: Infinity, ease: "easeInOut" },
-                    }
+                "question-capsule question-mobile question-capsule-" + index + " min-h-14 px-3 py-3 text-center text-base leading-[1.35] text-[var(--silente-ivory)] lg:hidden"
               }
             >
               <span className="relative z-10">{question}</span>
-            </motion.button>
+            </button>
           ))}
         </div>
 
         <a
           href="#como-funciona"
-          className="hero-cta relative z-20 mx-auto lg:-mt-8 flex min-h-16 w-full max-w-[590px] items-center justify-between rounded-full px-6 py-4 text-left font-medium text-[var(--silente-night)] transition-transform hover:scale-[1.01] active:scale-[.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
+          className="hero-cta relative z-20 mx-auto lg:-mt-8 flex min-h-14 w-full max-w-[590px] items-center justify-between rounded-full px-6 py-3 text-left font-medium text-[var(--silente-night)] transition-transform hover:scale-[1.01] active:scale-[.99] lg:min-h-16 lg:py-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
         >
           <span className="flex items-center gap-3">
             <WhatsAppIcon />

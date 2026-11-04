@@ -10,10 +10,10 @@ export function Benefits() {
       {items.map(({ icon, label }, index) => (
         <li
           key={label}
-          className={"flex min-h-28 flex-col items-center justify-center gap-2 px-2 text-center text-[clamp(11px,2vw,16px)] leading-snug text-[var(--silente-muted)] " + (index > 0 ? "border-l border-[rgba(174,181,188,.4)]" : "")}
+          className={"flex min-h-28 flex-col items-center justify-center gap-2 px-1.5 text-center text-xs leading-[1.4] text-[var(--silente-muted)] sm:text-sm lg:text-base " + (index > 0 ? "border-l border-[rgba(174,181,188,.4)]" : "")}
         >
-          <span aria-hidden="true" className="inline-flex h-9 w-9 shrink-0 items-center justify-center text-[var(--silente-gold)]">
-            {icon === "infinity" && <span className="text-4xl leading-none">∞</span>}
+          <span aria-hidden="true" className="inline-flex h-7 w-7 shrink-0 items-center justify-center text-[var(--silente-gold)] lg:h-9 lg:w-9">
+            {icon === "infinity" && <svg viewBox="0 0 24 24" className="h-7 w-7 fill-none stroke-current" strokeWidth="1.5"><path d="M12 12c-2-3-3.5-5-6-5a5 5 0 0 0 0 10c2.5 0 4-2 6-5Zm0 0c2-3 3.5-5 6-5a5 5 0 0 1 0 10c-2.5 0-4-2-6-5Z" /></svg>}
             {icon === "clock" && (
               <svg viewBox="0 0 24 24" className="h-8 w-8 fill-none stroke-current" strokeWidth="1.5">
                 <circle cx="12" cy="12" r="8.5" />

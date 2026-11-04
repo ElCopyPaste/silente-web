@@ -26,11 +26,11 @@ function BenefitIcon({ name }: { name: BenefitIconName }) {
 
 export function Pricing() {
   return (
-    <section id="elige-tu-plan" className="relative overflow-hidden px-5 py-24 md:px-8 md:py-32">
-      <div className="mx-auto max-w-5xl">
-        <div className="text-center">
+    <section id="elige-tu-plan" className="relative overflow-hidden px-5 py-12 md:px-8 md:py-16">
+      <div className="mx-auto grid w-full max-w-5xl items-center gap-10 md:grid-cols-[.9fr_1.1fr] md:gap-8 lg:gap-16">
+        <div className="text-center md:text-left">
           <p className="text-sm uppercase tracking-[.22em] text-[var(--silente-gold)]">Elige tu plan</p>
-          <h2 className="mt-4 text-4xl font-semibold leading-[1.02] tracking-[-.03em] text-[var(--silente-ivory)] md:text-6xl">
+          <h2 className="mt-4 text-4xl font-semibold leading-[1.02] tracking-[-.03em] text-[var(--silente-ivory)] md:text-5xl lg:text-6xl">
             Un espacio para conversar cuando lo necesitas.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[var(--silente-muted)]">
@@ -38,11 +38,11 @@ export function Pricing() {
           </p>
         </div>
 
-        <div className="mx-auto mt-14 max-w-lg">
-          <article className="relative overflow-hidden rounded-[2rem] border border-[rgba(213,170,75,.45)] bg-[var(--silente-secondary)] p-7 shadow-[0_0_70px_rgba(213,170,75,.06)] md:p-10">
+        <div className="mx-auto w-full max-w-lg">
+          <article className="relative overflow-hidden rounded-2xl border border-[rgba(213,170,75,.45)] bg-[var(--silente-secondary)] p-5 md:p-8">
             <div className="absolute inset-x-0 top-0 h-px bg-[var(--silente-gold)]" />
-            <div className="flex items-start justify-between gap-6">
-              <div>
+            <div className="flex flex-wrap items-start justify-between gap-3">
+              <div className="min-w-0 flex-1">
                 <p className="text-xs uppercase tracking-[.2em] text-[var(--silente-gold)]">Plan Silente</p>
                 <h3 className="mt-3 text-2xl font-semibold text-[var(--silente-ivory)]">Conversación privada</h3>
               </div>
@@ -51,14 +51,14 @@ export function Pricing() {
               </span>
             </div>
 
-            <div className="mt-10 border-y border-[var(--silente-border)] py-7">
+            <div className="mt-6 border-y border-[var(--silente-border)] py-5 md:mt-8">
               <p className="text-xs uppercase tracking-[.18em] text-[var(--silente-muted)]">Suscripción mensual</p>
-              <p className="mt-2 text-4xl font-semibold tracking-tight text-[var(--silente-ivory)] md:text-5xl">
-                $6.000 <span className="text-lg font-normal text-[var(--silente-muted)]">CLP / mes</span>
+              <p className="mt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-4xl font-semibold tracking-tight text-[var(--silente-ivory)] md:text-5xl">
+                $6.000 <span className="whitespace-nowrap text-base font-normal text-[var(--silente-muted)]">CLP / mes</span>
               </p>
             </div>
 
-            <ul className="mt-7 space-y-4 text-sm text-[var(--silente-ivory)]">
+            <ul className="mt-6 space-y-3 text-base leading-6 text-[var(--silente-ivory)]">
               <li className="flex items-start gap-3"><BenefitIcon name="messages" /><span>25 mensajes al día por WhatsApp</span></li>
               <li className="flex items-start gap-3"><BenefitIcon name="clock" /><span>Disponible 24 horas al día</span></li>
               <li className="flex items-start gap-3"><BenefitIcon name="history" /><span>Historial de conversaciones guardado</span></li>
@@ -69,7 +69,7 @@ export function Pricing() {
 
             <a
               href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/checkout/`}
-              className="mt-9 flex items-center justify-between rounded-full bg-[var(--silente-gold)] px-6 py-4 font-semibold text-[var(--silente-night)] transition-transform hover:scale-[1.01] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
+              className="mt-6 flex min-h-14 items-center justify-between rounded-full bg-[var(--silente-gold)] px-6 py-4 font-semibold text-[var(--silente-night)] transition-transform hover:scale-[1.01] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--silente-gold-light)]"
             >
               <span>Suscribirme</span>
               <span aria-hidden="true">→</span>
