@@ -5,14 +5,14 @@ export function SilenteSymbol() {
     <div
       role="img"
       aria-label="Aro dorado de luz en el centro del sistema orbital"
-      className="silente-symbol relative aspect-square w-[min(36vw,280px)] md:w-72"
+      className="silente-symbol relative aspect-square w-[min(30vw,180px)] lg:w-72"
     >
       <Image
         src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/central-symbol.webp`}
         alt=""
         fill
         unoptimized
-        sizes="(max-width: 768px) 36vw, 288px"
+        sizes="(min-width: 1024px) 288px, (min-width: 600px) 180px, 30vw"
         className="object-contain opacity-80 mix-blend-screen"
       />
     </div>

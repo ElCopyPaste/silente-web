@@ -26,12 +26,12 @@ const desktopPositions = [
 ];
 
 const mobilePositions = [
-  "left-[2%] top-[13%]",
-  "right-[2%] top-[13%]",
-  "left-[2%] top-[42%]",
-  "right-[2%] top-[42%]",
-  "left-[2%] bottom-[8%]",
-  "right-[2%] bottom-[8%]",
+  "left-[1%] top-[3%]",
+  "right-[1%] top-[3%]",
+  "left-[1%] top-[28%]",
+  "right-[1%] top-[28%]",
+  "left-[1%] bottom-[3%]",
+  "right-[1%] bottom-[3%]",
 ];
 
 function WhatsAppIcon() {
@@ -115,9 +115,9 @@ export function Hero() {
           Conversa con Luna por WhatsApp. Pregúntale por tu horóscopo y por lo que quieras saber sobre amor, dinero, trabajo y suerte.
         </p>
 
-        <div className="relative mx-auto mt-4 h-[560px] w-full max-w-6xl md:mt-5 md:h-[clamp(400px,46vh,460px)]">
+        <div className="relative mx-auto mt-4 h-[440px] w-full max-w-6xl md:mt-5 md:h-[480px] lg:h-[clamp(400px,46vh,460px)]">
           <motion.div
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+            className="absolute left-1/2 top-[62%] -translate-x-1/2 -translate-y-1/2 lg:top-1/2"
             animate={reduceMotion ? undefined : { scale: [1, 1.018, 1] }}
             transition={reduceMotion ? undefined : { duration: 8, repeat: Infinity, ease: "easeInOut" }}
           >
@@ -156,7 +156,7 @@ export function Hero() {
               type="button"
               onClick={goToHow}
               className={
-                "question-capsule question-capsule-" + index + " absolute block w-[min(32vw,190px)] px-2.5 py-3 text-center text-[clamp(11px,1.8vw,14px)] leading-[1.3] text-[var(--silente-ivory)] lg:hidden " +
+                "question-capsule question-capsule-" + index + " absolute block min-h-14 w-[44%] max-w-[240px] px-3 py-3 text-center text-[13px] leading-[1.4] text-[var(--silente-ivory)] sm:text-sm lg:hidden " +
                 mobilePositions[index]
               }
               initial={reduceMotion ? false : { opacity: 0, y: 10 }}

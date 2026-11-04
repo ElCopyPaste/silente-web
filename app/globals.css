@@ -12,7 +12,6 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--silente-night);color:var(--silente-ivory);font-family:var(--font-syne),sans-serif}
-button,a{font:inherit}
 button{touch-action:manipulation}
 ::selection{background:var(--silente-gold);color:var(--silente-night)}
 

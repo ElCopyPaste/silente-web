@@ -31,6 +31,8 @@ const testimonials = [
 export function TestimonialsCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [interacting, setInteracting] = useState(false);
+  const [hovered, setHovered] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
@@ -42,12 +44,12 @@ export function TestimonialsCarousel() {
   }, []);
 
   useEffect(() => {
-    if (paused || reducedMotion) return;
+    if (paused || reducedMotion || interacting || hovered) return;
     const interval = window.setInterval(() => {
       setActiveIndex((index) => (index + 1) % testimonials.length);
     }, 5000);
     return () => window.clearInterval(interval);
-  }, [paused, reducedMotion]);
+  }, [paused, reducedMotion, interacting, hovered]);
 
   const active = testimonials[activeIndex];
 
@@ -61,7 +63,14 @@ export function TestimonialsCarousel() {
           </h2>
         </div>
 
-        <div className="mx-auto mt-10 max-w-5xl">
+        <div className="mx-auto mt-10 max-w-5xl"
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          onFocusCapture={() => setInteracting(true)}
+          onBlurCapture={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget)) setInteracting(false);
+          }}
+        >
           <article
             key={activeIndex}
             role="group"
@@ -103,7 +112,7 @@ export function TestimonialsCarousel() {
                 onClick={() => setPaused((value) => !value)}
                 aria-pressed={paused}
                 aria-label={paused ? "Reanudar cambio automático" : "Pausar cambio automático"}
-                className="rounded-full border border-[var(--silente-border)] px-4 py-2 text-xs text-[var(--silente-muted)] transition-colors hover:border-[var(--silente-gold)] hover:text-[var(--silente-ivory)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--silente-gold-light)]"
+                className="min-h-11 rounded-full border border-[var(--silente-border)] px-4 py-2 text-xs text-[var(--silente-muted)] transition-colors hover:border-[var(--silente-gold)] hover:text-[var(--silente-ivory)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--silente-gold-light)]"
               >
                 {paused ? "Reanudar" : "Pausar"}
               </button>
@@ -117,7 +126,7 @@ export function TestimonialsCarousel() {
               </button>
             </div>
 
-            <div className="flex items-center gap-2" role="group" aria-label="Elegir testimonio">
+            <div className="flex items-center" role="group" aria-label="Elegir testimonio">
               {testimonials.map((testimonial, index) => (
                 <button
                   key={testimonial.image}
@@ -125,8 +134,10 @@ export function TestimonialsCarousel() {
                   onClick={() => setActiveIndex(index)}
                   aria-label={`Mostrar testimonio ${index + 1}`}
                   aria-current={index === activeIndex ? "true" : undefined}
-                  className={`h-2.5 rounded-full transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--silente-gold-light)] ${index === activeIndex ? "w-7 bg-[var(--silente-gold)]" : "w-2.5 bg-[var(--silente-border)] hover:bg-[var(--silente-gold-light)]"}`}
-                />
+                  className="group flex h-11 w-11 items-center justify-center rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--silente-gold-light)]"
+                >
+                  <span aria-hidden="true" className={`h-2.5 rounded-full transition-[width,background-color] motion-reduce:transition-none ${index === activeIndex ? "w-7 bg-[var(--silente-gold)]" : "w-2.5 bg-[var(--silente-border)] group-hover:bg-[var(--silente-gold-light)]"}`} />
+                </button>
               ))}
             </div>
           </div>
