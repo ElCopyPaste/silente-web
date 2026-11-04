@@ -55,10 +55,10 @@ export function Hero() {
 
   return (
     <section className="silente-hero silente-stars relative isolate min-h-[100svh] overflow-hidden bg-[#07111d] px-4 pb-10 pt-3 md:px-8 md:pb-14 md:pt-5">
-      <div
-        aria-hidden="true"
+      <picture
         className="hero-background absolute inset-[-2%] z-0"
       >
+        <source media="(min-width: 1024px)" srcSet={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/fondo-desktop.webp`} />
         <Image
           src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/fondo-centrado.webp`}
           alt=""
@@ -68,12 +68,12 @@ export function Hero() {
           sizes="100vw"
           className="pointer-events-none object-cover object-center"
         />
-      </div>
+      </picture>
       <Header />
 
       <div className="hero-content relative z-10 mx-auto mt-6 max-w-6xl text-center md:mt-7">
         <h1 className="w-full text-center text-[clamp(1.75rem,8.4vw,2.5rem)] font-normal leading-[1.08] md:text-[clamp(2.75rem,5vw,4.5rem)] tracking-[-.035em] text-[var(--silente-ivory)]">
-          <span className="block whitespace-nowrap">Hay cosas que</span>
+          <span className="block whitespace-nowrap">Hay cosas que</span>{" "}
           <span className="mt-1 block whitespace-nowrap">
             necesitas{" "}
             <span className="relative inline-block align-baseline">

@@ -30,6 +30,39 @@ html:has(.silente-home){scroll-snap-type:y proximity}
 }
 .silente-home > section:not(.silente-hero) > div{width:100%}
 .silente-home > footer{scroll-snap-align:end}
+
+/* Each mobile section keeps its heading, content and action together. */
+@media (max-width:767px){
+  .silente-home > section:not(.silente-hero){padding:24px 20px}
+  .silente-home > section:not(.silente-hero) h2{font-size:28px;line-height:1.12;letter-spacing:-.025em;margin-top:10px;text-wrap:balance}
+  .silente-home > section:not(.silente-hero) > div{gap:20px}
+  .silente-home > section:not(.silente-hero) h2 ~ p{margin-top:12px;font-size:16px;line-height:24px}
+  .silente-home > section:not(.silente-hero) > div > div > p:first-child{font-size:11px;line-height:18px;letter-spacing:.16em}
+  #como-funciona > div > div:last-child > p{margin-bottom:12px;font-size:11px;line-height:18px}
+  #como-funciona [role="img"]{border-radius:16px;padding:16px}
+  #como-funciona [role="img"] span{width:44px;height:44px}
+  #como-funciona [role="img"] p{margin-top:8px}
+  #elige-tu-plan .plan-card{padding:16px}
+  #elige-tu-plan .plan-card-header{gap:8px}
+  #elige-tu-plan .plan-card h3{font-size:21px;line-height:26px}
+  #elige-tu-plan .plan-price{margin-top:16px;padding-block:12px}
+  #elige-tu-plan .plan-price > p{margin-top:0;font-size:36px;line-height:42px}
+  #elige-tu-plan .plan-price > p > span{font-size:14px}
+  #elige-tu-plan .plan-card ul{margin-top:16px}
+  #elige-tu-plan .plan-card li{line-height:24px}
+  #elige-tu-plan .plan-card li + li{margin-top:8px}
+  #elige-tu-plan .plan-card > a{margin-top:16px;min-height:48px;padding-block:12px}
+  #elige-tu-plan .plan-card > p{margin-top:12px}
+  #preguntas-frecuentes > div{gap:24px}
+  #preguntas-frecuentes details{padding-block:12px}
+  #preguntas-frecuentes summary{font-size:16px;line-height:24px}
+  #testimonios > div > div:nth-child(2){margin-top:24px}
+  #testimonios .testimonial-slide{min-height:310px;gap:12px;padding:20px}
+  #testimonios blockquote{font-size:17px;line-height:26px}
+  #testimonios .testimonial-slide p{margin-top:16px}
+  #testimonios article + div{margin-top:16px;gap:8px}
+}
+
 .silente-hero{padding-block:max(12px,env(safe-area-inset-top)) 24px;padding-inline:max(16px,env(safe-area-inset-left)) max(16px,env(safe-area-inset-right))}
 .silente-hero .hero-content{margin-top:12px;width:100%}
 .silente-hero .hero-intro{font-size:14px;line-height:20px;margin-top:8px}
@@ -64,16 +97,20 @@ html:has(.silente-home){scroll-snap-type:y proximity}
 }
 
 @media (min-width:1024px){
-  .silente-hero header > div:first-child{height:64px}
-  .silente-hero header img{height:64px}
-  .silente-hero h1{font-size:clamp(2.25rem,5.2svh,3.5rem);letter-spacing:-.03em}
-  .silente-hero .hero-content > p:first-of-type{font-size:clamp(1.25rem,2.8svh,2rem);margin-top:8px}
-  .silente-hero .hero-intro{max-width:940px}
-  .silente-hero .hero-orbit{display:block;max-width:1152px;height:clamp(240px,calc(100svh - 534px),420px);margin-block:0}
+  .silente-hero header > div:first-child{height:clamp(64px,9svh,88px)}
+  .silente-hero header img{height:clamp(64px,9svh,88px)}
+  .silente-hero h1{font-size:clamp(40px,6svh,64px);line-height:1.1;letter-spacing:-.03em}
+  .silente-hero h1 > span{display:inline;margin-top:0}
+  .silente-hero .hero-content > p:first-of-type{font-size:clamp(24px,3.3svh,32px);margin-top:12px}
+  .silente-hero .hero-intro{max-width:760px;font-size:16px;line-height:24px;margin-top:12px}
+  .silente-hero .hero-orbit{display:block;max-width:1100px;height:clamp(240px,calc(60svh - 212px),400px);margin-block:0}
   .silente-hero .hero-symbol-anchor{position:absolute;left:50%;top:50%;translate:-50% -50%;padding:0}
-  .silente-hero .silente-symbol{width:clamp(160px,25svh,260px);animation:silente-breathe 8s ease-in-out infinite}
-  .silente-hero .hero-background{animation:silente-background-drift 48s ease-in-out infinite}
-  .silente-hero .hero-cta{margin-top:0}
+  .silente-hero .silente-symbol{width:clamp(180px,24svh,240px);animation:silente-breathe 8s ease-in-out infinite}
+  .silente-hero .question-capsule{width:260px;max-width:260px;font-size:16px;line-height:24px;padding:12px 18px}
+  .silente-hero .hero-background{inset:0;transform:none}
+  .silente-hero .hero-cta{margin-top:0;max-width:480px;min-height:56px;font-size:18px}
+  .silente-hero .hero-content > ul{max-width:660px;margin-top:20px}
+  .silente-hero .hero-content > ul > li{min-height:68px;font-size:14px}
 }
 @keyframes silente-background-drift{
   0%,100%{transform:scale(1.02) translate(0,0)}

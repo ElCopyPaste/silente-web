@@ -39,20 +39,15 @@ export function Pricing() {
         </div>
 
         <div className="mx-auto w-full max-w-lg">
-          <article className="relative overflow-hidden rounded-2xl border border-[rgba(213,170,75,.45)] bg-[var(--silente-secondary)] p-5 md:p-8">
+          <article className="plan-card relative overflow-hidden rounded-2xl border border-[rgba(213,170,75,.45)] bg-[var(--silente-secondary)] p-5 md:p-8">
             <div className="absolute inset-x-0 top-0 h-px bg-[var(--silente-gold)]" />
-            <div className="flex flex-wrap items-start justify-between gap-3">
+            <div className="plan-card-header flex flex-wrap items-start justify-between gap-3">
               <div className="min-w-0 flex-1">
-                <p className="text-xs uppercase tracking-[.2em] text-[var(--silente-gold)]">Plan Silente</p>
-                <h3 className="mt-3 text-2xl font-semibold text-[var(--silente-ivory)]">Conversación privada</h3>
+                <h3 className="text-2xl font-semibold text-[var(--silente-ivory)]">Conversación privada</h3>
               </div>
-              <span className="rounded-full border border-[var(--silente-border)] px-3 py-1 text-xs text-[var(--silente-muted)]">
-                Mensual
-              </span>
             </div>
 
-            <div className="mt-6 border-y border-[var(--silente-border)] py-5 md:mt-8">
-              <p className="text-xs uppercase tracking-[.18em] text-[var(--silente-muted)]">Suscripción mensual</p>
+            <div className="plan-price mt-6 border-y border-[var(--silente-border)] py-5 md:mt-8">
               <p className="mt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-4xl font-semibold tracking-tight text-[var(--silente-ivory)] md:text-5xl">
                 $6.000 <span className="whitespace-nowrap text-base font-normal text-[var(--silente-muted)]">CLP / mes</span>
               </p>
