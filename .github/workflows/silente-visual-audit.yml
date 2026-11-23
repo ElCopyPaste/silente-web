@@ -1,0 +1,126 @@
+name: Auditoría visual aislada de Silente
+on:
+  push:
+    branches: [qa/silente-visual-20261123]
+permissions:
+  contents: read
+jobs:
+  emular:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        engine: [chromium, webkit, firefox]
+    env:
+      ENGINE: ${{ matrix.engine }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Construir la vista estática
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+        env:
+          GITHUB_PAGES: "true"
+      - name: Instalar el navegador de Playwright
+        run: |
+          npm install --no-save --package-lock=false --no-audit --no-fund playwright@1.58.2
+          npx playwright install --with-deps "$ENGINE"
+      - name: Capturar y medir el diseño
+        run: |
+          mkdir -p /tmp/silente-visual
+          ln -s "$PWD/out" /tmp/silente-visual/silente-web
+          python3 -m http.server 4173 --bind 127.0.0.1 --directory /tmp/silente-visual &
+          for i in {1..15}; do
+            if curl -fsS http://127.0.0.1:4173/silente-web/ -o /dev/null; then break; fi
+            sleep 1
+          done
+          cat > visual-ci.cjs <<'PLAYWRIGHT_SCRIPT'
+          const {chromium, firefox, webkit, devices} = require('playwright');
+          const fs = require('node:fs/promises');
+          const engine = process.env.ENGINE;
+          const target = 'http://127.0.0.1:4173/silente-web/';
+          const desktop = (width,height) => ({viewport:{width,height}});
+          const modes = engine === 'webkit'
+            ? [['iphone-se',devices['iPhone SE']],['iphone-13',devices['iPhone 13']],['ipad',devices['iPad (gen 7)']],['desktop-1440',desktop(1440,900)]]
+            : engine === 'firefox'
+              ? [['mobile-360',{viewport:{width:360,height:800},hasTouch:true}],['laptop-1280',desktop(1280,720)],['desktop-1440',desktop(1440,900)]]
+              : [['mobile-320',{...devices['Pixel 7'],viewport:{width:320,height:568}}],['android-pixel',devices['Pixel 7']],['tablet-768',{viewport:{width:768,height:1024},isMobile:true,hasTouch:true}],['laptop-1024',desktop(1024,768)],['laptop-1280',desktop(1280,720)],['desktop-1440',desktop(1440,900)]];
+          const output = 'visual-results';
+          (async () => {
+            await fs.mkdir(output,{recursive:true});
+            const browser = await {chromium, firefox, webkit}[engine].launch();
+            const results = [];
+            try {
+              for (const [name, options] of modes) {
+                const page = await browser.newPage({...options,locale:'es-CL',reducedMotion:'reduce'});
+                const errors = [];
+                page.on('pageerror',e => errors.push(e.message));
+                try {
+                  const response = await page.goto(target,{waitUntil:'load'});
+                  if (!response.ok()) throw new Error('HTTP '+response.status());
+                  await page.locator('h1').first().waitFor();
+                  await page.evaluate(() => document.fonts.ready);
+                  await page.screenshot({path:output+'/'+name+'-inicio.png',animations:'disabled'});
+                  await page.evaluate(async () => {
+                    for (const image of document.images) if (image.loading === 'lazy') image.loading = 'eager';
+                    await Promise.race([Promise.allSettled([...document.images].map(image => image.decode())), new Promise(resolve => setTimeout(resolve,3000))]);
+                  });
+                  await page.screenshot({path:output+'/'+name+'-completa.png',fullPage:true,animations:'disabled'});
+                  const data = await page.evaluate(() => {
+                    const select = selector => [...document.querySelectorAll(selector)].filter(el => el.getClientRects().length);
+                    const n = Math.round;
+                    const box = (r) => ({x:n(r.x),y:n(r.y),w:n(r.width),h:n(r.height),right:n(r.right),bottom:n(r.bottom)});
+                    const label = el => ({text:el.innerText?.trim().replace(/\s+/g,' ').slice(0,85),...box(el.getBoundingClientRect())});
+                    const rendered = (el) => getComputedStyle(el).visibility === 'visible';
+                    const headings = select('h1,h2,h3');
+                    const textLeaves = headings.flatMap(el => {
+                      const walker = document.createTreeWalker(el,NodeFilter.SHOW_TEXT);
+                      const leaves=[];
+                      while(walker.nextNode()){
+                        const leaf=walker.currentNode;
+                        if (!leaf.textContent.trim() || !rendered(leaf.parentElement)) continue;
+                        const r=document.createRange(); r.selectNode(leaf);
+                        const b=box(r.getBoundingClientRect());
+                        if (b.x<0 || b.right>innerWidth) leaves.push({text:leaf.textContent,...b});
+                      }
+                      return leaves;
+                    });
+                    const heroElements=select('.hero-symbol-anchor,.silente-symbol,.hero-orbit,.hero-cta,.question-capsule').map(label);
+                    const capsules=select('.question-capsule').map(label);
+                    const overlaps=[];
+                    for(let i=0;i<capsules.length;i++) for(let j=i+1;j<capsules.length;j++){
+                      const a=capsules[i], b=capsules[j];
+                      const w=Math.min(a.right,b.right)-Math.max(a.x,b.x);
+                      const h=Math.min(a.bottom,b.bottom)-Math.max(a.y,b.y);
+                      if(w>2 && h>2) overlaps.push([a.text,b.text,w,h]);
+                    }
+                    return {viewport:[innerWidth,innerHeight],docWidth:document.documentElement.scrollWidth,headings:headings.map(label),headlineOverflow:textLeaves,
+                      heroElements,overlaps,imagesWithoutPixels:select('img').filter(i=>!i.complete||!i.naturalWidth).map(i=>i.alt||i.getAttribute('src')?.slice(0,85))};
+                  });
+                  results.push({name,...data,errors});
+                  console.log('VISUAL_RESULT '+JSON.stringify(results.at(-1)));
+                } catch(error) {
+                  results.push({name,error:String(error)});
+                  console.error('VISUAL_ERROR '+name+' '+error);
+                } finally { await page.close(); }
+              }
+            } finally {
+              await browser.close();
+              await fs.writeFile(output+'/mediciones.json',JSON.stringify({engine,results},null,2));
+            }
+            if(results.some(r=>r.error)) process.exitCode=1;
+          })().catch(e=>{console.error(e);process.exitCode=1;});
+          PLAYWRIGHT_SCRIPT
+          node visual-ci.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: silente-visual-${{ matrix.engine }}
+          path: visual-results
+          retention-days: 7
