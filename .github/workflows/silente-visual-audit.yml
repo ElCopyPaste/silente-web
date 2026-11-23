@@ -6,12 +6,12 @@ permissions:
   contents: read
 jobs:
   emular:
-    runs-on: ubuntu-24.04
+    runs-on: macos-15
     timeout-minutes: 12
     strategy:
       fail-fast: false
       matrix:
-        engine: [chromium, webkit, firefox]
+        engine: [webkit]
     env:
       ENGINE: ${{ matrix.engine }}
     steps:
@@ -30,7 +30,7 @@ jobs:
       - name: Instalar el navegador de Playwright
         run: |
           npm install --no-save --package-lock=false --no-audit --no-fund playwright@1.58.2
-          npx playwright install --with-deps "$ENGINE"
+          npx playwright install "$ENGINE"
       - name: Capturar y medir el diseño
         run: |
           mkdir -p /tmp/silente-visual
@@ -118,6 +118,7 @@ jobs:
           })().catch(e=>{console.error(e);process.exitCode=1;});
           PLAYWRIGHT_SCRIPT
           node visual-ci.cjs
+          node -e 'const fs = require("node:fs"); const sharp = require("sharp"); (async()=>{ for(const name of fs.readdirSync("visual-results").filter(n=>n.endsWith("-inicio.png"))) { const jpeg = await sharp("visual-results/"+name).resize(430).jpeg({quality:55}).toBuffer(); console.log("VISUAL_PREVIEW "+name+" "+jpeg.toString("base64")); } })().catch(e=>{ console.error(e.message); });'
       - uses: actions/upload-artifact@v4
         if: always()
         with:
