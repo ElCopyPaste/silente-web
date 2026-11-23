@@ -6,17 +6,18 @@ permissions:
   contents: read
 jobs:
   emular:
-    runs-on: macos-15
+    runs-on: ${{ matrix.engine == 'webkit' && 'macos-15' || 'ubuntu-24.04' }}
     timeout-minutes: 12
     strategy:
       fail-fast: false
       matrix:
-        engine: [webkit]
+        engine: [chromium, firefox, webkit]
     env:
       ENGINE: ${{ matrix.engine }}
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: f34dd39762a31e69daf4ef789c5d86f9bc224f12
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
@@ -30,7 +31,11 @@ jobs:
       - name: Instalar el navegador de Playwright
         run: |
           npm install --no-save --package-lock=false --no-audit --no-fund playwright@1.58.2
-          npx playwright install "$ENGINE"
+          if [ "$ENGINE" = webkit ]; then
+            npx playwright install "$ENGINE"
+          else
+            npx playwright install --with-deps "$ENGINE"
+          fi
       - name: Capturar y medir el diseño
         run: |
           mkdir -p /tmp/silente-visual
@@ -47,9 +52,9 @@ jobs:
           const target = 'http://127.0.0.1:4173/silente-web/';
           const desktop = (width,height) => ({viewport:{width,height}});
           const modes = engine === 'webkit'
-            ? [['iphone-se',devices['iPhone SE']],['iphone-13',devices['iPhone 13']],['ipad',devices['iPad (gen 7)']],['laptop-1280',desktop(1280,720)],['desktop-1440',desktop(1440,900)]]
+            ? [['iphone-se',devices['iPhone SE']],['iphone-13',devices['iPhone 13']],['ipad',devices['iPad (gen 7)']],['laptop-1024',desktop(1024,768)],['laptop-1280',desktop(1280,720)],['desktop-1440',desktop(1440,900)]]
             : engine === 'firefox'
-              ? [['mobile-360',{viewport:{width:360,height:800},hasTouch:true}],['laptop-1280',desktop(1280,720)],['desktop-1440',desktop(1440,900)]]
+              ? [['mobile-360',{viewport:{width:360,height:800},hasTouch:true}],['laptop-1024',desktop(1024,768)],['laptop-1280',desktop(1280,720)],['desktop-1440',desktop(1440,900)]]
               : [['mobile-320',{...devices['Pixel 7'],viewport:{width:320,height:568}}],['android-pixel',devices['Pixel 7']],['tablet-768',{viewport:{width:768,height:1024},isMobile:true,hasTouch:true}],['laptop-1024',desktop(1024,768)],['laptop-1280',desktop(1280,720)],['desktop-1440',desktop(1440,900)]];
           const output = 'visual-results';
           (async () => {
@@ -104,7 +109,26 @@ jobs:
                     return {viewport:[innerWidth,innerHeight],docWidth:document.documentElement.scrollWidth,headings:headings.map(label),headlineOverflow:textLeaves,
                       heroElements,overlaps,imagesWithoutPixels:select('img').filter(i=>!i.complete||!i.naturalWidth).map(i=>i.alt||i.getAttribute('src')?.slice(0,85))};
                   });
-                  results.push({name,...data,errors});
+                  const testFailures = [];
+                const measurements = {};
+                if (data.docWidth !== data.viewport[0]) testFailures.push('horizontal overflow');
+                if (data.headlineOverflow.length) testFailures.push('heading overflow');
+                if (data.overlaps.length) testFailures.push('overlapping question capsules');
+                if (data.viewport[0] >= 1024) {
+                  const [orbit, symbol, , ...elements] = data.heroElements;
+                  const capsules = elements.slice(0, -1);
+                  if (capsules.length !== 6) testFailures.push('expected six desktop question capsules');
+                  else {
+                    const pairs = [capsules.slice(0,2), capsules.slice(2,4), capsules.slice(4,6)];
+                    const verticalGaps = pairs.slice(1).map((row,index) => Math.min(...row.map(box=>box.y)) - Math.max(...pairs[index].map(box=>box.bottom)));
+                    if (verticalGaps.some(gap=>gap<11)) testFailures.push('insufficient row gap');
+                    const horizontalOffset = Math.abs(symbol.x + symbol.w/2 - data.viewport[0]/2);
+                    const verticalOffset = Math.abs(symbol.y + symbol.h/2 - (orbit.y + orbit.h/2));
+                    if (horizontalOffset > 1 || verticalOffset > 1) testFailures.push('off-center symbol');
+                    Object.assign(measurements, {verticalGaps,horizontalOffset,verticalOffset});
+                  }
+                }
+                results.push({name,...data,errors,testFailures,measurements});
                   console.log('VISUAL_RESULT '+JSON.stringify(results.at(-1)));
                 } catch(error) {
                   results.push({name,error:String(error)});
@@ -115,7 +139,7 @@ jobs:
               await browser.close();
               await fs.writeFile(output+'/mediciones.json',JSON.stringify({engine,results},null,2));
             }
-            if(results.some(r=>r.error)) process.exitCode=1;
+            if(results.some(r=>r.error||r.errors.length||r.testFailures.length)) process.exitCode=1;
           })().catch(e=>{console.error(e);process.exitCode=1;});
           PLAYWRIGHT_SCRIPT
           node visual-ci.cjs
