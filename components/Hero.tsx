@@ -16,15 +16,6 @@ const questions = [
   "¿Por qué me va mal?",
 ];
 
-const desktopPositions = [
-  "left-[5%] top-[8%]",
-  "right-[5%] top-[8%]",
-  "left-[1%] top-[42%]",
-  "right-[1%] top-[42%]",
-  "left-[6%] bottom-[8%]",
-  "right-[6%] bottom-[8%]",
-];
-
 function WhatsAppIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6 fill-current">
@@ -109,15 +100,12 @@ export function Hero() {
             <SilenteSymbol />
           </div>
 
-          {questions.map((question, index) => (
+          {questions.map((question) => (
             <button
               key={question}
               type="button"
               onClick={goToHow}
-              className={
-                "question-capsule question-capsule-" + index + " absolute hidden max-w-[240px] px-5 py-4 text-center text-sm leading-[1.35] text-[var(--silente-ivory)] lg:block " +
-                desktopPositions[index]
-              }
+              className="question-capsule question-desktop hidden text-center text-[var(--silente-ivory)] lg:block"
             >
               <span className="relative z-10">{question}</span>
             </button>
