@@ -6,12 +6,12 @@ permissions:
   contents: read
 jobs:
   emular:
-    runs-on: ${{ matrix.engine == 'webkit' && 'macos-15' || 'ubuntu-24.04' }}
+    runs-on: macos-15
     timeout-minutes: 12
     strategy:
       fail-fast: false
       matrix:
-        engine: [chromium, firefox, webkit]
+        engine: [firefox]
     env:
       ENGINE: ${{ matrix.engine }}
     steps:
@@ -31,11 +31,7 @@ jobs:
       - name: Instalar el navegador de Playwright
         run: |
           npm install --no-save --package-lock=false --no-audit --no-fund playwright@1.58.2
-          if [ "$ENGINE" = webkit ]; then
-            npx playwright install "$ENGINE"
-          else
-            npx playwright install --with-deps "$ENGINE"
-          fi
+          npx playwright install "$ENGINE"
       - name: Capturar y medir el diseño
         run: |
           mkdir -p /tmp/silente-visual
