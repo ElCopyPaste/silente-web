@@ -47,7 +47,7 @@ jobs:
           const target = 'http://127.0.0.1:4173/silente-web/';
           const desktop = (width,height) => ({viewport:{width,height}});
           const modes = engine === 'webkit'
-            ? [['iphone-se',devices['iPhone SE']],['iphone-13',devices['iPhone 13']],['ipad',devices['iPad (gen 7)']],['desktop-1440',desktop(1440,900)]]
+            ? [['iphone-se',devices['iPhone SE']],['iphone-13',devices['iPhone 13']],['ipad',devices['iPad (gen 7)']],['laptop-1280',desktop(1280,720)],['desktop-1440',desktop(1440,900)]]
             : engine === 'firefox'
               ? [['mobile-360',{viewport:{width:360,height:800},hasTouch:true}],['laptop-1280',desktop(1280,720)],['desktop-1440',desktop(1440,900)]]
               : [['mobile-320',{...devices['Pixel 7'],viewport:{width:320,height:568}}],['android-pixel',devices['Pixel 7']],['tablet-768',{viewport:{width:768,height:1024},isMobile:true,hasTouch:true}],['laptop-1024',desktop(1024,768)],['laptop-1280',desktop(1280,720)],['desktop-1440',desktop(1440,900)]];
@@ -71,7 +71,8 @@ jobs:
                     for (const image of document.images) if (image.loading === 'lazy') image.loading = 'eager';
                     await Promise.race([Promise.allSettled([...document.images].map(image => image.decode())), new Promise(resolve => setTimeout(resolve,3000))]);
                   });
-                  await page.screenshot({path:output+'/'+name+'-completa.png',fullPage:true,animations:'disabled'});
+                  await page.screenshot({path:output+'/'+name+'-cargado.png',animations:'disabled'});
+                await page.screenshot({path:output+'/'+name+'-completa.png',fullPage:true,animations:'disabled'});
                   const data = await page.evaluate(() => {
                     const select = selector => [...document.querySelectorAll(selector)].filter(el => el.getClientRects().length);
                     const n = Math.round;
@@ -118,7 +119,7 @@ jobs:
           })().catch(e=>{console.error(e);process.exitCode=1;});
           PLAYWRIGHT_SCRIPT
           node visual-ci.cjs
-          node -e 'const fs = require("node:fs"); const sharp = require("sharp"); (async()=>{ for(const name of fs.readdirSync("visual-results").filter(n=>n.endsWith("-inicio.png"))) { const jpeg = await sharp("visual-results/"+name).resize(430).jpeg({quality:55}).toBuffer(); console.log("VISUAL_PREVIEW "+name+" "+jpeg.toString("base64")); } })().catch(e=>{ console.error(e.message); });'
+          node -e 'const fs = require("node:fs"); const sharp = require("sharp"); (async()=>{ for(const name of fs.readdirSync("visual-results").filter(n=>/^(iphone-se|laptop-1280)-(inicio|cargado)\.png$/.test(n))) { const jpeg = await sharp("visual-results/"+name).resize(430).jpeg({quality:55}).toBuffer(); console.log("VISUAL_PREVIEW "+name+" "+jpeg.toString("base64")); } })().catch(e=>{ console.error(e.message); });'
       - uses: actions/upload-artifact@v4
         if: always()
         with:
